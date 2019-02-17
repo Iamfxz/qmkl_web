@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="tools/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            path: "/3D程序设计基础/Android_点餐系统体系结构设计.doc",
+            collegeName: "福州大学",
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDk2Mjc3NDIsImlhdCI6MTU0OTAyMjk0MiwidXNlcm5hbWUiOiIxMzA2NzM0MTIwMCJ9.VqXRWaw0BtGfEeAdX_BWPJy9eQ89VJNi-nEIQOeIeyM"
+        };
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://120.77.32.233/qmkl1.0.0/file/list/detail",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json;charset=UTF-8",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(myData)
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+        /*测试版本更新的get请求，
+        var dataURL = "http://120.77.32.233/qmkl1.0.0/app/update/49000";
+       $(function () {
+           $("button").bind("click", function () {
+               $.ajax({
+                   type:"get",
+                   url:dataURL,
+                   data: {
+                       username: "13067341200",
+                       password: "893bfa9e3d3a38c9f7f91fb15ec71f4ac6f97b90"
+                   },
+                   dataType: "json",
+                   success: function (data) {
+                       alert("size:"+data.size +"\nurl:"+data.url+"\nhasUpdate:"+data.hasUpdate);
+                   }
+               });
+           })
+       });*/
+    </script>
+</head>
+<body>
+
+<button>
+    向页面发送post请求，并获得返回结果
+</button>
+</body>
+</html>
