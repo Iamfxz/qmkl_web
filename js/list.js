@@ -17,7 +17,7 @@ function showMain() {
     $.cookie('currentPath', '/');
     var myData = {
         path: "/",
-        collegeName: "福州大学",
+        collegeName: $.cookie("currentCollege"),
         token: $.cookie('qmkl_token'),
         page: "1",
         pageNum: "20"
@@ -56,8 +56,8 @@ function showMain() {
  * 文件列表点击事件处理
  * @param id 点击的元素
  * @param requestMethod 请求的方法
- *  1--文件列表请求,默认方法
- *  2--路径导航的请求
+     *  1--通过点击文件列表请求,默认方法
+     *  2--通过点击路径导航的请求
  */
 function list_item_click(id, requestMethod) {
     //隐藏分页栏
@@ -105,8 +105,8 @@ function list_item_click(id, requestMethod) {
     if (requestMethod === 2) {
         pathNavigation.empty();
         pathNavigation.append("<li>\n" +
-            "            <a href=\"#\" id=\"school\">福州大学</a>\n" +
-            "        </li>");
+            "            <a href=\"#\" id=\"school\" data-toggle=\"modal\" data-target=\"#schoolModal\" onclick=\"postSchoolAjax()\">" +
+            $.cookie("currentCollege")+ "</a>\n" + "        </li>");
         pathNavigation.append("<li onclick=\"showMain()\" id=\"mainList\" >\n" +
             "            <a href=\"#\">主列表</a>\n" +
             "        </li>");
@@ -127,7 +127,7 @@ function list_item_click(id, requestMethod) {
     }
     var myData = {
         path: currentPath,
-        collegeName: "福州大学",
+        collegeName: $.cookie("currentCollege"),
         token: $.cookie('qmkl_token')
     };
     var settings = {
@@ -215,7 +215,7 @@ function fileDetailAjax(requestFile) {
     var currentFile = $.cookie('currentPath') + requestFile;
     var myData = {
         path: currentFile,
-        collegeName: "福州大学",
+        collegeName: $.cookie("currentCollege"),
         token: $.cookie('qmkl_token')
     };
     var settings = {
@@ -278,7 +278,7 @@ function pagination() {
     //获取文件总数，方便设置分页浏览
     var myData = {
         path: "/",
-        collegeName: "福州大学",
+        collegeName: $.cookie("currentCollege"),
         token: $.cookie('qmkl_token')
     };
     var settings = {

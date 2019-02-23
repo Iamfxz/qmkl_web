@@ -24,7 +24,7 @@ function nextPage(page){
     //请求新的文件列表
     var myData = {
         path: "/",
-        collegeName: "福州大学",
+        collegeName: $.cookie("currentCollege"),
         token: $.cookie('qmkl_token'),
         page: page.toString(),
         pageNum: "20"
