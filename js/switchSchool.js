@@ -37,5 +37,8 @@ function chooseSchoolAjax(school) {
     //点击后隐藏模态框
     $("#schoolModal").modal("hide");
     //存储当前学校
-    $.cookie("currentSchool",school.toString().trim());
+    $.cookie("currentCollege",school.toString().trim());
+    //console.log(school);
+    //重新加载资源页面和路径导航
+    showMain();
 }

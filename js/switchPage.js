@@ -1,4 +1,7 @@
-//模块官网，资源，趣聊，个人等的换页
+/**
+ * 模块官网，资源，趣聊，个人等的换页
+ *  网页打开后就预加载完成
+ */
 $(document).ready(function(){
     var resource = $("#resource");
     var information = $("#information");
