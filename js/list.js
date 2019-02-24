@@ -43,6 +43,8 @@ function showMain() {
 
     $.ajax(settings).done(function (response) {
         //console.log("主界面文件资源列表请求结果：" + response.msg);
+
+        //加载文件资源列表
         for (var i in response.data) {
             var newElement = $("<div class=\"list-group-item\">\n" +
                 "            <h4 class=\"list-group-item-heading\">\n" +
@@ -279,7 +281,12 @@ function myPreview(fileName) {
     return suffix === "pdf" || suffix === "jpg" || suffix === "png";
 }
 
-//分页设置
+/**
+ * 分页设置
+ *  请求所有的文件资源，并存储其文字及对应拼音
+ *  window.list
+ *  window.list_pinyin
+ */
 function pagination() {
     //获取文件总数，方便设置分页浏览
     var myData = {
@@ -301,11 +308,22 @@ function pagination() {
     };
 
     $.ajax(settings).done(function (response) {
+        var arr_list_pinyin = [];
+        var arr_list = [];
         var total = 0;
         for (var i in response.data) {
+            if(response.data.hasOwnProperty(i)){
+                arr_list[total] = i;
+                arr_list_pinyin[total] = pinyinUtil.getPinyin(i,"",false);
+            }
             total++;
         }
-        console.log("文件夹总数量为：" + total);
+        //全局变量,存储所有的文件夹汉字名或拼音名，用于搜索
+        window.list = arr_list;
+        window.list_pinyin = arr_list_pinyin;
+        //console.log(window.list);
+        //console.log(window.list_pinyin);
+        //console.log("文件夹总数量为：" + total);
         //存储文件总数
         $.cookie('totalFolderNum', total);
         //存储当前分页位置

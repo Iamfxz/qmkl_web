@@ -4,3 +4,11 @@ function onKeyDown(event) {
         alert("开始进行搜索");
     }
 }
+
+/**
+ *  搜索过滤对应的文件夹
+ * @param Folder 文件夹名字
+ */
+function searchFolder(Folder) {
+
+}

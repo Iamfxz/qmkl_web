@@ -4,8 +4,8 @@
     <list default="true" id="f1b1b9b2-3fae-470b-b214-a17e7bd0736f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/switchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/switchPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/switchSchool.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/switchSchool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/search_box.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/search_box.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qmklWeb.html" beforeDir="false" afterPath="$PROJECT_DIR$/qmklWeb.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="qmklWeb.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="qmklWeb.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qmklWeb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3270">
-              <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+            <state relative-caret-position="-1432">
+              <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -32,8 +32,8 @@
       <file leaf-file-name="switchSchool.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/switchSchool.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            <state relative-caret-position="210">
+              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -49,14 +49,18 @@
       </file>
       <file leaf-file-name="switchPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/switchPage.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="nextPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/nextPage.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+              <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -73,17 +77,17 @@
       <file leaf-file-name="search_box.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/search_box.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="360">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="46" />
+            <state relative-caret-position="594">
+              <caret line="325" column="24" selection-start-line="325" selection-start-column="24" selection-end-line="325" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -122,8 +126,9 @@
       <find>currentCollege</find>
       <find>current</find>
       <find>currentcollege</find>
-      <find>school</find>
       <find>currentschool</find>
+      <find>requestFile</find>
+      <find>school</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,15 +144,15 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/bootstrap template.html" />
         <option value="$PROJECT_DIR$/listTest.html" />
-        <option value="$PROJECT_DIR$/js/search_box.js" />
         <option value="$PROJECT_DIR$/apiTest.html" />
         <option value="$PROJECT_DIR$/js/sha1.js" />
         <option value="$PROJECT_DIR$/js/nextPage.js" />
-        <option value="$PROJECT_DIR$/qmklWeb.html" />
         <option value="$PROJECT_DIR$/js/login-register.js" />
         <option value="$PROJECT_DIR$/js/switchSchool.js" />
-        <option value="$PROJECT_DIR$/js/list.js" />
         <option value="$PROJECT_DIR$/js/switchPage.js" />
+        <option value="$PROJECT_DIR$/js/list.js" />
+        <option value="$PROJECT_DIR$/js/search_box.js" />
+        <option value="$PROJECT_DIR$/qmklWeb.html" />
       </list>
     </option>
   </component>
@@ -160,9 +165,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="322" />
-    <option name="y" value="205" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="331" />
+    <option name="y" value="142" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -181,6 +186,11 @@
             <path>
               <item name="qmkl-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="qmkl-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmkl-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmkl-web" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,16 +312,15 @@
       <workItem from="1549610940861" duration="15400000" />
       <workItem from="1550404114814" duration="2097000" />
       <workItem from="1550886620942" duration="10818000" />
-      <workItem from="1550974481525" duration="3425000" />
+      <workItem from="1550974481525" duration="10533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114597000" />
+    <option name="totallyTimeSpent" value="121705000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -349,6 +358,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/qmklWeb.html">
@@ -459,17 +473,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/search_box.js">
+    <entry file="file://$PROJECT_DIR$/js/sha1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="480">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qmklWeb.html">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3270">
-          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        <state relative-caret-position="-4738">
+          <caret line="9700" column="37" selection-start-line="9700" selection-start-column="23" selection-end-line="9700" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/switchSchool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/switchPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -483,31 +511,28 @@
     <entry file="file://$PROJECT_DIR$/js/nextPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/switchPage.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/sha1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/switchSchool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="594">
+          <caret line="325" column="24" selection-start-line="325" selection-start-column="24" selection-end-line="325" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/search_box.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qmklWeb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1432">
+          <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
         </state>
       </provider>
     </entry>
