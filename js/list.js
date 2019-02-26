@@ -311,16 +311,22 @@ function pagination() {
         var arr_list_pinyin = [];
         var arr_list = [];
         var total = 0;
+        //清空搜索下拉框的列表
+        var searchBoxItemList = $("#itemList");
+        searchBoxItemList.empty();
         for (var i in response.data) {
             if(response.data.hasOwnProperty(i)){
                 arr_list[total] = i;
                 arr_list_pinyin[total] = pinyinUtil.getPinyin(i,"",false);
+                var newElement = ("<option value=\"" + arr_list[total] + "\">" + arr_list_pinyin[total] + "</option>");
+                searchBoxItemList.append(newElement);
             }
             total++;
         }
         //全局变量,存储所有的文件夹汉字名或拼音名，用于搜索
         window.list = arr_list;
         window.list_pinyin = arr_list_pinyin;
+
         //console.log(window.list);
         //console.log(window.list_pinyin);
         //console.log("文件夹总数量为：" + total);
