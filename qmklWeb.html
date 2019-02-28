@@ -97,11 +97,10 @@
                 <input id="search_box" placeholder="搜索文件资源..." type="text" class="form-control"
                        onkeydown="onKeyDown(event)" list="itemList"/>
                 <datalist id="itemList">
-                    <option value="wrong">数据加载失败</option>
+                    <option value="wrong">数据加载错误</option>
                 </datalist>
-                <span class="input-group-addon">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
+                <span class="input-group-addon btn glyphicon glyphicon-search" onclick="searchFolder()">
+                </span>
             </div>
             <script src="js/search_box.js"></script>
         </div>

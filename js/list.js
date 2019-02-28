@@ -1,6 +1,10 @@
 //第一次打开页面加载主列表
 $(document).ready(
-    showMain()
+    function first() {
+        showMain();
+        //路径导航中设置默认学校（用户所在的学校）
+        $("#school").text($.cookie("currentCollege"))
+    }
 );
 
 //显示主列表，并初始化分页栏
@@ -15,7 +19,7 @@ function showMain() {
     $("#pathNavigation li:gt(1)").remove();
     //设置路径导航中的学校名字
     $("#school").text($.cookie("currentCollege"));
-    if($.cookie("currentCollege")==="其他学校"){
+    if ($.cookie("currentCollege") === "其他学校") {
         alert("目前还没有零散的其他学校的文件，如果您希望自己所在的学校也加入我们期末考啦共享资料库中，" +
             "欢迎上传资料，并留下您学校的名字，更多合作请联系qq:347647804");
     }
@@ -64,8 +68,9 @@ function showMain() {
  * 文件列表点击事件处理
  * @param id 点击的元素
  * @param requestMethod 请求的方法
-     *  1--通过点击文件列表请求,默认方法
-     *  2--通过点击路径导航的请求
+ *  1--通过点击文件列表请求,默认方法
+ *  2--通过点击路径导航的请求
+ *  3--通过搜索框的请求（此时id为文件名）
  */
 function list_item_click(id, requestMethod) {
     //隐藏分页栏
@@ -76,6 +81,8 @@ function list_item_click(id, requestMethod) {
     var pathNavigation = $("#pathNavigation");
     if (requestMethod === 2) {
         requestFile = $(id).children().text().toString().trim();
+    } else if (requestMethod === 3) {
+        requestFile = id.toString().trim();
     } else {
         requestFile = id.innerHTML.toString().trim();
     }
@@ -103,6 +110,10 @@ function list_item_click(id, requestMethod) {
     var currentPath;
     if (requestMethod === 2) {
         currentPath = prePath;
+    } else if (requestMethod === 3) {
+        currentPath = "/" + requestFile + "/";
+        //存储当前路径
+        $.cookie('currentPath', currentPath);
     } else {
         currentPath = prePath + requestFile + '/';
         //存储当前路径
@@ -110,11 +121,11 @@ function list_item_click(id, requestMethod) {
     }
     console.log("currentPath:" + currentPath);
     //修改路径导航
-    if (requestMethod === 2) {
+    if (requestMethod === 2 || requestMethod === 3) {
         pathNavigation.empty();
         pathNavigation.append("<li>\n" +
             "            <a href=\"#\" id=\"school\" data-toggle=\"modal\" data-target=\"#schoolModal\" onclick=\"postSchoolAjax()\">" +
-            $.cookie("currentCollege")+ "</a>\n" + "        </li>");
+            $.cookie("currentCollege") + "</a>\n" + "        </li>");
         pathNavigation.append("<li onclick=\"showMain()\" id=\"mainList\" >\n" +
             "            <a href=\"#\">主列表</a>\n" +
             "        </li>");
@@ -133,6 +144,7 @@ function list_item_click(id, requestMethod) {
             "            <a href=\"#\">" + requestFile.toString().trim() + "</a>\n" +
             "        </li>");
     }
+    //修改资源列表
     var myData = {
         path: currentPath,
         collegeName: $.cookie("currentCollege"),
@@ -168,7 +180,7 @@ function list_item_click(id, requestMethod) {
 
 /**
  * 路径导航中文件夹的跳转点击事件处理函数
- * @param id 希望跳转的文件夹
+ * @param id 希望跳转的文件夹的html元素（不是文件夹名字）
  * 逻辑：通过点击的文件夹获取其前面有哪些文件夹，重新设置当前路径currentPath
  * 再通过调用list_item_click(requestName)处理跳转事件
  */
@@ -315,9 +327,9 @@ function pagination() {
         var searchBoxItemList = $("#itemList");
         searchBoxItemList.empty();
         for (var i in response.data) {
-            if(response.data.hasOwnProperty(i)){
+            if (response.data.hasOwnProperty(i)) {
                 arr_list[total] = i;
-                arr_list_pinyin[total] = pinyinUtil.getPinyin(i,"",false);
+                arr_list_pinyin[total] = pinyinUtil.getPinyin(i, "", false);
                 var newElement = ("<option value=\"" + arr_list[total] + "\">" + arr_list_pinyin[total] + "</option>");
                 searchBoxItemList.append(newElement);
             }
@@ -333,7 +345,7 @@ function pagination() {
         //存储文件总数
         $.cookie('totalFolderNum', total);
         //存储当前分页位置
-        $.cookie("currentPage",1);
+        $.cookie("currentPage", 1);
         var totalPageNum = Math.ceil(total / 20);
         //清空分页列表
         var pagination = $("#pagination");
