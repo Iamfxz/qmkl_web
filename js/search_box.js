@@ -11,15 +11,27 @@ function onKeyDown(event) {
 
 /**
  *  搜索文件
- * @param Folder 文件夹名字
  */
 function searchFolder() {
-    var searchFolderName = $("#search_box").val();
+    var searchBox = $("#search_box");
+    var searchFolderName = searchBox.val();
     var FolderName = window.list;
     for (var i in FolderName) {
         if (FolderName.hasOwnProperty(i))
             if (searchFolderName === FolderName[i]) {
-                list_item_click($("#search_box").val(),3);
+                list_item_click(searchBox.val(),3);
             }
+    }
+    var resource = $("#resource");
+    if(!resource.hasClass("active")){
+        $("#officialWeb").removeClass("active");
+        resource.addClass("active");
+        $("#chat").removeClass("active");
+        $("#information").removeClass("active");
+
+        $(".officialWebPart").addClass("hidden");
+        $(".resourcePart").removeClass("hidden");
+        $(".chatPart").addClass("hidden");
+        $(".informationPart").addClass("hidden");
     }
 }

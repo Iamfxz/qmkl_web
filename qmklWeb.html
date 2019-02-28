@@ -36,36 +36,41 @@
     <![endif]-->
 </head>
 <body background="img/background.jpg">
-<div class="container-fluid">
+<div class="container">
     <!--标题栏-->
     <div class="page-header">
         <div class="row">
             <div class="col-md-1">
                 <a href="http://www.finalexam.cn/"><img src="img/icon/Icon-87.png" alt="期末考啦logo"></a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-3">
                 <h1>
                     <strong>期末考啦</strong>
                     <br/>
                     <small>大学考试再也不怕挂科啦</small>
                 </h1>
             </div>
-            <div class="col-md-1">
-                <a class="btn big-login" data-toggle="modal" href="javascript:void(0)"
-                   onclick="openLoginModal();">登陆</a>
+            <div class="col-md-1 col-md-offset-5">
+                <button class="btn big-login" data-toggle="modal" href="javascript:void(0)"
+                        onclick="openLoginModal();">
+                    <strong>登陆</strong>
+                </button>
             </div>
             <div class="col-md-1">
-                <a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
-                   onclick="openRegisterModal();">注册</a>
+                <button class="btn big-register" data-toggle="modal" href="javascript:void(0)"
+                        onclick="openRegisterModal();">
+                    <strong>注册</strong>
+                </button>
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 
     <div class="row">
         <!--导航栏-->
         <ul class="nav nav-tabs col-md-7">
-            <li>
-                <a id="officialWeb" href="http://www.finalexam.cn/">官网</a>
+            <li id="officialWeb">
+                <a href="#">主页</a>
             </li>
             <li id="resource" class="active">
                 <a href="#">资源</a>
@@ -105,96 +110,71 @@
             <script src="js/search_box.js"></script>
         </div>
     </div>
-    <!--路径导航-->
-    <ul class="breadcrumb" id="pathNavigation">
-        <li>
-            <a href="#" id="school" data-toggle="modal" data-target="#schoolModal" onclick="postSchoolAjax()">福州大学</a>
-        </li>
-        <li onclick="showMain()" id="mainList">
-            <a href="#">主列表</a>
-        </li>
-    </ul>
-    <!-- 选择学校模态框（Modal） -->
-    <div class="modal fade" id="schoolModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">×
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        选择学校
-                    </h4>
-                </div>
-                <div class="modal-body" id="SchoolModelBody">
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福州大学</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福建工程学院</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福建农林大学</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">复旦大学</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">山东师范大学</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">厦门理工学院</a>
-                    <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">其他学校</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">关闭
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!--文件资源列表-->
-    <div class="list-group" id="listGroup"></div>
-    <!--普通文件资源界面-->
-    <h2 class="text-center hidden" id="fileName">文件名字</h2>
-    <div class="alert alert-success hidden" id="fileInfo">
-        <h3> 文件大小: <span id="fileSize">0</span><br/>
-            创建时间: <span id="fileCreateAt">0</span><br/>
-            上传者: <span id="fileNick">0</span><br/>
-            点赞数: <span id="fileLikeNum">0</span><br/>
-            点踩数: <span id="fileDislikeNum">0</span><br/>
-        </h3>
-    </div>
-    <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col-md-1">
-            <a class="btn btn-success hidden" href="#" id="downloadButton">下载</a>
+    <!--资源列表页面内容-->
+    <div class="resourcePart">
+        <!--路径导航-->
+        <ul class="breadcrumb" id="pathNavigation">
+            <li>
+                <a href="#" id="school" data-toggle="modal" data-target="#schoolModal"
+                   onclick="postSchoolAjax()">福州大学</a>
+            </li>
+            <li onclick="showMain()" id="mainList">
+                <a href="#">主列表</a>
+            </li>
+        </ul>
+
+        <!--文件资源列表-->
+        <div class="list-group" id="listGroup"></div>
+        <!--普通文件资源界面-->
+        <h2 class="text-center hidden" id="fileName">文件名字</h2>
+        <div class="alert alert-success hidden" id="fileInfo">
+            <h3> 文件大小: <span id="fileSize">0</span><br/>
+                创建时间: <span id="fileCreateAt">0</span><br/>
+                上传者: <span id="fileNick">0</span><br/>
+                点赞数: <span id="fileLikeNum">0</span><br/>
+                点踩数: <span id="fileDislikeNum">0</span><br/>
+            </h3>
         </div>
-        <div class="col-md-1">
-            <a class="btn btn-warning popover-toggle hidden" href="#" id="previewButton"
-               title="预览提示" data-container="body"
-               data-toggle="popover" data-placement="bottom"
-               data-content="仅支持预览doc、pdf、ppt、jpg、png等类型文件，部分文件无法实现预览."
-               onmouseover="$(this).popover('show');"
-               onmouseout="$(this).popover('hide');">预览</a>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-1">
+                <a class="btn btn-success hidden" href="#" id="downloadButton">下载</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn btn-warning popover-toggle hidden" href="#" id="previewButton"
+                   title="预览提示" data-container="body"
+                   data-toggle="popover" data-placement="bottom"
+                   data-content="仅支持预览doc、pdf、ppt、jpg、png等类型文件，部分文件无法实现预览."
+                   onmouseover="$(this).popover('show');"
+                   onmouseout="$(this).popover('hide');">预览</a>
+            </div>
+            <div class="col-md-5"></div>
         </div>
-        <div class="col-md-5"></div>
+        <!--分页浏览-->
+        <ul class="pagination" id="pagination">
+            <li>
+                <a href="#" onclick="nextPage('prev')">Prev</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage(1)">1</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage(2)">2</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage(3)">3</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage(4)">4</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage(5)">5</a>
+            </li>
+            <li>
+                <a href="#" onclick="nextPage('next')">Next</a>
+            </li>
+        </ul>
     </div>
-    <!--分页浏览-->
-    <ul class="pagination" id="pagination">
-        <li>
-            <a href="#" onclick="nextPage('prev')">Prev</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage(1)">1</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage(2)">2</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage(3)">3</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage(4)">4</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage(5)">5</a>
-        </li>
-        <li>
-            <a href="#" onclick="nextPage('next')">Next</a>
-        </li>
-    </ul>
     <!--登陆和注册页面-->
     <div class="modal fade login" id="loginModal">
         <div class="modal-dialog login animated">
@@ -266,6 +246,125 @@
             </div>
         </div>
     </div>
+    <!--官网部分-->
+    <div class="officialWebPart hidden">
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="https://qmkl000.oss-cn-shenzhen.aliyuncs.com/finalexam/background.jpg" class="img-responsive">
+                <!--<a href="#" class="btn">下载</a>-->
+                <img src="img/WeChatOfficial.jpg" class="img-responsive"
+                     style="position:absolute; left:13%; top:20%; width: 25%;height: 50%">
+                <!--<div class="btn btn-info text-center" style="position:absolute; left:20%; top:80%;width: 10%;height: 10%;" data-toggle="modal" data-target="#downloadModal">-->
+                <!--下载客户端-->
+                <!--</div>-->
+                <button class="btn btn-info text-center" style="position:absolute; left:20%; top:80%; font-size: 1vw"
+                        data-toggle="modal" data-target="#downloadModal">
+                    <strong>下载客户端</strong>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center"><img src="img/phone.png" class="img-responsive"
+                                                                   style="width: 100%;">
+                <div class="lead">
+                    <p>一部联网设备</p>
+                    <p>随时随地<strong>复习</strong></p>
+                    <p>成绩不断UP!UP!UP!</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-2 text-center"><img src="img/resource.png" class="img-responsive"
+                                                                   style="width: 100%;">
+                <div class="lead">
+                    <p><strong>学习资料</strong>下载</p>
+                    <p>历年卷轻松get√</p>
+                    <p>再也不用拜托学长学姐啦</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-2 text-center"><img src="img/chat.png" class="img-responsive"
+                                                                   style="min-width: 100%;max-width: 100%;">
+                <div class="lead">
+                    <p>一起<strong>趣聊</strong>的圈子</p>
+                    <p>了解你的兴趣</p>
+                    <p>发现身边<strong>朋友圈</strong></p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <!--官网的footer-->
+        <div class="row text-center"><br>
+            <p>“期末考啦”由福州大学趣考网络团队开发</p>
+            <p>邮箱: <a href="mailto:#"> <strong>service@finalexam.cn</strong></a></p>
+            <p>2016-2018 福州趣考网络科技有限公司 版权所有</p>
+        </div>
+    </div>
 </div>
+
+<!--下载客户端模态框-->
+<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="downloadLabel">
+                    期末考啦客户端下载
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-center">Android下载</p>
+                        <img src="img/androidDownload.png" class="img-responsive center-block"><br>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-center">IOS下载</p>
+                        <img src="img/iosDownload.png" class="img-responsive center-block"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 选择学校模态框（Modal） -->
+<div class="modal fade" id="schoolModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    选择学校
+                </h4>
+            </div>
+            <div class="modal-body" id="SchoolModelBody">
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福州大学</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福建工程学院</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">福建农林大学</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">复旦大学</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">山东师范大学</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">厦门理工学院</a>
+                <a href="#" class="list-group-item" onclick="chooseSchoolAjax(this.innerText)">其他学校</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </body>
 </html>

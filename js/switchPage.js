@@ -7,26 +7,6 @@ $(document).ready(function(){
     var information = $("#information");
     var officialWeb = $("#officialWeb");
     var chat = $("#chat");
-    resource.click(function(){
-        if(resource.hasClass("active")){
-            return 1;
-        }else{
-            $("#resource").addClass("active");
-            $("#information").removeClass("active");
-            $("#chat").removeClass("active");
-            $("#officialWeb").removeClass("active");
-        }
-    });
-    information.click(function(){
-        if(information.hasClass("active")){
-            return 1;
-        }else{
-            $("#information").addClass("active");
-            $("#resource").removeClass("active");
-            $("#chat").removeClass("active");
-            $("#officialWeb").removeClass("active");
-        }
-    });
     officialWeb.click(function () {
         if(officialWeb.hasClass("active")){
             return 1;
@@ -35,16 +15,56 @@ $(document).ready(function(){
             $("#resource").removeClass("active");
             $("#information").removeClass("active");
             $("#chat").removeClass("active");
+
+            $(".officialWebPart").removeClass("hidden");
+            $(".resourcePart").addClass("hidden");
+            $(".chatPart").addClass("hidden");
+            $(".informationPart").addClass("hidden");
+        }
+    });
+    resource.click(function(){
+        if(resource.hasClass("active")){
+            return 1;
+        }else{
+            $("#officialWeb").removeClass("active");
+            $("#resource").addClass("active");
+            $("#chat").removeClass("active");
+            $("#information").removeClass("active");
+
+            $(".officialWebPart").addClass("hidden");
+            $(".resourcePart").removeClass("hidden");
+            $(".chatPart").addClass("hidden");
+            $(".informationPart").addClass("hidden");
         }
     });
     chat.click(function () {
         if(chat.hasClass("active")){
             return 1;
         }else{
-            $("#chat").addClass("active");
-            $("#resource").removeClass("active");
-            $("#information").removeClass("active");
             $("#officialWeb").removeClass("active");
+            $("#resource").removeClass("active");
+            $("#chat").addClass("active");
+            $("#information").removeClass("active");
+
+            $(".officialWebPart").addClass("hidden");
+            $(".resourcePart").addClass("hidden");
+            $(".chatPart").removeClass("hidden");
+            $(".informationPart").addClass("hidden");
         }
-    })
+    });
+    information.click(function(){
+        if(information.hasClass("active")){
+            return 1;
+        }else{
+            $("#officialWeb").removeClass("active");
+            $("#resource").removeClass("active");
+            $("#chat").removeClass("active");
+            $("#information").addClass("active");
+
+            $(".officialWebPart").addClass("hidden");
+            $(".resourcePart").addClass("hidden");
+            $(".chatPart").addClass("hidden");
+            $(".informationPart").removeClass("hidden");
+        }
+    });
 });
