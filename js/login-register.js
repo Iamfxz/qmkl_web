@@ -4,7 +4,7 @@ function showRegisterForm() {
         $('.login-footer').fadeOut('fast', function () {
             $('.register-footer').fadeIn('fast');
         });
-        $('.modal-title').html('Register with');
+        $('.modal-title').html('使用第三方账号注册');
     });
     $('.error').removeClass('alert alert-danger').html('');
 }
@@ -15,7 +15,7 @@ function showLoginForm() {
         $('.register-footer').fadeOut('fast', function () {
             $('.login-footer').fadeIn('fast');
         });
-        $('.modal-title').html('Login with');
+        $('.modal-title').html('使用第三方账号登陆');
     });
     $('.error').removeClass('alert alert-danger').html('');
 }

@@ -239,7 +239,7 @@ function fileDetailAjax(requestFile) {
         token: $.cookie('qmkl_token')
     };
     var settings = {
-        "async": true,
+        "async": false,
         "crossDomain": true,
         "url": "http://120.77.32.233/qmkl1.0.0/file/list/detail",
         "method": "POST",
@@ -252,10 +252,19 @@ function fileDetailAjax(requestFile) {
     };
     $.ajax(settings).done(function (response) {
         console.log("文件详细信息：" + response);
+        $("#fileSize").text(response.data["size"]);
         $("#fileCreateAt").text(response.data["createAt"]);
         $("#fileNick").text(response.data["nick"]);
         $("#fileLikeNum").text(response.data["likeNum"]);
         $("#fileDislikeNum").text(response.data["dislikeNum"]);
+
+        //绑定各种点击事件
+        $("#like").off("click").on("click",function () {
+            like(response.data["id"]);
+        });
+        $("#dislike").off("click").on("click",function () {
+            dislike(response.data["id"]);
+        });
         fileDownloadButton(requestFile, response.data["md5"], response.data["id"]);
         filePreviewButton(requestFile, response.data["md5"], response.data["id"]);
 
