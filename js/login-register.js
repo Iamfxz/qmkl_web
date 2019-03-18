@@ -45,7 +45,7 @@ function loginAjax() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": urlprefix.concat("/user/login"),
+        "url": "http://120.77.32.233/qmkl1.0.0/user/login",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ function userInfoAjax(token) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url":urlprefix.concat("/user/info"),
+        "url": "http://120.77.32.233/qmkl1.0.0/user/info",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json;charset=UTF-8",

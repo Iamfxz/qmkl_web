@@ -1,1 +1,0 @@
-var urlprefix = 'http://120.77.32.233/qmkl1.0.0';
