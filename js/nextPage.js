@@ -32,7 +32,7 @@ function nextPage(page){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": urlprefix.concat("/file/list/"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",

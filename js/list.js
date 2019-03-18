@@ -1,5 +1,6 @@
 //第一次打开页面加载主列表
 $(document).ready(
+
     function first() {
         showMain();
         //路径导航中设置默认学校（用户所在的学校）
@@ -35,7 +36,7 @@ function showMain() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": urlprefix.concat("/qmkl1.0.0/file/list/"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -153,7 +154,7 @@ function list_item_click(id, requestMethod) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": urlprefix.concat("/qmkl1.0.0/file/list/"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -241,7 +242,7 @@ function fileDetailAjax(requestFile) {
     var settings = {
         "async": false,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/detail",
+        "url": urlprefix.concat("/file/list/detail"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json;charset=UTF-8",
@@ -275,7 +276,7 @@ function fileDetailAjax(requestFile) {
 //文件下载按钮设置
 function fileDownloadButton(requestFile, md5, id) {
     $("#downloadButton").attr({
-        "href": "http://120.77.32.233/qmkl1.0.0/dir/download/file/" + md5 + "/" + id,
+        "href": urlprefix.concat("/dir/download/file/" + md5 + "/" + id),
         "download": requestFile
     });
 }
@@ -318,7 +319,7 @@ function pagination() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": urlprefix.concat("/file/list/"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",

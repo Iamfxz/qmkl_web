@@ -7,7 +7,7 @@ function like(fileID) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/like/addordesc",
+        "url": urlprefix.concat("/like/addordesc"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function dislike(fileID) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/dislike/addordesc",
+        "url": urlprefix.concat("/dislike/addordesc"),
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
