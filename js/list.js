@@ -240,7 +240,7 @@ function fileDetailAjax(requestFile) {
         token: $.cookie('qmkl_token')
     };
     var settings = {
-        "async": false,
+        "async": true,
         "crossDomain": true,
         "url": urlprefix.concat("/file/list/detail"),
         "method": "POST",
@@ -259,15 +259,19 @@ function fileDetailAjax(requestFile) {
         $("#fileLikeNum").text(response.data["likeNum"]);
         $("#fileDislikeNum").text(response.data["dislikeNum"]);
 
+        var fileID = response.data["id"];
+        //判断是否点过赞或点过踩,并设置图片
+        isLike(fileID);
+        isDislike(fileID);
         //绑定各种点击事件
-        $("#like").off("click").on("click",function () {
-            like(response.data["id"]);
+        $("#likeIcon").off("click").on("click", function () {
+            like(fileID);
         });
-        $("#dislike").off("click").on("click",function () {
-            dislike(response.data["id"]);
+        $("#dislikeIcon").off("click").on("click",function () {
+            dislike(fileID);
         });
-        fileDownloadButton(requestFile, response.data["md5"], response.data["id"]);
-        filePreviewButton(requestFile, response.data["md5"], response.data["id"]);
+        fileDownloadButton(requestFile, response.data["md5"], fileID);
+        filePreviewButton(requestFile, response.data["md5"], fileID);
 
         showFileUI(requestFile);
     });
