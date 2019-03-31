@@ -124,3 +124,59 @@ function userInfoAjax(token) {
         }
     });
 }
+
+/*
+*  注册时选择学校 获取学院列表
+* */
+function collegeListAjax() {
+    var myData = {
+        collegeName: $('#college').val()
+    };
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://120.77.32.233/qmkl1.0.0/academy/list/college",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(myData)
+    };
+    $.ajax(settings).done(function (response) {
+        if (response.code === 200) {
+            var academy = response.data;
+            document.getElementById('academy').innerHTML = "";
+            for (var ad in academy) {
+                var option = document.createElement('option');
+                option.innerHTML = academy[ad];
+                document.getElementById('academy').append(option);
+            }
+            /*showMain();*/
+        } else {
+            shakeModal();
+        }
+    });
+}
+
+
+/*
+* 检查注册时输入信息的正确性
+* */
+function check() {
+    /*检查密码不能为空*/
+    var password = document.getElementById("password_register").value;
+    if(password == null || password == ''){
+        alert("密码不能为空");
+        return false;
+    }
+    /*检查两次密码的一致性*/
+    var password_confirmation = document.getElementById("password_confirmation").value;
+    if(password != password_confirmation){
+        alert("两次输入的密码不一致，请重新输入");
+        return false;
+    }
+    return true;
+}
+

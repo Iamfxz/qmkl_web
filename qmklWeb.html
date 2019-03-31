@@ -40,7 +40,7 @@
 <body background="img/background.jpg">
 <div class="container">
     <!--标题栏-->
-    <!--黄二明来过-。- -->
+
     <div class="page-header">
         <div class="row">
             <div class="col-md-9 page-header-title">
@@ -218,7 +218,7 @@
                         <div class="content registerBox" style="display:none;">
                             <div class="form">
                                 <form method="post" action="http://120.77.32.233/qmkl1.0.0/user/all/info"
-                                      accept-charset="UTF-8">
+                                      accept-charset="UTF-8" onsubmit="return check()">
                                     <input id="telephone_register" class="form-control" type="text"
                                            placeholder="手机号码（仅支持中国大陆）" name="phone">
                                     <!--todo-->
@@ -255,20 +255,20 @@
                                     <label for="college">
                                         <select id="college" class="form-control">
                                             <option value="" style="display: none;" disabled selected>学校</option>
-                                            <option>福州大学</option>
-                                            <option>福建工程学院</option>
-                                            <option>福建农林大学</option>
-                                            <option>复旦大学</option>
-                                            <option>山东师范大学</option>
-                                            <option>厦门理工学院</option>
-                                            <option>其他学校</option>
+                                            <option onclick="collegeListAjax()">福州大学</option>
+                                            <option onclick="collegeListAjax()">福建工程学院</option>
+                                            <option onclick="collegeListAjax()">福建农林大学</option>
+                                            <option onclick="collegeListAjax()">复旦大学</option>
+                                            <option onclick="collegeListAjax()">山东师范大学</option>
+                                            <option onclick="collegeListAjax()">厦门理工学院</option>
+                                            <option onclick="collegeListAjax()">其他学校</option>
                                         </select>
                                     </label>
                                     <label for="academy">
                                         <select id="academy" class="form-control">
-                                            <option value="" style="display: none;" disabled selected>学院</option>
-                                            <option>经济管理学院</option>
-                                            <option>数学与计算机科学学院</option>
+                                            <option value="" style="display: none;"  disabled selected>学院</option>
+                                            <!--<option>经济管理学院</option>
+                                            <option>数学与计算机科学学院</option>-->
                                         </select>
                                     </label>
                                     <input class="btn btn-default btn-register" type="submit" value="创建"
@@ -413,5 +413,8 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+
 </body>
 </html>
