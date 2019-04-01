@@ -1,0 +1,61 @@
+.forMyPlate{
+    color: red;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.bbs_banner{
+    margin: 0;
+    padding: 0;
+}
+
+.bbs_banner li{
+    list-style-type: none;
+    margin-bottom: 20px;
+    border-bottom:1px double #d6d6d6;
+    text-align: center;
+
+}
+
+.bbs_banner li a:link{
+    color: black;
+}
+
+.bbs_banner li a:visited{
+    color: black;
+}
+
+.bbs_banner li a:active{
+    color: #d12008;
+}
+
+.bbs-top{
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom:1px double #d6d6d6;
+}
+
+.bbs-content .title_bbs{
+    padding-right: 200px;
+    width: 400px;
+    text-align: left;
+}
+
+.bbs-content .author{
+    padding-right: 80px;
+    width: 150px;
+    text-align: right;
+    float: right;
+}
+
+.bbs-content .time{
+    text-align: left;
+    width: 150px;
+    float: right;
+}
+.bbs-content li{
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 1px double #d6d6d6;
+}

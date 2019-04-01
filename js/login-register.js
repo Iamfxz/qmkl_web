@@ -145,15 +145,29 @@ function collegeListAjax() {
         "data": JSON.stringify(myData)
     };
     $.ajax(settings).done(function (response) {
+        console.log(response);
         if (response.code === 200) {
-            var academy = response.data;
+
+            /*以下除了谷歌浏览器都可以*/
+           /* var academy1 = response.data;
             document.getElementById('academy').innerHTML = "";
+            for (var ad in academy1) {
+                var option = document.createElement("option");
+                var node = document.createTextNode(academy1[ad]);
+                option.appendChild(node);
+                document.getElementById('academy').appendChild(option)
+            }*/
+            /*以上除了谷歌浏览器都可以*/
+
+            var academy = response.data;
+            var obj = document.getElementById('academy');
+            obj.options.length = 0;
             for (var ad in academy) {
-                var option = document.createElement('option');
-                option.innerHTML = academy[ad];
-                document.getElementById('academy').append(option);
+                obj.options.add(new Option(academy[ad]));
             }
-            /*showMain();*/
+
+
+
         } else {
             shakeModal();
         }
@@ -175,6 +189,36 @@ function check() {
     var password_confirmation = document.getElementById("password_confirmation").value;
     if(password != password_confirmation){
         alert("两次输入的密码不一致，请重新输入");
+        return false;
+    }
+    /*检查用户名不能为空*/
+    var nickname = document.getElementById("nickname").value;
+    if(nickname == null || nickname == ''){
+        alert("用户名不能为空");
+        return false;
+    }
+    /*检查入学年份不能为空*/
+    var enterYear = document.getElementById("enterYear").value;
+    if(enterYear == null || enterYear == ''){
+        alert("入学年份不能为空");
+        return false;
+    }
+    /*检查性别不能为空*/
+    var gender = document.getElementById("gender").value;
+    if(gender == null || gender == ''){
+        alert("性别不能为空");
+        return false;
+    }
+    /*检查学校不能为空*/
+    var college = document.getElementById("college").value;
+    if(college == null || college == ''){
+        alert("学校不能为空");
+        return false;
+    }
+    /*检查学院不能为空*/
+    var temp_academy = document.getElementById("temp_academy").value;
+    if(temp_academy == null || temp_academy == ''){
+        alert("学院不能为空");
         return false;
     }
     return true;
