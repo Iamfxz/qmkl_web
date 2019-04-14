@@ -59,3 +59,60 @@
     padding: 10px;
     border-bottom: 1px double #d6d6d6;
 }
+
+#letterNumber{
+    position: fixed;
+    left: 0px;
+    top: 300px;
+    width: 40px;
+    height: 50px;
+    /*background-color: red;*/
+
+}
+
+#float_left{
+
+}
+
+#letterContentFrame{
+    position: fixed;
+    left: 40px;
+    top:300px;
+   /* width: 420px;*/
+    /*height: 200px;*/  /*高度由私信条数确定*/
+    background-color:rgb(245,245,245);
+    visibility: hidden;
+    border: 5px double #d6d6d6;
+}
+
+#ulLetterContent{
+    padding: 5px;
+
+    margin: 5px;
+}
+
+#ulLetterContent li{
+    list-style-type:none;
+
+}
+
+#ulLetterContent li .isRead{
+    width: 40px;
+    float:left;
+
+}
+
+#ulLetterContent li .simpleContent{
+    width: 200px;
+    float:left;
+}
+
+#ulLetterContent li .sendTime{
+    width: 100px;
+    float:left;
+}
+
+#ulLetterContent li .sender {
+    width: 150px;
+    float:right;
+}
