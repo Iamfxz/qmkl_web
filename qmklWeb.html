@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -25,9 +25,12 @@
     <!--自定义js引用-->
     <script src="js/login-register.js" type="text/javascript"></script>
     <script src="js/switchPage.js" type="text/javascript"></script>
-    <script src="js/list.js" type="text/javascript"></script>
     <script src="js/sha1.js" type="text/javascript"></script>
     <script src="js/nextPage.js" type="text/javascript"></script>
+    <script src="js/list.js" type="text/javascript"></script>
+    <script src="js/page.js" type="text/javascript"></script>
+    <script src="js/timeOrHeat.js" type="text/javascript"></script>
+    <script src="js/switchBlock.js" type="text/javascript"></script>
     <script src="js/switchSchool.js" type="text/javascript"></script>
     <script src="js/LikeDislike.js" type="text/javascript"></script>
     <script src="js/bbs_new_message.js" type="text/javascript"></script>
@@ -186,7 +189,7 @@
                 <div class="modal-body">
                     <div class="box">
                         <div class="content">
-                            <div class="social">
+                            <!--<div class="social">
                                 <a class="circle github" href="#">
                                     <i class="fa fa-github fa-fw"></i>
                                 </a>
@@ -196,13 +199,13 @@
                                 <a id="facebook_login" class="circle facebook" href="#">
                                     <i class="fa fa-facebook fa-fw"></i>
                                 </a>
-                            </div>
-                            <div class="division">
+                            </div>-->
+                           <!-- <div class="division">
                                 <div class="line l"></div>
                                 <span>or</span>
                                 <div class="line r"></div>
                             </div>
-                            <div class="error"></div>
+                            <div class="error"></div>-->
                             <div class="form loginBox">
                                 <form method="post" action="#" accept-charset="UTF-8">
                                     <input id="telephone_login" class="form-control" type="text"
@@ -218,20 +221,19 @@
                     <div class="box">
                         <div class="content registerBox" style="display:none;">
                             <div class="form">
-                                <form method="post" action="    "
-                                      accept-charset="UTF-8"  onsubmit="return check()">
+                                <!--<form method="post" action="    "
+                                      accept-charset="UTF-8"  onsubmit="return check()" onclick="register">
                                     <input id="telephone_register" class="form-control" type="text"
                                            placeholder="手机号码（仅支持中国大陆）" name="phone">
-                                    <!--todo-->
-                                    <!--<input id="verify_number" class="form-control" type="text"-->
-                                    <!--placeholder="验证码" name="verify_number">-->
-                                    <input id="password_register" class="form-control" type="password"
+                                    &lt;!&ndash;todo&ndash;&gt;
+                                    &lt;!&ndash;<input id="password_register" class="form-control" type="password"
                                            placeholder="密码" name="password">
                                     <input id="password_confirmation" class="form-control" type="password"
-                                           placeholder="再次确认密码" name="password_confirmation">
+                                           placeholder="再次确认密码" name="password_confirmation">&ndash;&gt;
                                     <div class="input-group">
                                         <input id="validNum" type="text" class="form-control" placeholder="验证码">
-                                        <span class="input-group-addon btn btn-info" style="padding: 5px">验证码
+                                        &lt;!&ndash;<button class="yzm input-group-addon btn btn-info "></button>&ndash;&gt;
+                                        <span class="yzm input-group-addon btn btn-info " id="yzm1" style="padding: 5px" onclick="yzm()">验证码
                                         </span>
                                     </div>
                                     <input id="nickname" class="form-control" type="text"
@@ -268,13 +270,26 @@
                                     <label for="academy">
                                         <select id="academy" class="form-control">
                                             <option value="" style="display: none;"  disabled selected>学院</option>
-                                            <!--<option>经济管理学院</option>
-                                            <option>数学与计算机科学学院</option>-->
+                                            &lt;!&ndash;<option>经济管理学院</option>
+                                            <option>数学与计算机科学学院</option>&ndash;&gt;
                                         </select>
                                     </label>
                                     <input class="btn btn-default btn-register" type="submit" value="创建"
                                            name="commit">
-                                </form>
+                                </form>-->
+
+                                <input id="telephone_register" class="form-control" type="text"
+                                       placeholder="手机号码（仅支持中国大陆）" name="phone">
+                                <div class="input-group">
+                                    <input id="validNum" type="text" class="form-control" placeholder="验证码">
+                                    <!--<button class="yzm input-group-addon btn btn-info "></button>-->
+                                    <span class="yzm input-group-addon btn btn-info " id="yzm1" style="padding: 5px" onclick="yzm()">验证码
+                                        </span>
+                                </div>
+                                <!--<input class="btn btn-default btn-register" type="submit" value="创建"
+                                       name="commit">-->
+                                <button class="yzm btn btn-default btn-register" onclick="register()">创建</button>
+
                             </div>
                         </div>
                     </div>
@@ -357,13 +372,13 @@
             <div class="bbsPlate">
                 <p class="forMyPlate">板块分类</p>
                 <ul class="bbs_banner">
-                    <li><a href="#">全部板块</a></li>
-                    <li><a href="#">日常吐槽</a></li>
-                    <li><a href="#">生活趣事</a></li>
-                    <li><a href="#">学习分享</a></li>
-                    <li><a href="#">游戏娱乐</a></li>
-                    <li><a href="#">运动生活</a></li>
-                    <li><a href="#">站务管理</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(1)">全部板块</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(2)">日常吐槽</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(3)">生活趣事</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(4)">学习分享</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(5)">游戏娱乐</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(6)">运动生活</a></li>
+                    <li><a href="#jumpHere" onclick="switchBlock(7)">站务管理</a></li>
                 </ul>
             </div>
         </div>
@@ -374,113 +389,18 @@
             <!--论坛右上显示帖子begin-->
             <div class="bbsHotPit">
                 <div class="bbs-top"><!--显示按某种方法排序的按钮begin-->
-                    <h5><span class="label label-info">板块名：全部板块</span><span class="label label-info">今日：0</span><span class="label label-info">总版：50</span></h5>
-                    <button class="btn btn-primary" style="position:absolute; top: 5px; right: 5px">按时间</button>
-                    <button class="btn btn-primary" style="position:absolute; top: 5px; right: 80px">按热度</button>
+                    <h5><span class="label label-info" id="jumpHere">板块名：全部板块</span><span class="label label-info">今日：0</span><span class="label label-info">总版：50</span></h5>
+                    <button class="btn btn-primary" id="sortByTime" style="position:absolute; top: 5px; right: 5px" onclick="sortByTime()">按时间</button>
+                    <button class="btn btn-success" id="sortByHeat" style="position:absolute; top: 5px; right: 80px" onclick="sortByHeat()">按热度</button>
                   <!--  <div><br/></div>-->
                 </div><!--显示按某种方法排序的按钮begin-->
-                <div class="bbs-content"><!--显示帖子标题的地方begin-->
-                    <ul>
-                        <li>
+                <div class="bbs-content" id = "bbs_content"><!--显示帖子标题的地方begin-->
+                    <ul class="bbs-ul">
+                        <!--<li>
                             <span class="title_bbs">[日常吐槽]灌水灌水。。。。。。。。。。。。</span>
                             <span class="author">大学生A</span>
                             <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。...。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">[日常吐槽]灌水灌水。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。...。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
-                        <li>
-                            <span class="title_bbs">灌水灌水。。。。。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>
+                        </li>-->
                     </ul>
                 </div><!--显示帖子标题的地方end-->
             </div>
@@ -489,8 +409,9 @@
             <!--上一页下一页begin-->
             <div style="padding-left: 200px;padding-right: 200px;border-bottom: 1px double #d6d6d6;">
                 <ul class="pager">
-                    <li class="previous disabled"><a href="#">&larr; 上一页</a></li>
-                    <li class="next"><a href="#">下一页 &rarr;</a></li>
+                    <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
+                    <span id="showPageMessage"></span>
+                    <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a></li>
                 </ul>
             </div>
             <!--上一页下一页end-->

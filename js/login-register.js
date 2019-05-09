@@ -45,7 +45,7 @@ function loginAjax() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/user/login",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/user/login",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -158,16 +158,13 @@ function collegeListAjax() {
                 document.getElementById('academy').appendChild(option)
             }*/
             /*以上除了谷歌浏览器都可以*/
-
             var academy = response.data;
+            console.log(response.data);
             var obj = document.getElementById('academy');
             obj.options.length = 0;
             for (var ad in academy) {
                 obj.options.add(new Option(academy[ad]));
             }
-
-
-
         } else {
             shakeModal();
         }
@@ -224,3 +221,106 @@ function check() {
     return true;
 }
 
+var registerToken;
+//注册单击验证码
+function yzm() {
+    if(isPhoneNum()){
+        var myData = {
+            phone:$('#telephone_register').val(),
+            msg : "注册"
+        };
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://119.23.238.215:8080/qmkl1.0.0/sms/send",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json;charset=UTF-8",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(myData)
+        };
+        $.ajax(settings).done(function (response) {
+            if(response.code == 200){
+                alert("发送验证码成功");
+                registerToken = response.data;
+                console.log(registerToken);
+                setTime();
+                // $("#yzm1").attr("onclick","null");
+            }else{
+                alert("发送失败");
+            }
+        });
+    }
+}
+
+//设置还有多长时间不能点击获取验证码
+var countdown = 60;
+function setTime() {
+    if (countdown == 0) {
+        $("#yzm1").attr('disabled',false);
+        $("#yzm1").text("验证码");
+        countdown = 60;//60秒过后button上的文字初始化,计时器初始化;
+        return;
+    } else {
+        $("#yzm1").attr('disabled', true);
+        $("#yzm1").attr('onclick','null');
+        $("#yzm1").css("background", "#ccc").css("cursor", "not-allowed")
+        $("#yzm1").text("("+countdown+"s)后重新发送") ;
+        countdown--;
+    }
+    setTimeout(function() { setTime() },1000) //每1000毫秒执行一次
+}
+
+//校验手机号是否合法
+function isPhoneNum(){
+    var phonenum = $("#telephone_register").val();
+    var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    if(!reg.test(phonenum)){
+        alert('请输入有效的手机号码！');
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function register() {
+    var registerPhone = document.getElementById('telephone_register').value;
+    var registerVercode = document.getElementById('validNum').value;
+    var myData = {
+        phone:registerPhone,
+        vercode:registerVercode,
+        token : registerToken
+    };
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://120.77.32.233/qmkl1.0.0/user/vercode",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json;charset=UTF-8",
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(myData)
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response.code);
+        if(response.code == 200){
+            registerSuccess();
+            console.log(registerPhone+"   "+  registerVercode  +  "    "  + registerToken);
+        }else{
+            registerFail();
+            console.log(registerPhone+"   "+  registerVercode  +  "    "  + registerToken);
+        }
+    });
+}
+
+function registerSuccess() {
+    console.log("注册成功");
+}
+
+function registerFail() {
+    console.log("注册失败");
+}
