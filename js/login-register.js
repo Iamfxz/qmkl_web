@@ -286,11 +286,13 @@ function isPhoneNum(){
 }
 
 function register() {
-    var registerPhone = document.getElementById('telephone_register').value;
-    var registerVercode = document.getElementById('validNum').value;
+    /*var registerPhone = document.getElementById('telephone_register').value;
+    var registerVercode = document.getElementById('validNum').value;*/
+    var registerPhone = $('#telephone_register').val();
+    var registerVercode = $('#validNum').val();
     var myData = {
-        phone:registerPhone,
-        vercode:registerVercode,
+        phone:$('#telephone_register').val(),
+        vercode:$('#validNum').val(),
         token : registerToken
     };
     var settings = {
@@ -307,9 +309,10 @@ function register() {
     };
     $.ajax(settings).done(function (response) {
         console.log(response.code);
+        console.log(response.data);
         if(response.code == 200){
             registerSuccess();
-            console.log(registerPhone+"   "+  registerVercode  +  "    "  + registerToken);
+            console.log(+"   "+  registerVercode  +  "    "  + registerToken);
         }else{
             registerFail();
             console.log(registerPhone+"   "+  registerVercode  +  "    "  + registerToken);
