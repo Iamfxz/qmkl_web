@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qmklWeb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="292" column="34" lean-forward="true" selection-start-line="292" selection-start-column="34" selection-end-line="292" selection-end-column="34" />
+            <state relative-caret-position="179">
+              <caret line="366" lean-forward="true" selection-start-line="366" selection-end-line="366" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -50,6 +50,7 @@
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -79,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="220">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -118,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/login-register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="294" column="37" lean-forward="true" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
+            <state relative-caret-position="7018">
+              <caret line="319" column="28" selection-start-line="319" selection-start-column="28" selection-end-line="319" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -180,6 +181,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>openRegisterModal()</find>
+      <find>btn</find>
+      <find>big-register</find>
       <find>header</find>
       <find>资源</find>
       <find>login</find>
@@ -198,6 +202,7 @@
       <find>yzm</find>
       <find>qmkl_token</find>
       <find>first</find>
+      <find>上一页</find>
       <find>response.data.post[i]</find>
       <find>listPerPage</find>
       <find>showRegister</find>
@@ -206,10 +211,6 @@
       <find>showRegisterForm</find>
       <find>vercode</find>
       <find>按热度</find>
-      <find>上一页</find>
-      <find>register</find>
-      <find>bbs</find>
-      <find>bbs-top</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -244,13 +245,13 @@
         <option value="$PROJECT_DIR$/js/package.json" />
         <option value="$PROJECT_DIR$/js/bbs_new_message.js" />
         <option value="$PROJECT_DIR$/css/login-register.css" />
+        <option value="$PROJECT_DIR$/js/login-register.js" />
         <option value="$PROJECT_DIR$/js/page.js" />
         <option value="$PROJECT_DIR$/js/list.js" />
         <option value="$PROJECT_DIR$/js/switchBlock.js" />
         <option value="$PROJECT_DIR$/js/timeOrHeat.js" />
         <option value="$PROJECT_DIR$/qmklWeb.html" />
         <option value="$PROJECT_DIR$/css/bbs_css.css" />
-        <option value="$PROJECT_DIR$/js/login-register.js" />
       </list>
     </option>
   </component>
@@ -268,7 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -291,6 +291,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -417,19 +418,17 @@
       <workItem from="1556352794953" duration="9183000" />
       <workItem from="1556446975580" duration="5914000" />
       <workItem from="1557382377304" duration="239000" />
-      <workItem from="1557579785677" duration="541000" />
-      <workItem from="1558174467807" duration="4303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278630000" />
+    <option name="totallyTimeSpent" value="273786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.21331316" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.25642964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -657,6 +656,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/login-register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7018">
+          <caret line="319" column="28" selection-start-line="319" selection-start-column="28" selection-end-line="319" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/switchBlock.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1078">
@@ -690,15 +696,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="220">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qmklWeb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="292" column="34" lean-forward="true" selection-start-line="292" selection-start-column="34" selection-end-line="292" selection-end-column="34" />
+        <state relative-caret-position="179">
+          <caret line="366" lean-forward="true" selection-start-line="366" selection-end-line="366" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -711,6 +717,7 @@
             <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -733,13 +740,6 @@
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/login-register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="294" column="37" lean-forward="true" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
         </state>
       </provider>
     </entry>
