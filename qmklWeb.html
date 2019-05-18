@@ -357,29 +357,21 @@
         <br/>
         <br/>
         <br/>
-        <!--官网的footer-->
-        <div class="row text-center"><br>
-            <p>“期末考啦”由福州大学趣考网络团队开发</p>
-            <p>邮箱: <a href="mailto:#"> <strong>service@finalexam.cn</strong></a></p>
-            <p>2016-2018 福州趣考网络科技有限公司 版权所有</p>
-        </div>
     </div>
 
     <!--趣聊页面-->
-    <div class="chatPart container-fluid" style="margin-top: 5px;">
+    <div class="chatPart container-fluid hidden" style="margin-top: 5px;">
         <!--论坛左边板块分类begin-->
         <div class="col-md-2 leftPart" >
-            <div class="bbsPlate">
-                <p class="forMyPlate">板块分类</p>
-                <ul class="bbs_banner">
-                    <li><a href="#jumpHere" onclick="switchBlock(1)">全部板块</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(2)">日常吐槽</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(3)">生活趣事</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(4)">学习分享</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(5)">游戏娱乐</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(6)">运动生活</a></li>
-                    <li><a href="#jumpHere" onclick="switchBlock(7)">站务管理</a></li>
-                </ul>
+            <div class="bbsPlate list-group">
+                <h3 class="forMyPlate">板块分类</h3>
+                    <a href="#jumpHere" onclick="switchBlock(1)" class="list-group-item">全部板块</a>
+                    <a href="#jumpHere" onclick="switchBlock(2)" class="list-group-item">日常吐槽</a>
+                    <a href="#jumpHere" onclick="switchBlock(3)" class="list-group-item">生活趣事</a>
+                    <a href="#jumpHere" onclick="switchBlock(4)" class="list-group-item">学习分享</a>
+                    <a href="#jumpHere" onclick="switchBlock(5)" class="list-group-item">游戏娱乐</a>
+                    <a href="#jumpHere" onclick="switchBlock(6)" class="list-group-item">运动生活</a>
+                    <a href="#jumpHere" onclick="switchBlock(7)" class="list-group-item">站务管理</a>
             </div>
         </div>
         <!--论坛左边板块分类end-->
@@ -388,49 +380,61 @@
         <div class="col-md-9 rightPart">
             <!--论坛右上显示帖子begin-->
             <div class="bbsHotPit">
-                <div class="bbs-top"><!--显示按某种方法排序的按钮begin-->
-                    <h5><span class="label label-info" id="jumpHere">板块名：全部板块</span><span class="label label-info">今日：0</span><span class="label label-info">总版：50</span></h5>
-                    <button class="btn btn-primary" id="sortByTime" style="position:absolute; top: 5px; right: 5px" onclick="sortByTime()">按时间</button>
-                    <button class="btn btn-success" id="sortByHeat" style="position:absolute; top: 5px; right: 80px" onclick="sortByHeat()">按热度</button>
+
+                <!--显示按排序的按钮begin-->
+                <div class="bbs-top">
+                    <h5><span class="label label-info chartRightPartTip" id="jumpHere">全部板块</span>
+                        <span class="label label-info chartRightPartTip">今日：0</span>
+                        <span class="label label-info chartRightPartTip">总版：50</span>
+                    </h5>
+                    <button class="btn btn-primary SortBtn" id="sortByTime" onclick="sortByTime()">按时间</button>
+                    <button class="btn btn-success SortBtn" id="sortByHeat" onclick="sortByHeat()">按热度</button>
                   <!--  <div><br/></div>-->
-                </div><!--显示按某种方法排序的按钮begin-->
-                <div class="bbs-content" id = "bbs_content"><!--显示帖子标题的地方begin-->
-                    <ul class="bbs-ul">
-                        <!--<li>
-                            <span class="title_bbs">[日常吐槽]灌水灌水。。。。。。。。。。。。</span>
-                            <span class="author">大学生A</span>
-                            <span class="time">2019-4-1 16:17PM</span>
-                        </li>-->
+                </div>
+                <!--显示按排序的按钮begin-->
+
+
+
+                <!--上一页下一页begin-->
+                <div>
+                    <ul class="pager">
+                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
+                        <span id="showPageMessage"></span>
+                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a></li>
                     </ul>
-                </div><!--显示帖子标题的地方end-->
+                </div>
+                <!--上一页下一页end-->
             </div>
             <!--论坛右上显示帖子end-->
 
-            <!--上一页下一页begin-->
-            <div style="padding-left: 200px;padding-right: 200px;border-bottom: 1px double #d6d6d6;">
-                <ul class="pager">
-                    <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
-                    <span id="showPageMessage"></span>
-                    <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a></li>
+            <!--显示帖子列表的地方begin-->
+            <div class="bbs-content">
+                <ul class="list-group">
+                    <li  class="list-group-item">
+                        <span class="badge badge-info">大学生A</span>
+                        <span class="badge badge-info">日常吐槽</span>
+                        <span class="badge badge-info">19-4-1 16:17</span>
+                        <p>灌水灌水..........</p>
+                    </li>
                 </ul>
             </div>
-            <!--上一页下一页end-->
+            <!--显示帖子标题的地方end-->
 
             <!--论坛右下发帖区begin-->
-            <div class="bbs_Post">
-                <div class="post_Head">
-                    <h1>快捷发帖</h1>
+            <div class="bbs-post">
+                <div class="post-head text-center">
+                    <h1>火速发帖</h1>
                 </div>
                 <div class="post_Form">
                     <form action="?" method="get">
                         <h3 style="display: inline"><span class="label label-default">标题：</span></h3>
                         <br /><br />
-                        <input type="text" name="title" size="100" class="form-control">
+                        <input type="text" name="title" size="100" class="form-control" title="">
                         <br />
                         <h3 style="display: inline"><span class="label label-default">内容：</span></h3>
                         <br /><br />
-                        <textarea name="post_content" id="post_content" cols="97" rows="10" class="form-control"></textarea>
-                        <button type="submit" class="btn btn-primary">发表</button>
+                        <textarea name="post_content" id="post_content" cols="97" rows="10" class="form-control" title=""></textarea>
+                        <button type="submit" class="btn-lg btn-primary post-submit">发表</button>
                     </form>
                 </div>
             </div>
@@ -442,7 +446,7 @@
         <div id="float_left" >
             <div id="letterNumber">
                 <!--<a href="#" id="letter">私信(1)</a>-->
-                <img src="img/sixin.png" alt="私信泡泡" height="32px" width="32px">
+                <img src="img/sixin.png" alt="私信泡泡" height="32" width="32">
                 <p style="text-align: center">(<span style="color: red">1</span>)</p>
             </div>
 
@@ -478,16 +482,17 @@
                 </div>
             </div>
         </div>
-
-        <!--趣聊的footer-->
-        <div class="row text-center" style="clear: both;"><br>
-            <p>“期末考啦”由福州大学趣考网络团队开发</p>
-            <p>邮箱: <a href="mailto:#"> <strong>service@finalexam.cn</strong></a></p>
-            <p>2016-2018 福州趣考网络科技有限公司 版权所有</p>
-        </div>
-
+    </div>
+    <!--所有页面的footer-->
+    <div class="footer row text-center"><br>
+        <p>“期末考啦”由福州大学趣考网络团队开发</p>
+        <p>邮箱: <a href="mailto:#"> <strong>service@finalexam.cn</strong></a></p>
+        <p>2016-2018 福州趣考网络科技有限公司 版权所有</p>
     </div>
 </div>
+<!--TODO-->
+<!--静态页面到这里结束-->
+
 
 <!--下载客户端模态框-->
 <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadLabel"
