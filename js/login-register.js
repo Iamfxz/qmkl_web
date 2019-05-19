@@ -268,7 +268,8 @@ function yzm() {
                 setTime();
                 // $("#yzm1").attr("onclick","null");
             }else if(response.msg == "手机号已注册"){
-                alert("手机号已注册");
+                /*alert("手机号已注册");*/
+                $('#tel_hava_register').modal('show');
             }else{
                 alert("发送失败");
             }
@@ -316,7 +317,7 @@ function register() {
         vercode:document.getElementById('validNum').value,
         phone: $("#telephone_register").val()
     };
-    console.log("手机：" + registerPhone + "验证码：" + registerCode);
+    /*console.log("手机：" + registerPhone + "验证码：" + registerCode);*/
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -334,11 +335,8 @@ function register() {
         console.log(response.msg);
         if(response.code == 200){
             registerSuccess();
-            console.log(registerPhone+"   "+  registerCode  +  "    "  + registerTaken);
         }else{
             registerFail();
-            console.log(registerCode);
-            console.log(registerPhone+"   "+  registerCode  +  "    "  + registerTaken);
         }
     });
 }
@@ -387,4 +385,30 @@ function improveRegister() {
             }
         });
     }
+}
+
+/*登出系统*/
+function logOut() {
+    console.log("我进来了");
+    /*等登出接口写完下面就可以用了*/
+
+    $(".page-header-left").remove();
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute("class","col-md-3 page-header-left");
+
+    /*var loginButton = document.createElement('button');
+    loginButton.setAttribute("href","javascript:void(0)");
+    loginButton.setAttribute("class","btn big-login");
+    loginButton.setAttribute("data-toggle","modal");
+    loginButton.setAttribute("onclick","openLoginModal();");
+    loginButton.innerHTML = "<strong>登陆</strong>";
+    newDiv.append(loginButton);
+    var registerButton = document.createElement('button');
+    loginButton.setAttribute("href","javascript:void(0)");
+    registerButton.setAttribute("class","btn big-register");
+    loginButton.setAttribute("data-toggle","modal");
+    registerButton.setAttribute("onclick","openRegisterModal();")
+    registerButton.innerHTML = "<strong>注册</strong>";
+    newDiv.append(registerButton);
+    $(".container .page-header .row").append(newDiv);*/
 }
