@@ -7,7 +7,7 @@ $(document).ready(
         $("#school").text($.cookie("currentCollege"))
 
         //首页显示帖子
-        showPostList("1","1",listPerPage.toString(),timeOrHeat.toString());
+        showPostList();
     }
 );
 
@@ -17,30 +17,13 @@ function isLogin() {
     if(token == null){
         console.log("还没登录");
     }else{
-       /* $(".page-header-left").remove();
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute("class","col-md-3 page-header-left");
-        var infoButton = document.createElement('button');
-        infoButton.setAttribute("type","button");
-        infoButton.setAttribute("class","btn btn-default btn-lg");
-        infoButton.innerHTML = "<span class=\"glyphicon glyphicon-user\"></span> 用户中心";
-        newDiv.append(infoButton);
-        var logOutButton = document.createElement('button');
-        logOutButton.setAttribute("type","button");
-        logOutButton.setAttribute("class","btn btn-default btn-lg");
-        logOutButton.setAttribute("onclick","logOut()")
-        logOutButton.innerHTML = "<span class=\"glyphicon glyphicon-log-out\"></span> 退出";
-        newDiv.append(logOutButton);
-        $(".container .page-header .row").append(newDiv);*/
-
-       /*等登出接口设计完上面的就可以用*/
-
         console.log("登录，token为" + token);
     }
+
 }
 
 //设置每页显示的帖子数
-var listPerPage = 15;
+var listPerPage = 7;
 //保存帖子能显示的最多页数
 var maxPage = 0;
 //保存当前在第几个分区
@@ -48,20 +31,13 @@ var postClassify = 1;
 
 
 //首页显示帖子
-function showPostList(classify,page,num,sortMethod) {
-    /*var myData = {
+function showPostList() {
+    var myData = {
         classify:"1",  //默认返回的是第一个分区
-        page:"1",   /!*这里写1是因为第一次载入都是显示第一页*!/
+        page:"1",   /*这里写1是因为第一次载入都是显示第一页*/
         num:listPerPage.toString(),
         token: $.cookie('qmkl_token'),
         sortMethod:timeOrHeat.toString()
-    };*/
-    var myData = {
-        classify:classify,  //默认返回的是第一个分区
-        page:page,   /*这里写1是因为第一次载入都是显示第一页*/
-        num:num,
-        token: $.cookie('qmkl_token'),
-        sortMethod:sortMethod
     };
     var settings = {
         "async": true,
@@ -87,28 +63,9 @@ function showPostList(classify,page,num,sortMethod) {
             /*console.log(response.data.post.length);*/
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
-                newElement.setAttribute("class","list-group-item");
-                var bbsClassfy = response.data.post[i].classify;
-                if(response.data.post[i].classify == "1"){
-                    bbsClassfy = "全部板块";
-                }else if(response.data.post[i].classify == "2"){
-                    bbsClassfy = "日常吐槽";
-                }else if(response.data.post[i].classify == "3"){
-                    bbsClassfy = "生活趣事";
-                }else if(response.data.post[i].classify == "4"){
-                    bbsClassfy = "学习分享";
-                }else if(response.data.post[i].classify == "5"){
-                    bbsClassfy = "游戏娱乐";
-                }else if(response.data.post[i].classify == "6"){
-                    bbsClassfy = "运动生活";
-                }else if(response.data.post[i].classify == "7"){
-                    bbsClassfy = "站务管理";
-                }
-                /*console.log(bbsClassfy);*/
-                var htmlstr = "<span class=\"badge badge-info author\">" + response.data.post[i].nickName + "</span>\n" +
-                    "                        <span class=\"badge badge-info bbs-classfy\">" + bbsClassfy + "</span>\n" +
-                    "                        <span class=\"badge badge-info post-time\">" + response.data.post[i].createTime +"</span>\n" +
-                    "                        <p>" + response.data.post[i].title + "</p>";
+                var htmlstr = "<span class=\'title_bbs\'><a href='#'>" + response.data.post[i].title + "</a></span>" +
+                    "<span class=\'author\'>" + response.data.post[i].userId + "</span>"+
+                    "<span class=\'time\'>" + response.data.post[i].createTime + "</span>";
                 newElement.innerHTML = htmlstr;
                 $(".bbs-ul").append(newElement);
             }

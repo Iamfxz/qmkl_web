@@ -111,7 +111,6 @@
             <script src="js/search_box.js"></script>
         </div>
     </div>
-
     <!--资源列表页面内容-->
     <div class="resourcePart">
         <!--路径导航-->
@@ -222,6 +221,63 @@
                     <div class="box">
                         <div class="content registerBox" style="display:none;">
                             <div class="form">
+                                <!--<form method="post" action="    "
+                                      accept-charset="UTF-8"  onsubmit="return check()" onclick="register">
+                                    <input id="telephone_register" class="form-control" type="text"
+                                           placeholder="手机号码（仅支持中国大陆）" name="phone">
+                                    &lt;!&ndash;todo&ndash;&gt;
+                                    &lt;!&ndash;<input id="password_register" class="form-control" type="password"
+                                           placeholder="密码" name="password">
+                                    <input id="password_confirmation" class="form-control" type="password"
+                                           placeholder="再次确认密码" name="password_confirmation">&ndash;&gt;
+                                    <div class="input-group">
+                                        <input id="validNum" type="text" class="form-control" placeholder="验证码">
+                                        &lt;!&ndash;<button class="yzm input-group-addon btn btn-info "></button>&ndash;&gt;
+                                        <span class="yzm input-group-addon btn btn-info " id="yzm1" style="padding: 5px" onclick="yzm()">验证码
+                                        </span>
+                                    </div>
+                                    <input id="nickname" class="form-control" type="text"
+                                           placeholder="用户名">
+                                    <label for="enterYear">
+                                        <select id="enterYear" class="form-control">
+                                            <option value="" style="display: none;" disabled selected>年级</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                        </select>
+                                    </label>
+                                    <label for="gender">
+                                        <select id="gender" class="form-control">
+                                            <option value="" style="display: none;" disabled selected>性别</option>
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </label>
+                                    <label for="college">
+                                        <select id="college" class="form-control" onchange="collegeListAjax()">
+                                            <option value="" style="display: none;" disabled selected>学校</option>
+                                            <option>福州大学</option>
+                                            <option>福建工程学院</option>
+                                            <option>福建农林大学</option>
+                                            <option>复旦大学</option>
+                                            <option>山东师范大学</option>
+                                            <option>厦门理工学院</option>
+                                            <option>其他学校</option>
+                                        </select>
+                                    </label>
+                                    <label for="academy">
+                                        <select id="academy" class="form-control">
+                                            <option value="" style="display: none;"  disabled selected>学院</option>
+                                            &lt;!&ndash;<option>经济管理学院</option>
+                                            <option>数学与计算机科学学院</option>&ndash;&gt;
+                                        </select>
+                                    </label>
+                                    <input class="btn btn-default btn-register" type="submit" value="创建"
+                                           name="commit">
+                                </form>-->
+
                                 <input id="telephone_register" class="form-control" type="text"
                                        placeholder="手机号码（仅支持中国大陆）" name="phone">
                                 <div class="input-group">
@@ -240,6 +296,14 @@
                     <div class="box">
                         <div class="content ImproveBox" style="display:none;">
                             <div class="form">
+                                <!--<form method="post" action=""
+                                      accept-charset="UTF-8"  onsubmit="return check()" onclick="improveRegister()">-->
+                                    <!--todo-->
+                                    <!--<input id="password_register" class="form-control" type="password"
+                                           placeholder="密码" name="password">
+                                    <input id="password_confirmation" class="form-control" type="password"
+                                           placeholder="再次确认密码" name="password_confirmation">-->
+                                        <!--<button class="yzm input-group-addon btn btn-info "></button>-->
                                     <input id="nickname" class="form-control" type="text"
                                            placeholder="昵称">
                                     <input id="password_register" class="form-control" type="password"
@@ -327,27 +391,6 @@
         </div><!-- /.modal -->
     </div>
     <!-- 弹出已发送验证码模态框-->
-    <!-- 弹出手机号已注册模态框-->
-    <div class="modal fade" id="tel_hava_register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel22" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" class="myModelLabel22"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-                </div>
-                <div class="modal-body">您的手机号已被注册，是否直接跳转到
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="showLoginForm() ">登录</button>
-                </div>
-               <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
-                    &lt;!&ndash;<button type="button" class="btn btn-primary">提交更改</button>&ndash;&gt;
-                </div>-->
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-    <!-- 弹出手机号已注册模态框-->
-
 
 
     <!--官网部分-->
@@ -407,13 +450,13 @@
         <div class="col-md-2 leftPart" >
             <div class="bbsPlate list-group">
                 <h3 class="forMyPlate">板块分类</h3>
-                    <a href="#jump_here" onclick="switchBlock(1)" class="list-group-item">全部板块</a>
-                    <a href="#jump_here" onclick="switchBlock(2)" class="list-group-item">日常吐槽</a>
-                    <a href="#jump_here" onclick="switchBlock(3)" class="list-group-item">生活趣事</a>
-                    <a href="#jump_here" onclick="switchBlock(4)" class="list-group-item">学习分享</a>
-                    <a href="#jump_here" onclick="switchBlock(5)" class="list-group-item">游戏娱乐</a>
-                    <a href="#jump_here" onclick="switchBlock(6)" class="list-group-item">运动生活</a>
-                    <a href="#jump_here" onclick="switchBlock(7)" class="list-group-item">站务管理</a>
+                    <a href="#jumpHere" onclick="switchBlock(1)" class="list-group-item">全部板块</a>
+                    <a href="#jumpHere" onclick="switchBlock(2)" class="list-group-item">日常吐槽</a>
+                    <a href="#jumpHere" onclick="switchBlock(3)" class="list-group-item">生活趣事</a>
+                    <a href="#jumpHere" onclick="switchBlock(4)" class="list-group-item">学习分享</a>
+                    <a href="#jumpHere" onclick="switchBlock(5)" class="list-group-item">游戏娱乐</a>
+                    <a href="#jumpHere" onclick="switchBlock(6)" class="list-group-item">运动生活</a>
+                    <a href="#jumpHere" onclick="switchBlock(7)" class="list-group-item">站务管理</a>
             </div>
         </div>
         <!--论坛左边板块分类end-->
@@ -425,7 +468,7 @@
 
                 <!--显示按排序的按钮begin-->
                 <div class="bbs-top">
-                    <h5><span class="label label-info chartRightPartTip" id="jump_here">全部板块</span>
+                    <h5><span class="label label-info chartRightPartTip" id="jumpHere">全部板块</span>
                         <span class="label label-info chartRightPartTip">今日：0</span>
                         <span class="label label-info chartRightPartTip">总版：50</span>
                     </h5>
@@ -433,34 +476,34 @@
                     <button class="btn btn-success SortBtn" id="sortByHeat" onclick="sortByHeat()">按热度</button>
                   <!--  <div><br/></div>-->
                 </div>
-                <!--显示按排序的按钮end-->
+                <!--显示按排序的按钮begin-->
 
+
+
+                <!--上一页下一页begin-->
+                <div>
+                    <ul class="pager">
+                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
+                        <span id="showPageMessage"></span>
+                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a></li>
+                    </ul>
+                </div>
+                <!--上一页下一页end-->
             </div>
-            <br><br>
             <!--论坛右上显示帖子end-->
 
             <!--显示帖子列表的地方begin-->
             <div class="bbs-content">
-                <ul class="list-group bbs-ul">
-                    <!--<li  class="list-group-item">
-                        <span class="badge badge-info author">大学生A</span>
-                        <span class="badge badge-info bbs-classfy">日常吐槽</span>
-                        <span class="badge badge-info post-time">19-4-1 16:17</span>
+                <ul class="list-group">
+                    <li  class="list-group-item">
+                        <span class="badge badge-info">大学生A</span>
+                        <span class="badge badge-info">日常吐槽</span>
+                        <span class="badge badge-info">19-4-1 16:17</span>
                         <p>灌水灌水..........</p>
-                    </li>-->
+                    </li>
                 </ul>
             </div>
             <!--显示帖子标题的地方end-->
-
-            <!--上一页下一页begin-->
-            <div>
-                <ul class="pager">
-                    <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
-                    <span id="showPageMessage"></span>
-                    <li class="next" id="nextPageNode"><a href="#jump_here" onclick="postNextPage()">下一页 &rarr;</a></li>
-                </ul>
-            </div>
-            <!--上一页下一页end-->
 
             <!--论坛右下发帖区begin-->
             <div class="bbs-post">
