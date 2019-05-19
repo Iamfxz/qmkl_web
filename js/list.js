@@ -23,7 +23,7 @@ function isLogin() {
 }
 
 //设置每页显示的帖子数
-var listPerPage = 5;
+var listPerPage = 7;
 //保存帖子能显示的最多页数
 var maxPage = 0;
 //保存当前在第几个分区

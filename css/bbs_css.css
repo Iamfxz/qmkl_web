@@ -1,5 +1,5 @@
 .forMyPlate{
-    color: red;
+    color: #28a4c9;
     margin-top: 30px;
     margin-left: 30px;
     margin-bottom: 20px;
@@ -8,28 +8,17 @@
 .leftPart{
     background-color: #ecf1f4;
     border-radius:5px;
-    margin-right: 5px;
+    margin-top: 25px;
+    margin-right: 20px;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
 
 }
 
 .rightPart{
     background-color: #f5f5f5;
+    margin-top: 25px;
     border-radius:5px;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
-}
-
-.bbs_banner{
-    margin: 0;
-    padding: 0;
-}
-
-.bbs_banner li{
-    list-style-type: none;
-    margin-bottom: 20px;
-    border-bottom:1px double #d6d6d6;
-    text-align: center;
-
 }
 
 .bbs_banner li a:link{
@@ -47,34 +36,34 @@
 .bbs-top{
     padding: 5px;
     margin-bottom: 10px;
-    border-bottom:1px double #d6d6d6;
 }
 
-.bbs-content .title_bbs{
-    /*padding-right: 200px;*/
-    padding-right: 150px;
-    width: 400px;
-    text-align: left;
+.bbs-post{
+    margin-top: 100px;
 }
 
-.bbs-content .author{
-    padding-right: 80px;
-    width: 150px;
-    text-align: right;
+.chartRightPartTip{
+    margin: 10px;
+    float: left;
+}
+
+.SortBtn{
+    margin: 10px;
     float: right;
 }
 
-.bbs-content .time{
-    text-align: left;
-    width: 150px;
+.post-submit{
+    margin: 10px;
     float: right;
 }
-.bbs-content li{
-    list-style-type: none;
-    padding: 10px;
-    border-bottom: 1px double #d6d6d6;
+.post-head{
+    color: #d12008;
+    text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
 }
 
+.badge-info{
+    background: #28a4c9;
+}
 #letterNumber{
     position: fixed;
     left: 0px;
@@ -98,36 +87,4 @@
     background-color:rgb(245,245,245);
     visibility: hidden;
     border: 5px double #d6d6d6;
-}
-
-#ulLetterContent{
-    padding: 5px;
-
-    margin: 5px;
-}
-
-#ulLetterContent li{
-    list-style-type:none;
-
-}
-
-#ulLetterContent li .isRead{
-    width: 40px;
-    float:left;
-
-}
-
-#ulLetterContent li .simpleContent{
-    width: 200px;
-    float:left;
-}
-
-#ulLetterContent li .sendTime{
-    width: 100px;
-    float:left;
-}
-
-#ulLetterContent li .sender {
-    width: 150px;
-    float:right;
 }
