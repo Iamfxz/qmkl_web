@@ -6,7 +6,7 @@ function postSchoolAjax() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/college/list",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/college/list",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
