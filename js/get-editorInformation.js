@@ -1,5 +1,5 @@
 function getInfo() {
-    $("#Nickname").text($.cookie("userNickname"));
+    $("#infoNickname").text($.cookie("userNickname"));
     $("#myNickname").val($.cookie("userNickname"));
     $("#mySex").val($.cookie("userGender"));
     $("#myPhone").val($.cookie("userPhone"));
