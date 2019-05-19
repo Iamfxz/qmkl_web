@@ -163,7 +163,8 @@ function collegeListAjax() {
             var obj = document.getElementById('academy');
             obj.options.length = 0;
             for (var ad in academy) {
-                obj.options.add(new Option(academy[ad]));
+                if(academy.hasOwnProperty(ad))
+                    obj.options.add(new Option(academy[ad]));
             }
         } else {
             shakeModal();
