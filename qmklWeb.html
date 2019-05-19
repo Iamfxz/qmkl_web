@@ -34,6 +34,7 @@
     <script src="js/switchSchool.js" type="text/javascript"></script>
     <script src="js/LikeDislike.js" type="text/javascript"></script>
     <script src="js/bbs_new_message.js" type="text/javascript"></script>
+    <script src="js/get-editorInformation.js" type="text/javascript"></script>
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
@@ -80,7 +81,7 @@
                 <a href="#">趣聊</a>
             </li>
             <li id="information">
-                <a href="#">个人</a>
+                <a href="#" onclick="getInfo()">个人</a>
             </li>
             <li class="dropdown pull-right">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">更多选项<strong class="caret"></strong></a>
@@ -483,6 +484,58 @@
             </div>
         </div>
     </div>
+    <!--个人信息页面-->
+    <div class="informationPart">
+        <div class="person col-md-12" id="personInfo">
+            <div class="picnick">
+                <img src="img/favicon.ico" class="img-thumbnail" id="portrait">
+                <span id="Nickname"></span>
+            </div>
+            <div class="info">
+                <table class="table-striped">
+                    <tr>
+                        <td>昵称：</td>
+                        <td class="">
+                            <input id="myNickname" class="myInformation modifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性别：</td>
+                        <td class="">
+                            <input id="mySex"  class="myInformation modifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >手机：</td>
+                        <td class="">
+                            <input id="myPhone" class="myInformation unmodifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >学校：</td>
+                        <td class="">
+                            <input id="myShool"  class="myInformation unmodifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >学院：</td>
+                        <td class="">
+                            <input id="myCollege"  class="myInformation unmodifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >入学年份：</td>
+                        <td class="">
+                            <input id="myAdminssiondate"  class="myInformation modifyTd" type="text">
+                        </td>
+                    </tr>
+                </table>
+                <input type="button" value="修改" id="editButton" class="info_btn" onclick="infoAlter()"/>
+                &nbsp;&nbsp;<input type="button" value="保存" id="saveButton" class="info_btn" onclick="saveTd()"/>
+            </div>
+        </div>
+    </div>
+
     <!--所有页面的footer-->
     <div class="footer row text-center"><br>
         <p>“期末考啦”由福州大学趣考网络团队开发</p>

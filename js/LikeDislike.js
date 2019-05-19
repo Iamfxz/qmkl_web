@@ -13,7 +13,7 @@ function like(fileID) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/like/addordesc",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/like/addordesc",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function dislike(fileID, isDislike) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/dislike/addordesc",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/dislike/addordesc",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -88,7 +88,7 @@ function isLike(fileID) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/like/is/like",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/like/is/like",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -121,7 +121,7 @@ function isDislike(fileID) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/dislike/is/dislike",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/dislike/is/dislike",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
