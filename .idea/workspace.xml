@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1b1b9b2-3fae-470b-b214-a17e7bd0736f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/login-register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login-register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bbs_css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bbs_css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/myCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/myCss.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qmklWeb.html" beforeDir="false" afterPath="$PROJECT_DIR$/qmklWeb.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +43,8 @@
       <file leaf-file-name="qmklWeb.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qmklWeb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="536" column="23" selection-start-line="536" selection-start-column="23" selection-end-line="536" selection-end-column="23" />
+            <state relative-caret-position="480">
+              <caret line="332" column="25" lean-forward="true" selection-start-line="332" selection-start-column="25" selection-end-line="332" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,6 +61,24 @@
                 <element signature="e#20563#20569#0" expanded="true" />
                 <element signature="e#20750#20756#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blur.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/blur.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-630">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bbs_css.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1209">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -89,15 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bbs_css.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login-register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/login-register.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,17 +132,8 @@
       <file leaf-file-name="myCss.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/myCss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nextPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/nextPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="388">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -148,19 +152,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>http://120.77.32.233/qmkl1.0.0/sms/send</find>
-      <find>pagination</find>
-      <find>list.js</find>
-      <find>showMain</find>
       <find>验证码</find>
       <find>yzm</find>
       <find>qmkl_token</find>
@@ -187,6 +187,10 @@
       <find>bbs-content</find>
       <find>content</find>
       <find>bbsHotPit</find>
+      <find>文件</find>
+      <find>blur</find>
+      <find>left</find>
+      <find>板块</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -224,9 +228,11 @@
         <option value="$PROJECT_DIR$/js/list.js" />
         <option value="$PROJECT_DIR$/js/switchBlock.js" />
         <option value="$PROJECT_DIR$/js/timeOrHeat.js" />
-        <option value="$PROJECT_DIR$/css/myCss.css" />
-        <option value="$PROJECT_DIR$/css/bbs_css.css" />
         <option value="$PROJECT_DIR$/js/login-register.js" />
+        <option value="$PROJECT_DIR$/css/myCss.css" />
+        <option value="$PROJECT_DIR$/css/glass.css" />
+        <option value="$PROJECT_DIR$/js/blur.js" />
+        <option value="$PROJECT_DIR$/css/bbs_css.css" />
         <option value="$PROJECT_DIR$/qmklWeb.html" />
       </list>
     </option>
@@ -241,8 +247,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="308" />
-    <option name="y" value="-18" />
+    <option name="x" value="2216" />
+    <option name="y" value="-12" />
     <option name="width" value="1378" />
     <option name="height" value="707" />
   </component>
@@ -262,6 +268,27 @@
             <path>
               <item name="qmkl_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="qmkl_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmkl_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmkl_web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmkl_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmkl_web" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmkl_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmkl_web" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmkl_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmkl_web" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,22 +312,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\qmkl_web\img\theme" />
+      <recent name="F:\qmkl_web\css" />
+      <recent name="F:\qmkl-web\img" />
+      <recent name="F:\qmkl-web" />
+      <recent name="F:\qmkl-web\img\icon" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\qmkl_web\js" />
       <recent name="F:\qmkl-web\img\icon" />
       <recent name="F:\qmkl-web\img" />
       <recent name="C:\Users\Shinelon\Desktop\qmkl_web\img" />
       <recent name="C:\Users\Administrator\Desktop\qmkl_web\js" />
-      <recent name="C:\Users\Administrator\Desktop\qmkl_web\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\qmkl-web\img" />
-      <recent name="F:\qmkl-web" />
-      <recent name="F:\qmkl-web\img\icon" />
-      <recent name="C:\Users\Administrator\Desktop\qmkl_web\css" />
-      <recent name="C:\Users\Administrator\Desktop\qmkl_web\tools" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -420,15 +447,15 @@
       <workItem from="1556352794953" duration="9183000" />
       <workItem from="1556446975580" duration="5914000" />
       <workItem from="1557382377304" duration="239000" />
-      <workItem from="1558196685841" duration="4704000" />
+      <workItem from="1558196685841" duration="14560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284471000" />
+    <option name="totallyTimeSpent" value="294327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -439,7 +466,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3295082" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="5" />
@@ -465,24 +492,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/login-register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3780">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qmklWeb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/jquery-3.3.1.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -683,17 +722,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/myCss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/LikeDislike.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qmkl_web.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login-register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/glass.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/myCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -705,20 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qmkl_web.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apiTest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="883">
@@ -726,17 +768,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/login-register.js">
+    <entry file="file://$PROJECT_DIR$/js/blur.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+        <state relative-caret-position="-630">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bbs_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1209">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qmklWeb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="536" column="23" selection-start-line="536" selection-start-column="23" selection-end-line="536" selection-end-column="23" />
+        <state relative-caret-position="480">
+          <caret line="332" column="25" lean-forward="true" selection-start-line="332" selection-start-column="25" selection-end-line="332" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -762,6 +811,18 @@
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>author</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

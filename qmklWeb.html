@@ -48,7 +48,8 @@
     <div class="page-header">
         <div class="row">
             <div class="col-md-9 page-header-title">
-                <a href="http://www.finalexam.cn/"><img style="margin: 0 0 46px 0;" src="img/icon/Icon-87.png" alt="期末考啦logo"></a>
+                <a href="http://www.finalexam.cn/"><img style="margin: 0 0 46px 0;" src="img/icon/Icon-87.png"
+                                                        alt="期末考啦logo"></a>
                 <h1 style="display:inline-block;">
                     <strong>期末考啦</strong>
                     <br/>
@@ -100,7 +101,7 @@
         <!--搜索框-->
         <div class="col-md-5">
             <div class="input-group">
-                <input id="search_box" placeholder="搜索文件资源..." type="text" class="form-control"
+                <input id="search_box" placeholder="搜索课件资源..." type="text" class="form-control"
                        onkeydown="onKeyDown(event)" list="itemList"/>
                 <datalist id="itemList">
                     <option value="wrong">数据加载错误</option>
@@ -200,12 +201,12 @@
                                     <i class="fa fa-facebook fa-fw"></i>
                                 </a>
                             </div>-->
-                           <!-- <div class="division">
-                                <div class="line l"></div>
-                                <span>or</span>
-                                <div class="line r"></div>
-                            </div>
-                            <div class="error"></div>-->
+                            <!-- <div class="division">
+                                 <div class="line l"></div>
+                                 <span>or</span>
+                                 <div class="line r"></div>
+                             </div>
+                             <div class="error"></div>-->
                             <div class="form loginBox">
                                 <form method="post" action="#" accept-charset="UTF-8">
                                     <input id="telephone_login" class="form-control" type="text"
@@ -283,7 +284,8 @@
                                 <div class="input-group">
                                     <input id="validNum" type="text" class="form-control" placeholder="验证码">
                                     <!--<button class="yzm input-group-addon btn btn-info "></button>-->
-                                    <span class="yzm input-group-addon btn btn-info " id="yzm1" style="padding: 5px" onclick="yzm()">验证码
+                                    <span class="yzm input-group-addon btn btn-info " id="yzm1" style="padding: 5px"
+                                          onclick="yzm()">验证码
                                         </span>
                                 </div>
                                 <!--<input class="btn btn-default btn-register" type="submit" value="创建"
@@ -362,17 +364,21 @@
     <!--趣聊页面-->
     <div class="chatPart container-fluid hidden" style="margin-top: 5px;">
         <!--论坛左边板块分类begin-->
-        <div class="col-md-2 leftPart" >
-            <div class="bbsPlate list-group">
-                <h3 class="forMyPlate">板块分类</h3>
-                    <a href="#jumpHere" onclick="switchBlock(1)" class="list-group-item">全部板块</a>
-                    <a href="#jumpHere" onclick="switchBlock(2)" class="list-group-item">日常吐槽</a>
-                    <a href="#jumpHere" onclick="switchBlock(3)" class="list-group-item">生活趣事</a>
-                    <a href="#jumpHere" onclick="switchBlock(4)" class="list-group-item">学习分享</a>
-                    <a href="#jumpHere" onclick="switchBlock(5)" class="list-group-item">游戏娱乐</a>
-                    <a href="#jumpHere" onclick="switchBlock(6)" class="list-group-item">运动生活</a>
-                    <a href="#jumpHere" onclick="switchBlock(7)" class="list-group-item">站务管理</a>
-            </div>
+        <div class="col-md-2 list-group leftPart">
+            <a href="#jumpHere" onclick="switchBlock(1)"
+               class="list-group-item text-center"><strong>全部板块</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(2)"
+               class="list-group-item text-center"><strong>日常吐槽</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(3)"
+               class="list-group-item text-center"><strong>生活趣事</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(4)"
+               class="list-group-item text-center"><strong>学习分享</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(5)"
+               class="list-group-item text-center"><strong>游戏娱乐</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(6)"
+               class="list-group-item text-center"><strong>运动生活</strong></a>
+            <a href="#jumpHere" onclick="switchBlock(7)"
+               class="list-group-item text-center"><strong>站务管理</strong></a>
         </div>
         <!--论坛左边板块分类end-->
 
@@ -389,18 +395,19 @@
                     </h5>
                     <button class="btn btn-primary SortBtn" id="sortByTime" onclick="sortByTime()">按时间</button>
                     <button class="btn btn-success SortBtn" id="sortByHeat" onclick="sortByHeat()">按热度</button>
-                  <!--  <div><br/></div>-->
+                    <!--  <div><br/></div>-->
                 </div>
                 <!--显示按排序的按钮begin-->
-
 
 
                 <!--上一页下一页begin-->
                 <div>
                     <ul class="pager">
-                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr; 上一页</a></li>
+                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr;
+                            上一页</a></li>
                         <span id="showPageMessage"></span>
-                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a></li>
+                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a>
+                        </li>
                     </ul>
                 </div>
                 <!--上一页下一页end-->
@@ -410,7 +417,25 @@
             <!--显示帖子列表的地方begin-->
             <div class="bbs-content">
                 <ul class="list-group">
-                    <li  class="list-group-item">
+                    <li class="list-group-item active">
+                        <span class="badge badge-info">大学生A</span>
+                        <span class="badge badge-info">日常吐槽</span>
+                        <span class="badge badge-info">19-4-1 16:17</span>
+                        <p>灌水灌水..........</p>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-info">大学生A</span>
+                        <span class="badge badge-info">日常吐槽</span>
+                        <span class="badge badge-info">19-4-1 16:17</span>
+                        <p>灌水灌水..........</p>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-info">大学生A</span>
+                        <span class="badge badge-info">日常吐槽</span>
+                        <span class="badge badge-info">19-4-1 16:17</span>
+                        <p>灌水灌水..........</p>
+                    </li>
+                    <li class="list-group-item">
                         <span class="badge badge-info">大学生A</span>
                         <span class="badge badge-info">日常吐槽</span>
                         <span class="badge badge-info">19-4-1 16:17</span>
@@ -428,12 +453,13 @@
                 <div class="post_Form">
                     <form action="?" method="get">
                         <h3 style="display: inline"><span class="label label-default">标题：</span></h3>
-                        <br /><br />
+                        <br/><br/>
                         <input type="text" name="title" size="100" class="form-control" title="">
-                        <br />
+                        <br/>
                         <h3 style="display: inline"><span class="label label-default">内容：</span></h3>
-                        <br /><br />
-                        <textarea name="post_content" id="post_content" cols="97" rows="10" class="form-control" title=""></textarea>
+                        <br/><br/>
+                        <textarea name="post_content" id="post_content" cols="97" rows="10" class="form-control"
+                                  title=""></textarea>
                         <button type="submit" class="btn-lg btn-primary post-submit">发表</button>
                     </form>
                 </div>
@@ -443,7 +469,7 @@
         <!--论坛右边区域end-->
 
         <!--私信显示-->
-        <div id="float_left" >
+        <div id="float_left">
             <div id="letterNumber">
                 <!--<a href="#" id="letter">私信(1)</a>-->
                 <img src="img/sixin.png" alt="私信泡泡" height="32" width="32">
@@ -497,7 +523,8 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-2 column">
-            <img alt="140x140" src="img/user/head/miss.jpeg" class="img-circle img-responsive center-block" height="140" width="140"/>
+            <img alt="140x140" src="img/user/head/miss.jpeg" class="img-circle img-responsive center-block user-head"
+                 height="" width=""/>
             <ul>
                 <li>
                     昵称[ID号](点击发送私信)
@@ -528,7 +555,7 @@
         </div>
         <div class="col-md-4 column">
             <blockquote>
-                    人生的磨难是很多的，所以我们不可对于每一件轻微的伤害都过于敏感。在生活磨难面前，精神上的坚强和无动于衷是我们抵抗罪恶和人生意外的最好武器。
+                人生的磨难是很多的，所以我们不可对于每一件轻微的伤害都过于敏感。在生活磨难面前，精神上的坚强和无动于衷是我们抵抗罪恶和人生意外的最好武器。
                 <small>洛克</small>
             </blockquote>
         </div>
@@ -539,7 +566,7 @@
     <div class="footer row text-center"><br>
         <p>“期末考啦”由福州大学趣考网络团队开发</p>
         <p>邮箱: <a href="mailto:#"> <strong>service@finalexam.cn</strong></a></p>
-        <p>2016-2018 福州趣考网络科技有限公司 版权所有</p>
+        <p>2016-2019 福州趣考网络科技有限公司 版权所有</p>
     </div>
 </div>
 <!--TODO-->
@@ -609,8 +636,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-
 
 </body>
 </html>
