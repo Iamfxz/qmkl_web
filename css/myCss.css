@@ -13,7 +13,85 @@
     margin: 30px 0 0 0;
     text-align: center;
 }
-.footer
-{
-    margin: 50px;
+#my-title{
+    background-color: #1A1A17;
 }
+#my-title-name{
+    display:inline;
+    color: #FFFFFF;
+}
+#my-title-name-area{
+    line-height: 30px;
+    font-size:26px;
+    width: 75%;
+}
+#my-essay-publish\ {
+    width: 7%;
+    line-height: 30px;
+    font-size:25px;
+}
+
+.breadcrumb{
+    margin-top: 20px;
+}
+.person{
+    margin-left: 30px;
+}
+.picnick{
+    width: 80%;
+    height: 80px;
+}
+.picnick img{
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+.picnick span{
+    float: left;
+    font-size: 22px;
+    line-height: 60px;
+    margin-left:8px;
+}
+.info{
+    width:40%;
+    background-color: rgba(249,249,249,0.6);
+    border: #dddddd 2px solid;
+    border-radius:14px;
+    text-align: center;
+    font-size: 18px;
+}
+.info table{
+    width: 70%;
+    line-height:40px;
+    margin:0px auto;
+    margin-top:30px;
+}
+.info_btn {
+    width: 70px;
+    height: 34px;
+    background-color: #c9f5f5;
+    border: #dddddd 1px solid;
+    border-radius: 3px;
+    color: #337ab1;
+    margin: 10px 0px 10px 0px;
+}
+.input{
+    width:200px;
+    height:30px;
+    border: #2aabd2 1px solid;
+    border-radius: 4px;
+}
+
+#information{
+    display: none;
+}
+
+.informationPart{
+    display: none;
+}
+.myInformation{
+    border:none;
+    background-color: rgba(249,249,249,0.6);
+}
+
+

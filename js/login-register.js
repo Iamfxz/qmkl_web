@@ -113,7 +113,7 @@ function userInfoAjax(token) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/user/info",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/user/info",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json;charset=UTF-8",
@@ -137,6 +137,7 @@ function userInfoAjax(token) {
             $.cookie("userAcademy",response.data["academy"]);
             //用户id，用于修改头像
             $.cookie("userID",response.data["id"]);
+            $("#information").show();
         }
     });
 }
@@ -151,7 +152,7 @@ function collegeListAjax() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/academy/list/college",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/academy/list/college",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",

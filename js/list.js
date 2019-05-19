@@ -17,7 +17,7 @@ function isLogin() {
     if(token == null){
         console.log("还没登录");
     }else{
-        $(".page-header-left").remove();
+        /*$(".page-header-left").remove();
         var newDiv = document.createElement('div');
         newDiv.setAttribute("class","col-md-3 page-header-left");
 
@@ -31,7 +31,7 @@ function isLogin() {
         logOutButton.setAttribute("class","btn btn-default btn-lg");
         logOutButton.innerHTML = "<span class=\"glyphicon glyphicon-log-out\"></span> 退出";
         newDiv.append(logOutButton);
-        $(".container .page-header .row").append(newDiv);
+        $(".container .page-header .row").append(newDiv);*/
 
         console.log("登录，token为" + token);
     }
@@ -157,7 +157,7 @@ function showMain() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/file/list/",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -275,7 +275,7 @@ function list_item_click(id, requestMethod) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/file/list/",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -363,7 +363,7 @@ function fileDetailAjax(requestFile) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/detail",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/file/list/detail",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json;charset=UTF-8",
@@ -401,7 +401,7 @@ function fileDetailAjax(requestFile) {
 //文件下载按钮设置
 function fileDownloadButton(requestFile, md5, id) {
     $("#downloadButton").attr({
-        "href": "http://120.77.32.233/qmkl1.0.0/dir/download/file/" + md5 + "/" + id,
+        "href": "http://119.23.238.215:8080/qmkl1.0.0/dir/download/file/" + md5 + "/" + id,
         "download": requestFile
     });
 }
@@ -444,7 +444,7 @@ function pagination() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://120.77.32.233/qmkl1.0.0/file/list/",
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/file/list/",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
