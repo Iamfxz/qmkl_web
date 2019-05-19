@@ -1,6 +1,7 @@
 //第一次打开页面加载主列表
 $(document).ready(
     function first() {
+        isLogin();//判断是否已经登录
         showMain();
         //路径导航中设置默认学校（用户所在的学校）
         $("#school").text($.cookie("currentCollege"))
@@ -9,6 +10,17 @@ $(document).ready(
         showPostList();
     }
 );
+
+//判断是否已经登录 显示或者隐藏登录注册按钮 以及个人中心和退出按钮
+function isLogin() {
+    var token = $.cookie('qmkl_token');
+    if(token == null){
+        console.log("还没登录");
+    }else{
+        console.log("登录，token为" + token);
+    }
+
+}
 
 //设置每页显示的帖子数
 var listPerPage = 5;
