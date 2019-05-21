@@ -22,6 +22,7 @@
     <link href="css/login-register.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/bbs_css.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="tools/editor-master/css/editormd.css" />
     <!--自定义js引用-->
     <script src="js/login-register.js" type="text/javascript"></script>
     <script src="js/switchPage.js" type="text/javascript"></script>
@@ -34,6 +35,11 @@
     <script src="js/switchSchool.js" type="text/javascript"></script>
     <script src="js/LikeDislike.js" type="text/javascript"></script>
     <script src="js/bbs_new_message.js" type="text/javascript"></script>
+    <script src="js/get-editorInformation.js" type="text/javascript"></script>
+    <script src="tools/editor-master/editormd.min.js" type="text/javascript"></script>
+    <script src="js/markdown.js" type="text/javascript"></script>
+    <script src="js/starPost.js" type="text/javascript"></script>
+    <script src="js/get-editorInformation.js" type="text/javascript"></script>
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
@@ -81,7 +87,7 @@
                 <a href="#">趣聊</a>
             </li>
             <li id="information">
-                <a href="#">个人</a>
+                <a href="#" onclick="getInfo()">个人</a>
             </li>
             <li class="dropdown pull-right">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">更多选项<strong class="caret"></strong></a>
@@ -467,26 +473,7 @@
             </div>
             <!--显示帖子标题的地方end-->
 
-            <!--论坛右下发帖区begin-->
-            <div class="bbs-post">
-                <div class="post-head text-center">
-                    <h1>火速发帖</h1>
-                </div>
-                <div class="post_Form">
-                    <form action="?" method="get">
-                        <h3 style="display: inline"><span class="label label-default">标题：</span></h3>
-                        <br/><br/>
-                        <input type="text" name="title" size="100" class="form-control" title="">
-                        <br/>
-                        <h3 style="display: inline"><span class="label label-default">内容：</span></h3>
-                        <br/><br/>
-                        <textarea name="post_content" id="post_content" cols="97" rows="10" class="form-control"
-                                  title=""></textarea>
-                        <button type="submit" class="btn-lg btn-primary post-submit">发表</button>
-                    </form>
-                </div>
-            </div>
-            <!--论坛右下发帖区end-->
+
         </div>
         <!--论坛右边区域end-->
 
@@ -588,6 +575,123 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <!--火速发帖部分-->
+    <div class="bbs-post chatPart">
+        <div class="post-head text-center">
+            <h1>火速发帖</h1>
+        </div>
+        <div class="post_Form">
+            <!--发文章-->
+            <form action="?" method="get">
+                <h3 style="display: inline"><span class="label label-default">标题：</span></h3>
+                <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
+                <select id="modulePart">
+                    <option value="" style="display: none;" disabled selected>全部模块</option>
+                    <option value="2">日常吐槽</option>
+                    <option value="3">生活趣事</option>
+                    <option value="4">学习分享</option>
+                    <option value="5">游戏娱乐</option>
+                    <option value="6">运动生活</option>
+                    <option value="7">站务管理</option>
+                </select>
+                <br /><br />
+                <input type="text" name="title" size="100" class="form-control" title="" id="my-title">
+                <br />
+                <h3 style="display: inline"><span class="label label-default">内容：</span></h3>
+                <br /><br />
+                <div id="my-editormd"> <!--文章内容-->
+                    <!-- 书写与实时显示的textarea -->
+                    <label>
+                    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
+                    </label>
+                    <label>
+                    <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
+                    <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
+                    </label>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!--个人信息页面-->
+    <div class="informationPart">
+        <div class="person col-md-12" id="personInfo">
+            <div class="picnick">
+                <img src="img/favicon.ico" class="img-thumbnail" id="portrait" alt="">
+                <span id="infoNickname"></span>
+            </div>
+            <div class="info">
+                <table class="table-striped">
+                    <tr>
+                        <td>昵称：</td>
+                        <td class="">
+                            <label>
+                            <input id="myNickname" class="myInformation modifyTd" type="text">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性别：</td>
+                        <td class="">
+                            <label>
+                            <input id="mySex"  class="myInformation modifyTd" type="text">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >手机：</td>
+                        <td class="">
+                            <input id="myPhone" class="myInformation unmodifyTd" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >学校：</td>
+                        <td class="">
+                            <input id="myShool"  class="myInformation unmodifyTd" type="text">
+                            <label for="mySchoolAlter">
+                                <select id="mySchoolAlter" onchange="MycollegeListAjax()">
+                                    <option value="" style="display: none;" disabled selected>学校</option>
+                                    <option>福州大学</option>
+                                    <option>福建工程学院</option>
+                                    <option>福建农林大学</option>
+                                    <option>复旦大学</option>
+                                    <option>厦门理工学院</option>
+                                    <option>其他学校</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >学院：</td>
+                        <td class="">
+                            <input id="myCollege"  class="myInformation unmodifyTd" type="text">
+                            <select id="myCollegeAlter" >
+                                <option value="" style="display: none;"  disabled selected>先选学校，再选学院</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >入学年份：</td>
+                        <td class="">
+                            <label>
+                            <input id="myAdminssiondate"  class="myInformation modifyTd" type="text">
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <input type="button" value="修改" id="editButton" class="info_btn" onclick="infoAlter()"/>
+                &nbsp;&nbsp;<input type="button" value="保存" id="saveButton" class="info_btn" onclick="saveTd()"/>
+            </div>
+        </div>
+    </div>
+
 
     <!--所有页面的footer-->
     <div class="footer row text-center"><br>

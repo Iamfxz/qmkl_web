@@ -19,7 +19,119 @@
     margin: 30px 0 0 0;
     text-align: center;
 }
+
+
+
+#my-essay-publish\ {
+    width: 7%;
+    line-height: 30px;
+    font-size:25px;
+}
+
+.breadcrumb{
+    margin-top: 20px;
+}
+.person{
+    margin-left: 30px;
+}
+.picnick{
+    width: 80%;
+    height: 80px;
+}
+.picnick img{
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+.picnick span{
+    float: left;
+    font-size: 22px;
+    line-height: 60px;
+    margin-left:8px;
+}
+.info{
+    width:60%;
+    background-color: rgba(249,249,249,0.6);
+    border: #dddddd 2px solid;
+    border-radius:14px;
+    text-align: center;
+    font-size: 18px;
+}
+.info table{
+    width: 90%;
+    line-height:40px;
+    margin:0px auto;
+    margin-top:30px;
+}
+.info_btn {
+    width: 70px;
+    height: 34px;
+    background-color: #c9f5f5;
+    border: #dddddd 1px solid;
+    border-radius: 3px;
+    color: #337ab1;
+    margin: 10px 0px 10px 0px;
+}
+.input{
+    width:200px;
+    height:30px;
+    border: #2aabd2 1px solid;
+    border-radius: 4px;
+}
+
+#information{
+
+}
+
+.informationPart{
+    display: none;
+}
+.myInformation{
+    border:none;
+    background-color: rgba(249,249,249,0.6);
+}
+
+.post_Form,.form-control{
+    background-color: #ecf1f4;
+    border-radius:5px;
+    margin-top: 25px;
+    margin-right: 20px;
+    box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+}
+
+.bbs-post{
+    width: 100%;
+    float: left;
+}
+#modulePart{
+    margin: 10px;
+    float: right;
+}
+
+
 .footer
 {
     margin: 50px;
+}
+#mySchoolAlter{
+    display: none;
+    width:126%;
+    background-color: rgb(201, 245, 245);
+    font-weight: normal;
+    border-radius:5px;
+    margin-top: 25px;
+    margin-right: 100px;
+    box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+}
+#myCollegeAlter{
+    display: none;
+    width:70%;
+    background-color: rgb(201, 245, 245);
+    border-radius:5px;
+    margin-top: 25px;
+    margin-right: -60px;
+    box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+}
+.modifyTd{
+    font-weight: normal;
 }
