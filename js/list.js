@@ -96,10 +96,12 @@ function showPostList(classify,page,num,sortMethod) {
                     bbsClassfy = "站务管理";
                 }
                 /*console.log(bbsClassfy);*/
+                var myPostId =response.data.post[i].postId;
+                var myModels=bbsClassfy;
                 var htmlstr = "<span class=\"badge badge-info author\">" + response.data.post[i].nickName + "</span>\n" +
                     "                        <span class=\"badge badge-info bbs-classfy\">" + bbsClassfy + "</span>\n" +
                     "                        <span class=\"badge badge-info post-time\">" + response.data.post[i].createTime +"</span>\n" +
-                    "                        <p>" + response.data.post[i].title + "</p>";
+                    "                        <p onclick='showPost("+myPostId+")'>" + response.data.post[i].title + "</p>";
                 newElement.innerHTML = htmlstr;
                 $(".bbs-ul").append(newElement);
             }

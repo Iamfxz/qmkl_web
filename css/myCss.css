@@ -135,3 +135,15 @@
 .modifyTd{
     font-weight: normal;
 }
+#postInfo{
+    display: none;
+}
+
+#postTitle{
+    width: 120%;
+}
+
+
+postInfoLi{
+    left: 0px;
+}

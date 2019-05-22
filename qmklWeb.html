@@ -40,6 +40,16 @@
     <script src="js/markdown.js" type="text/javascript"></script>
     <script src="js/starPost.js" type="text/javascript"></script>
     <script src="js/get-editorInformation.js" type="text/javascript"></script>
+    <script src="js/showPost.js" type="text/javascript"></script>
+
+    <script src="tools/editor-master/lib/marked.min.js"></script>
+    <script src="tools/editor-master/lib/prettify.min.js"></script>
+    <script src="tools/editor-master/lib/raphael.min.js"></script>
+    <script src="tools/editor-master/lib/underscore.min.js"></script>
+    <script src="tools/editor-master/lib/sequence-diagram.min.js"></script>
+    <script src="tools/editor-master/lib/flowchart.min.js"></script>
+    <script src="tools/editor-master/lib/jquery.flowchart.min.js"></script>
+
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
@@ -411,7 +421,7 @@
         <!--论坛左边板块分类end-->
 
         <!--论坛右边区域begin-->
-        <div class="col-md-9 rightPart">
+        <div id="postList" class="col-md-9 rightPart">
             <!--论坛右上显示帖子begin-->
             <div class="bbsHotPit">
 
@@ -473,9 +483,23 @@
             </div>
             <!--显示帖子标题的地方end-->
 
-
         </div>
         <!--论坛右边区域end-->
+
+        <!--论坛右边区域更改为帖子详情star-->
+        <div id="postInfo" class="col-md-9 rightPart ">
+                    <li  id="postInfoLi" class="list-group-item my-list-group-item active">
+                        <span id="postLikeNum" class="badge badge-info author"></span>
+                        <span id="postDislikeNum" class="badge badge-info author"></span>
+                        <span id="postCommentNum" class="badge badge-info author"></span>
+                        <span id="postInfoTime" class="badge badge-info post-time"></span>
+                        <p id="postInfoTitle"></p>
+                    </li>
+            <div id="test-editormd-view">
+
+            </div>
+
+        </div>
 
         <!--帖子详情模块-->
         <div class="post-detail hidden">

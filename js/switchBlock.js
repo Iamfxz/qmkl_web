@@ -9,5 +9,7 @@ function switchBlock(blockNum) {
     //清理帖子
     $(".bbs-ul").empty();
     showPostList(postClassify.toString(),"1",listPerPage.toString(),timeOrHeat.toString());/*这里写1是因为第一次载入都是显示第一页*/
+    $("#postInfo").hide();
+    $("#postList").show();
 
 }
