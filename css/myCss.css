@@ -124,11 +124,12 @@
 }
 #myCollegeAlter{
     display: none;
-    width:70%;
+    font-weight: normal;
+    width:90%;
     background-color: rgb(201, 245, 245);
     border-radius:5px;
     margin-top: 25px;
-    margin-right: -60px;
+    margin-right: 40px;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
 }
 .modifyTd{

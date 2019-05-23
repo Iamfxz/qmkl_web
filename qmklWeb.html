@@ -488,17 +488,15 @@
 
         <!--论坛右边区域更改为帖子详情star-->
         <div id="postInfo" class="col-md-9 rightPart " style="padding-left: 0; padding-right: 0;">
-            <li id="postInfoLi" class="list-group-item my-list-group-item active">
+            <div id="postInfoLi" class="list-group-item my-list-group-item active">
                 <span id="postLikeNum" class="badge badge-info author"></span>
                 <span id="postDislikeNum" class="badge badge-info author"></span>
                 <span id="postCommentNum" class="badge badge-info author"></span>
                 <span id="postInfoTime" class="badge badge-info post-time"></span>
                 <p id="postInfoTitle"></p>
-            </li>
-            <div id="test-editormd-view">
-
             </div>
-
+            <div id="test-editormd-view">
+            </div>
         </div>
 
         <!--帖子详情模块-->
@@ -567,15 +565,17 @@
                 <!--发文章-->
 
                 <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
-                <select id="modulePart">
-                    <option value="" style="display: none;" disabled selected>全部模块</option>
-                    <option value="2">日常吐槽</option>
-                    <option value="3">生活趣事</option>
-                    <option value="4">学习分享</option>
-                    <option value="5">游戏娱乐</option>
-                    <option value="6">运动生活</option>
-                    <option value="7">站务管理</option>
-                </select>
+                <label for="modulePart">
+                    <select id="modulePart">
+                        <option value="" style="display: none;" disabled selected>全部模块</option>
+                        <option value="2">日常吐槽</option>
+                        <option value="3">生活趣事</option>
+                        <option value="4">学习分享</option>
+                        <option value="5">游戏娱乐</option>
+                        <option value="6">运动生活</option>
+                        <option value="7">站务管理</option>
+                    </select>
+                </label>
                 <br/><br/>
                 <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title"
                        placeholder="请输入文章标题">
@@ -664,13 +664,17 @@
                     <tr>
                         <td>手机：</td>
                         <td class="">
-                            <input id="myPhone" class="myInformation unmodifyTd" type="text">
+                            <label for="myPhone">
+                                <input id="myPhone" class="myInformation unmodifyTd" type="text">
+                            </label>
                         </td>
                     </tr>
                     <tr>
                         <td>学校：</td>
                         <td class="">
-                            <input id="myShool" class="myInformation unmodifyTd" type="text">
+                            <label for="myShool">
+                                <input id="myShool" class="myInformation unmodifyTd" type="text">
+                            </label>
                             <label for="mySchoolAlter">
                                 <select id="mySchoolAlter" onchange="MycollegeListAjax()">
                                     <option value="" style="display: none;" disabled selected>学校</option>
@@ -687,10 +691,14 @@
                     <tr>
                         <td>学院：</td>
                         <td class="">
-                            <input id="myCollege" class="myInformation unmodifyTd" type="text">
-                            <select id="myCollegeAlter">
-                                <option value="" style="display: none;" disabled selected>先选学校，再选学院</option>
-                            </select>
+                            <label for="myCollege">
+                                <input id="myCollege" class="myInformation unmodifyTd" type="text">
+                            </label>
+                            <label for="myCollegeAlter">
+                                <select id="myCollegeAlter">
+                                    <option value="" style="" disabled selected>先选学校，再选学院</option>
+                                </select>
+                            </label>
                         </td>
                     </tr>
                     <tr>
