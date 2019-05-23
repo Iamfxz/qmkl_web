@@ -22,7 +22,7 @@
     <link href="css/login-register.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/bbs_css.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="tools/editor-master/css/editormd.css" />
+    <link rel="stylesheet" href="tools/editor-master/css/editormd.css"/>
     <!--自定义js引用-->
     <script src="js/login-register.js" type="text/javascript"></script>
     <script src="js/switchPage.js" type="text/javascript"></script>
@@ -403,19 +403,19 @@
     <div class="chatPart container-fluid hidden" style="margin-top: 5px;">
         <!--论坛左边板块分类begin-->
         <div class="col-md-2 list-group leftPart">
-            <a href="#jumpHere" onclick="switchBlock(-1)"
+            <a href="#" onclick="switchBlock(-1)"
                class="list-group-item my-list-group-item text-center"><strong>全部板块</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(2)"
+            <a href="#" onclick="switchBlock(2)"
                class="list-group-item my-list-group-item text-center"><strong>日常吐槽</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(3)"
+            <a href="#" onclick="switchBlock(3)"
                class="list-group-item my-list-group-item text-center"><strong>生活趣事</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(4)"
+            <a href="#" onclick="switchBlock(4)"
                class="list-group-item my-list-group-item text-center"><strong>学习分享</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(5)"
+            <a href="#" onclick="switchBlock(5)"
                class="list-group-item my-list-group-item text-center"><strong>游戏娱乐</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(6)"
+            <a href="#" onclick="switchBlock(6)"
                class="list-group-item my-list-group-item text-center"><strong>运动生活</strong></a>
-            <a href="#jumpHere" onclick="switchBlock(7)"
+            <a href="#" onclick="switchBlock(7)"
                class="list-group-item my-list-group-item text-center"><strong>站务管理</strong></a>
         </div>
         <!--论坛左边板块分类end-->
@@ -488,13 +488,13 @@
 
         <!--论坛右边区域更改为帖子详情star-->
         <div id="postInfo" class="col-md-9 rightPart " style="padding-left: 0; padding-right: 0;">
-                    <li  id="postInfoLi" class="list-group-item my-list-group-item active">
-                        <span id="postLikeNum" class="badge badge-info author"></span>
-                        <span id="postDislikeNum" class="badge badge-info author"></span>
-                        <span id="postCommentNum" class="badge badge-info author"></span>
-                        <span id="postInfoTime" class="badge badge-info post-time"></span>
-                        <p id="postInfoTitle"></p>
-                    </li>
+            <li id="postInfoLi" class="list-group-item my-list-group-item active">
+                <span id="postLikeNum" class="badge badge-info author"></span>
+                <span id="postDislikeNum" class="badge badge-info author"></span>
+                <span id="postCommentNum" class="badge badge-info author"></span>
+                <span id="postInfoTime" class="badge badge-info post-time"></span>
+                <p id="postInfoTitle"></p>
+            </li>
             <div id="test-editormd-view">
 
             </div>
@@ -565,33 +565,34 @@
             </div>
             <div class="post_Form">
                 <!--发文章-->
-                <form action="?" method="get">
-                    <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
-                    <select id="modulePart">
-                        <option value="" style="display: none;" disabled selected>全部模块</option>
-                        <option value="2">日常吐槽</option>
-                        <option value="3">生活趣事</option>
-                        <option value="4">学习分享</option>
-                        <option value="5">游戏娱乐</option>
-                        <option value="6">运动生活</option>
-                        <option value="7">站务管理</option>
-                    </select>
-                    <br /><br />
-                    <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title" placeholder="请输入文章标题">
-                    <br />
-                    <br /><br />
-                    <div id="my-editormd"> <!--文章内容-->
-                        <!-- 书写与实时显示的textarea -->
-                        <label>
-                            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
-                        </label>
-                        <label>
-                            <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
-                            <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
-                        </label>
-                    </div>
 
-                </form>
+                <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
+                <select id="modulePart">
+                    <option value="" style="display: none;" disabled selected>全部模块</option>
+                    <option value="2">日常吐槽</option>
+                    <option value="3">生活趣事</option>
+                    <option value="4">学习分享</option>
+                    <option value="5">游戏娱乐</option>
+                    <option value="6">运动生活</option>
+                    <option value="7">站务管理</option>
+                </select>
+                <br/><br/>
+                <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title"
+                       placeholder="请输入文章标题">
+                <br/>
+                <br/><br/>
+                <div id="my-editormd"> <!--文章内容-->
+                    <!-- 书写与实时显示的textarea -->
+                    <label>
+                        <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
+                    </label>
+                    <label>
+                        <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
+                        <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
+                    </label>
+                </div>
+
+
             </div>
         </div>
         <!--私信显示-->
@@ -642,13 +643,13 @@
                 <img src="img/favicon.ico" class="img-thumbnail" id="portrait" alt="">
                 <span id="infoNickname"></span>
             </div>
-            <div class="info">
+            <div class="info center-block">
                 <table class="table-striped">
                     <tr>
                         <td>昵称：</td>
                         <td class="">
                             <label>
-                            <input id="myNickname" class="myInformation modifyTd" type="text">
+                                <input id="myNickname" class="myInformation modifyTd" type="text">
                             </label>
                         </td>
                     </tr>
@@ -656,20 +657,20 @@
                         <td>性别：</td>
                         <td class="">
                             <label>
-                            <input id="mySex"  class="myInformation modifyTd" type="text">
+                                <input id="mySex" class="myInformation modifyTd" type="text">
                             </label>
                         </td>
                     </tr>
                     <tr>
-                        <td >手机：</td>
+                        <td>手机：</td>
                         <td class="">
                             <input id="myPhone" class="myInformation unmodifyTd" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td >学校：</td>
+                        <td>学校：</td>
                         <td class="">
-                            <input id="myShool"  class="myInformation unmodifyTd" type="text">
+                            <input id="myShool" class="myInformation unmodifyTd" type="text">
                             <label for="mySchoolAlter">
                                 <select id="mySchoolAlter" onchange="MycollegeListAjax()">
                                     <option value="" style="display: none;" disabled selected>学校</option>
@@ -684,19 +685,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td >学院：</td>
+                        <td>学院：</td>
                         <td class="">
-                            <input id="myCollege"  class="myInformation unmodifyTd" type="text">
-                            <select id="myCollegeAlter" >
-                                <option value="" style="display: none;"  disabled selected>先选学校，再选学院</option>
+                            <input id="myCollege" class="myInformation unmodifyTd" type="text">
+                            <select id="myCollegeAlter">
+                                <option value="" style="display: none;" disabled selected>先选学校，再选学院</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td >入学年份：</td>
+                        <td>入学年份：</td>
                         <td class="">
                             <label>
-                            <input id="myAdminssiondate"  class="myInformation modifyTd" type="text">
+                                <input id="myAdminssiondate" class="myInformation modifyTd" type="text">
                             </label>
                         </td>
                     </tr>

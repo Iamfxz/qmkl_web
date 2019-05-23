@@ -21,7 +21,6 @@ function starPost() {
     $.ajax(settings).done(function (response) {
 
         if(response.code == 200){
-
             alert("成功");
         }
         else {

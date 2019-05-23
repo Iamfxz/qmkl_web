@@ -35,8 +35,8 @@
     margin-left: 30px;
 }
 .picnick{
-    width: 80%;
     height: 80px;
+    float: left;
 }
 .picnick img{
     float: left;
