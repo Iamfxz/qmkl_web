@@ -91,7 +91,7 @@
     background-color: rgba(249,249,249,0.6);
 }
 
-.post_Form,.form-control{
+.post_Form{
     background-color: #ecf1f4;
     border-radius:5px;
     margin-top: 25px;
@@ -105,9 +105,8 @@
 }
 #modulePart{
     margin: 10px;
-    float: right;
+    float: left;
 }
-
 
 .footer
 {

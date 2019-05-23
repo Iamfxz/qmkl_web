@@ -611,7 +611,6 @@
         <div class="post_Form">
             <!--发文章-->
             <form action="?" method="get">
-                <h3 style="display: inline"><span class="label label-default">标题：</span></h3>
                 <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
                 <select id="modulePart">
                     <option value="" style="display: none;" disabled selected>全部模块</option>
@@ -623,9 +622,8 @@
                     <option value="7">站务管理</option>
                 </select>
                 <br /><br />
-                <input type="text" name="title" size="100" class="form-control" title="" id="my-title">
+                <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title" placeholder="请输入文章标题">
                 <br />
-                <h3 style="display: inline"><span class="label label-default">内容：</span></h3>
                 <br /><br />
                 <div id="my-editormd"> <!--文章内容-->
                     <!-- 书写与实时显示的textarea -->
