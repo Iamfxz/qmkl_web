@@ -78,6 +78,8 @@ function showPostList(classify,page,num,sortMethod) {
             /*console.log(response.data.post.length);*/
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
+                var jsName = "showPost(" + response.data.post[i].postId.toString() + ")";
+                newElement.setAttribute("onclick",jsName);
                 newElement.setAttribute("class","list-group-item my-list-group-item listOfItem");
                 var bbsClassfy = response.data.post[i].classify;
                 if(response.data.post[i].classify == "1"){
@@ -101,7 +103,7 @@ function showPostList(classify,page,num,sortMethod) {
                 var htmlstr = "<span class=\"badge badge-info author\">" + response.data.post[i].nickName + "</span>\n" +
                     "                        <span class=\"badge badge-info bbs-classfy\">" + bbsClassfy + "</span>\n" +
                     "                        <span class=\"badge badge-info post-time\">" + response.data.post[i].createTime +"</span>\n" +
-                    "                        <p onclick='showPost("+myPostId+")'>" + response.data.post[i].title + "</p>";
+                    "                        <p>" + response.data.post[i].title + "</p>";
                 newElement.innerHTML = htmlstr;
                 $(".bbs-ul").append(newElement);
             }
