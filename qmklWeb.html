@@ -403,7 +403,7 @@
     <div class="chatPart container-fluid hidden" style="margin-top: 5px;">
         <!--论坛左边板块分类begin-->
         <div class="col-md-2 list-group leftPart">
-            <a href="#jumpHere" onclick="switchBlock(1)"
+            <a href="#jumpHere" onclick="switchBlock(-1)"
                class="list-group-item my-list-group-item text-center"><strong>全部板块</strong></a>
             <a href="#jumpHere" onclick="switchBlock(2)"
                class="list-group-item my-list-group-item text-center"><strong>日常吐槽</strong></a>
@@ -558,6 +558,42 @@
             <!--todo-->
             <!--在这里加入markdown Editor-->
         </div>
+        <!--火速发帖部分-->
+        <div class="bbs-post chatPart">
+            <div class="post-head text-center">
+                <h1>火速发帖</h1>
+            </div>
+            <div class="post_Form">
+                <!--发文章-->
+                <form action="?" method="get">
+                    <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
+                    <select id="modulePart">
+                        <option value="" style="display: none;" disabled selected>全部模块</option>
+                        <option value="2">日常吐槽</option>
+                        <option value="3">生活趣事</option>
+                        <option value="4">学习分享</option>
+                        <option value="5">游戏娱乐</option>
+                        <option value="6">运动生活</option>
+                        <option value="7">站务管理</option>
+                    </select>
+                    <br /><br />
+                    <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title" placeholder="请输入文章标题">
+                    <br />
+                    <br /><br />
+                    <div id="my-editormd"> <!--文章内容-->
+                        <!-- 书写与实时显示的textarea -->
+                        <label>
+                            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
+                        </label>
+                        <label>
+                            <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
+                            <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
+                        </label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
         <!--私信显示-->
         <div id="float_left">
             <div id="letterNumber">
@@ -593,54 +629,11 @@
                             <span class="sendTime">12/14 13:20:05</span>
                             <span class="sender">小张发f f fasf asf as 发</span>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-    <!--火速发帖部分-->
-    <div class="bbs-post chatPart">
-        <div class="post-head text-center">
-            <h1>火速发帖</h1>
-        </div>
-        <div class="post_Form">
-            <!--发文章-->
-            <form action="?" method="get">
-                <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
-                <select id="modulePart">
-                    <option value="" style="display: none;" disabled selected>全部模块</option>
-                    <option value="2">日常吐槽</option>
-                    <option value="3">生活趣事</option>
-                    <option value="4">学习分享</option>
-                    <option value="5">游戏娱乐</option>
-                    <option value="6">运动生活</option>
-                    <option value="7">站务管理</option>
-                </select>
-                <br /><br />
-                <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title" placeholder="请输入文章标题">
-                <br />
-                <br /><br />
-                <div id="my-editormd"> <!--文章内容-->
-                    <!-- 书写与实时显示的textarea -->
-                    <label>
-                    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
-                    </label>
-                    <label>
-                    <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
-                    <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
-                    </label>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
-
 
     <!--个人信息页面-->
     <div class="informationPart">
