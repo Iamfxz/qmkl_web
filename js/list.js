@@ -7,7 +7,7 @@ $(document).ready(
         $("#school").text($.cookie("currentCollege"));
 
         //首页显示帖子
-        showPostList("1","1",listPerPage.toString(),timeOrHeat.toString());
+        showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
     }
 );
 
@@ -42,7 +42,7 @@ var listPerPage = 7;
 //保存帖子能显示的最多页数
 var maxPage = 0;
 //保存当前在第几个分区
-var postClassify = 1;
+var postClassify = -1;
 
 
 //首页显示帖子
@@ -78,7 +78,7 @@ function showPostList(classify,page,num,sortMethod) {
             /*console.log(response.data.post.length);*/
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
-                newElement.setAttribute("class","list-group-item my-list-group-item active");
+                newElement.setAttribute("class","list-group-item my-list-group-item listOfItem");
                 var bbsClassfy = response.data.post[i].classify;
                 if(response.data.post[i].classify == "1"){
                     bbsClassfy = "全部板块";

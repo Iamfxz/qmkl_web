@@ -81,3 +81,11 @@
     visibility: hidden;
     border: 5px double #d6d6d6;
 }
+
+.listOfItem:active{
+    background-color: #337ab7;
+}
+
+.listOfItem:hover{
+    background-color: #337ab7;
+}
