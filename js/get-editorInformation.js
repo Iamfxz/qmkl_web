@@ -82,45 +82,51 @@ function MycollegeListAjax() {
 更新个人信息
  */
 function saveTd() {
-        var myData = {
-            token: $.cookie('qmkl_token'),
-            user:{
-                nickname:$("#myNickname").val(),
-                gender:$("#mySex").val(),
-                enterYear:$("#myAdminssiondate").val(),
-                college:$("#mySchoolAlter").val(),
-                academy:$("#myCollegeAlter").val()
-            }
-        };
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://119.23.238.215:8080/qmkl1.0.0/user/update/info",
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json;charset=UTF-8",
-                "cache-control": "no-cache"
-            },
-            "processData": false,
-            "data": JSON.stringify(myData)
-        };
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            if(response.code == 200){
-                 alert("修改成功！");
-                $(".modifyTd").css("background-color","rgba(249,249,249,0.6)");
-                $("#myCollegeAlter").hide();
-                $("#mySchoolAlter").hide();
-                $.cookie("currentCollege", $("#mySchoolAlter").val());
-                $.cookie("userAcademy",$("#myCollegeAlter").val());
-                $.cookie("userGender",$("#mySex").val());
-                $.cookie("userNickname",$("#myNickname").val());
-                $.cookie("userEnterYear",$("#myAdminssiondate").val());
-                getInfo();
-                $("#myCollege").show();
-                $("#myShool").show();
-            }
-        });
+        if($("#mySchoolAlter").val()==null|| $("#myCollegeAlter").val()==null|| $("#myNickname").val()==null|| $("#mySex").val()==null|| $("#myAdminssiondate").val()==null){
+            alert("修改内容不能为空！！！");
+        }
+        else
+        {
+            var myData = {
+                token: $.cookie('qmkl_token'),
+                user:{
+                    nickname:$("#myNickname").val(),
+                    gender:$("#mySex").val(),
+                    enterYear:$("#myAdminssiondate").val(),
+                    college:$("#mySchoolAlter").val(),
+                    academy:$("#myCollegeAlter").val()
+                }
+            };
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://119.23.238.215:8080/qmkl1.0.0/user/update/info",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": JSON.stringify(myData)
+            };
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                if(response.code == 200){
+                    alert("修改成功！"+$("#mySchoolAlter").val()+$("#myCollegeAlter").val());
+                    $(".modifyTd").css("background-color","rgba(249,249,249,0.6)");
+                    $("#myCollegeAlter").hide();
+                    $("#mySchoolAlter").hide();
+                    $.cookie("currentCollege", $("#mySchoolAlter").val());
+                    $.cookie("userAcademy",$("#myCollegeAlter").val());
+                    $.cookie("userGender",$("#mySex").val());
+                    $.cookie("userNickname",$("#myNickname").val());
+                    $.cookie("userEnterYear",$("#myAdminssiondate").val());
+                    getInfo();
+                    $("#myCollege").show();
+                    $("#myShool").show();
+                }
+            });
+        }
 
 }
 

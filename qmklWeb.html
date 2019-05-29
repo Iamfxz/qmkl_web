@@ -557,7 +557,7 @@
             <!--在这里加入markdown Editor-->
         </div>
         <!--火速发帖部分-->
-        <div class="bbs-post chatPart">
+        <div  id="mypost" class="bbs-post chatPart hidden">
             <div class="post-head text-center">
                 <h1>火速发帖</h1>
             </div>
@@ -567,7 +567,7 @@
                 <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
                 <label for="modulePart">
                     <select id="modulePart">
-                        <option value="" style="display: none;" disabled selected>全部模块</option>
+                        <option value="1" style="display: none;" disabled selected>全部模块</option>
                         <option value="2">日常吐槽</option>
                         <option value="3">生活趣事</option>
                         <option value="4">学习分享</option>
@@ -595,6 +595,9 @@
 
             </div>
         </div>
+
+
+
         <!--私信显示-->
         <div id="float_left">
             <div id="letterNumber">
@@ -635,6 +638,7 @@
             </div>
         </div>
     </div>
+
 
     <!--个人信息页面-->
     <div class="informationPart">

@@ -43,6 +43,7 @@ function showPost(myPostId) {
                 sequenceDiagram : true,  // 默认不解析
             });
             $("#postList").hide();
+            $("#myPost").hide();
             $("#postInfo").show();
              }
         else {

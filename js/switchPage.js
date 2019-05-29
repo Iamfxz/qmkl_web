@@ -49,6 +49,7 @@ $(document).ready(function(){
             $(".officialWebPart").addClass("hidden");
             $(".resourcePart").addClass("hidden");
             $(".chatPart").removeClass("hidden");
+            $("#myPost").show();
             $(".informationPart").addClass("hidden");
         }
     });
@@ -65,6 +66,7 @@ $(document).ready(function(){
             $(".resourcePart").addClass("hidden");
             $(".chatPart").addClass("hidden");
             $(".informationPart").removeClass("hidden");
+
         }
     });
 });
