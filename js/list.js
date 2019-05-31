@@ -75,7 +75,7 @@ function showPostList(classify,page,num,sortMethod) {
             console.log(response.data);
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
-
+            $("#letterInfo").hide();
             /*console.log(response.data.post.length);*/
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
