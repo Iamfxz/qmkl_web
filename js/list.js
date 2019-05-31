@@ -8,8 +8,11 @@ $(document).ready(
 
         //首页显示帖子
         showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
-    }
+        setMessageBox();
+}
 );
+
+
 
 //判断是否已经登录 显示或者隐藏登录注册按钮 以及个人中心和退出按钮
 function isLogin() {
@@ -38,7 +41,7 @@ function isLogin() {
 }
 
 //设置每页显示的帖子数
-var listPerPage = 7;
+var listPerPage = 15;
 //保存帖子能显示的最多页数
 var maxPage = 0;
 //保存当前在第几个分区
@@ -69,9 +72,7 @@ function showPostList(classify,page,num,sortMethod) {
     $.ajax(settings).done(function (response) {
         /*console.log(response.code);*/
         if(response.code=="200"){
-
             console.log(response.data);
-
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
 
@@ -107,8 +108,8 @@ function showPostList(classify,page,num,sortMethod) {
                 newElement.innerHTML = htmlstr;
                 $(".bbs-ul").append(newElement);
             }
-            document.getElementById('showPageMessage').innerText = "当前第 " + postCurrentPage + " 页/ 总:"
-                + maxPage + " 页";
+            document.getElementById('currentPage').innerText = postCurrentPage;
+            document.getElementById('maxPage').innerText = maxPage;
             //如果点了下一页后的当前页是最后一页 那么他的按钮将不能点击 反之相反
             if(postCurrentPage >= maxPage){
                 $("#nextPageNode").attr("class","next disabled");
@@ -499,3 +500,30 @@ function pagination() {
     });
 }
 
+function jumpPage() {
+    var targetPage = document.getElementById("currentPage").innerHTML;
+    var sumPage = document.getElementById('maxPage').innerHTML;
+    if(parseInt(targetPage)>parseInt(sumPage)){
+        alert("您输入的页数大于最大页数，请重新输入！");
+    }else if(parseInt(targetPage)<1){
+        alert("您输入的页数错误，请重新输入！");
+    }else{
+        $(".bbs-ul").empty();
+
+        //将当前页数+1
+        postCurrentPage = parseInt(targetPage);
+
+        //重新获取第二页的帖子
+        showPostList(postClassify.toString(),postCurrentPage.toString(),listPerPage.toString(),timeOrHeat.toString());
+    }
+}
+
+function changeUpOrDown() {
+  /*  var eleSpan = $("#upOrDown");*/
+    var eleSpan = document.getElementById("upOrDown");
+    var attr = eleSpan.getAttribute("class");
+    if(attr == "glyphicon glyphicon-chevron-down")
+        eleSpan.setAttribute("class","glyphicon glyphicon-chevron-up")
+    else
+        eleSpan.setAttribute("class","glyphicon glyphicon-chevron-down")
+}

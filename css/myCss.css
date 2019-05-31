@@ -139,11 +139,15 @@
     display: none;
 }
 
+#letterInfo{
+    display: none;
+}
+
 #postTitle{
     width: 120%;
 }
 
 
-postInfoLi{
+postInfoLi {
     left: 0px;
 }

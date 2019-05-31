@@ -10,7 +10,7 @@
 
 
 .rightPart{
-    border-radius:5px;
+    border-radius:4px 4px 0 0 ;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
 }
 
@@ -67,9 +67,7 @@
 
 }
 
-#float_left{
 
-}
 
 #letterContentFrame{
     position: fixed;
@@ -89,3 +87,4 @@
 .listOfItem:hover{
     background-color: #337ab7;
 }
+

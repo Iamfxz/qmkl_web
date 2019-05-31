@@ -35,6 +35,7 @@
     <script src="js/switchSchool.js" type="text/javascript"></script>
     <script src="js/LikeDislike.js" type="text/javascript"></script>
     <script src="js/bbs_new_message.js" type="text/javascript"></script>
+    <script src="js/messageBox.js" type="text/javascript"></script>
     <script src="js/get-editorInformation.js" type="text/javascript"></script>
     <script src="tools/editor-master/editormd.min.js" type="text/javascript"></script>
     <script src="js/markdown.js" type="text/javascript"></script>
@@ -417,8 +418,36 @@
                class="list-group-item my-list-group-item text-center"><strong>运动生活</strong></a>
             <a href="#" onclick="switchBlock(7)"
                class="list-group-item my-list-group-item text-center"><strong>站务管理</strong></a>
+            <div class="col-md-12 list-group leftPart" id="leftPart" style="padding: 0;margin-top: 30px;border: #474747 1px solid;">
+                <div class="list-group-item my-list-group-item text-center">
+                    <strong>私信列表</strong><span id="numOfLetter"></span>
+                    <a href="#letterUser" style="float: right;" data-toggle="collapse" data-parent="#accordion " onclick="changeUpOrDown()">
+                        <span class="glyphicon glyphicon-chevron-up" id="upOrDown"></span>
+                    </a>
+                </div>
+
+                <div id="letterUser" class=" collapse in">
+                    <!--<div class="my-list-group-item col-md-11 alert" style="margin: 5px;padding: 3px">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <span style="color: #8a9182">天天天</span><span style="color: red">          3条未读</span>
+                    </div>-->
+                    <!--<div class="my-list-group-item col-md-11 alert" style="margin: 5px;padding: 3px">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <a href="#"><span class="badge" style="color: red; background-color: #020101">21</span> 收件箱 </a>
+                    </div>-->
+
+
+                </div>
+
+
+
+
+
+
+            </div>
         </div>
         <!--论坛左边板块分类end-->
+
 
         <!--论坛右边区域begin-->
         <div id="postList" class="col-md-9 rightPart">
@@ -441,11 +470,18 @@
                 <!--上一页下一页begin-->
                 <div>
                     <ul class="pager">
-                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">&larr;
-                            上一页</a></li>
-                        <li id="showPageMessage"></li>
-                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页 &rarr;</a>
+                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">上一页</a></li>
+                        <li id="showPageMessage">
+                             当前第
+                            <span id="currentPage" contenteditable="true"></span>
+                            总 :
+                            <label id="maxPage"></label>
+                             页
                         </li>
+                        <li ><a href="#jumpHere" class="jumpTargetPage" onclick="jumpPage()">跳转</a>
+                        <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页</a>
+                        </li>
+
                     </ul>
                 </div>
                 <!--上一页下一页end-->
@@ -496,6 +532,19 @@
                 <p id="postInfoTitle"></p>
             </div>
             <div id="test-editormd-view">
+            </div>
+        </div>
+
+        <!--论坛右边区域更改为私信详情star-->
+        <div id="letterInfo" class="col-md-9 rightPart " style="padding-left: 0; padding-right: 0;">
+            <div class="list-group-item my-list-group-item active letterInfoLi">
+                <p id="sender">发帖人啊</p>
+            </div>
+            <div class="letterContent">
+                <div class="letterLi" style="padding: 10px">
+                    <span class="badge badge-info send-time sendLetterTime" style="float: right;">2019/05/31 23：12</span>
+                    <span class="letterContent">测试测试</span>
+                </div>
             </div>
         </div>
 
@@ -554,6 +603,7 @@
                 </div>
             </div>
             <!--todo-->
+
             <!--在这里加入markdown Editor-->
         </div>
         <!--火速发帖部分-->
@@ -599,9 +649,9 @@
 
 
         <!--私信显示-->
-        <div id="float_left">
+       <!-- <div id="float_left">
             <div id="letterNumber">
-                <!--<a href="#" id="letter">私信(1)</a>-->
+                &lt;!&ndash;<a href="#" id="letter">私信(1)</a>&ndash;&gt;
                 <img src="img/sixin.png" alt="私信泡泡" height="32" width="32">
                 <p style="text-align: center">(<span style="color: red">1</span>)</p>
             </div>
@@ -611,32 +661,32 @@
                     <ul id="ulLetterContent">
                         <li>
                             <span class="isRead" style="color: #c7254e">读</span>
-                            <span class="simpleContent" style="color: #c7254e">私信内容</span><!--这个要控制显示几个字-->
+                            <span class="simpleContent" style="color: #c7254e">私信内容</span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
                             <span class="sendTime" style="color: #c7254e">发送时间</span>
                             <span class="sender" style="color: #c7254e">发送者</span>
                         </li>
                         <li>
                             <span class="isRead">[未读]</span>
-                            <span class="simpleContent"><a href="#">在吗？在干嘛</a></span><!--这个要控制显示几个字-->
+                            <span class="simpleContent"><a href="#">在吗？在干嘛</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
                             <span class="sendTime">5分钟前</span>
                             <span class="sender">小王</span>
                         </li>
                         <li>
                             <span class="isRead">[已读]</span>
-                            <span class="simpleContent"><a href="#">在吗？那点事发是</a></span><!--这个要控制显示几个字-->
+                            <span class="simpleContent"><a href="#">在吗？那点事发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
                             <span class="sendTime">4/14 23:20:05</span>
                             <span class="sender">小张发发</span>
                         </li>
                         <li>
                             <span class="isRead">[已读]</span>
-                            <span class="simpleContent"><a href="#">在吗？那点事d 发是</a></span><!--这个要控制显示几个字-->
+                            <span class="simpleContent"><a href="#">在吗？那点事d 发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
                             <span class="sendTime">12/14 13:20:05</span>
                             <span class="sender">小张发f f fasf asf as 发</span>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 
