@@ -117,16 +117,18 @@
         </ul>
         <!--搜索框-->
         <div class="col-md-5">
-            <div class="input-group">
-                <input id="search_box" placeholder="搜索课件资源..." type="text" class="form-control"
-                       onkeydown="onKeyDown(event)" list="itemList"/>
-                <datalist id="itemList">
-                    <option value="wrong">数据加载错误</option>
-                </datalist>
-                <span class="input-group-addon btn glyphicon glyphicon-search" onclick="searchFolder()">
+            <form class="bs-example bs-example-form" role="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search_box" placeholder="搜索课件资源..."
+                           onkeydown="onKeyDown(event)" list="itemList"/>
+                    <datalist id="itemList">
+                        <option value="wrong">数据加载错误</option>
+                    </datalist>
+                    <span class="input-group-addon btn glyphicon glyphicon-search" onclick="searchFolder()">
                 </span>
-            </div>
-            <script src="js/search_box.js"></script>
+                </div>
+                <script src="js/search_box.js"></script>
+            </form>
         </div>
     </div>
     <!--资源列表页面内容-->
@@ -224,25 +226,25 @@
                                  <div class="line r"></div>
                              </div>
                              <div class="error"></div>-->
-                            <div class="form loginBox">
-                                <form method="post" action="#" accept-charset="UTF-8">
+                            <form role="form">
+                                <div class="loginBox">
                                     <input id="telephone_login" class="form-control" type="text"
-                                           placeholder="手机号码" name="phone">
+                                           placeholder="手机号码" name="phone" autocomplete="username" >
                                     <input id="password_login" class="form-control" type="password"
-                                           placeholder="密码" name="password">
+                                           placeholder="密码" name="password" autocomplete="current-password">
                                     <input class="btn btn-default btn-login" type="button" value="登陆"
                                            onclick="loginAjax()">
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="box">
                         <div class="content registerBox" style="display:none;">
-                            <div class="form">
+                            <div class="form" role="form">
 
 
                                 <input id="telephone_register" class="form-control" type="text"
-                                       placeholder="手机号码（仅支持中国大陆）" name="phone">
+                                       placeholder="手机号码（仅支持中国大陆）" name="phone" autocomplete="username">
                                 <div class="input-group">
                                     <input id="validNum" type="text" class="form-control" placeholder="验证码">
                                     <!--<button class="yzm input-group-addon btn btn-info "></button>-->
@@ -259,13 +261,13 @@
                     </div>
                     <div class="box">
                         <div class="content ImproveBox" style="display:none;">
-                            <div class="form">
+                            <form role="form">
                                 <input id="nickname" class="form-control" type="text"
-                                       placeholder="昵称">
+                                       placeholder="昵称" autocomplete="nickname">
                                 <input id="password_register" class="form-control" type="password"
-                                       placeholder="密码" name="password">
+                                       placeholder="密码" name="password" autocomplete="new-password">
                                 <input id="password_confirmation" class="form-control" type="password"
-                                       placeholder="再次确认密码" name="password_confirmation">
+                                       placeholder="再次确认密码" name="password_confirmation" autocomplete="new-password">
                                 <label for="enterYear">
                                     <select id="enterYear" class="form-control">
                                         <option value="" style="display: none;" disabled selected>年级</option>
@@ -306,7 +308,7 @@
                                        name="commit">-->
                                 <button class="yzm btn btn-default btn-register" onclick="improveRegister()">创建</button>
                                 <!--</form>-->
-                            </div>
+                            </form>
                         </div>
                     </div>
 
@@ -418,10 +420,12 @@
                class="list-group-item my-list-group-item text-center"><strong>运动生活</strong></a>
             <a href="#" onclick="switchBlock(7)"
                class="list-group-item my-list-group-item text-center"><strong>站务管理</strong></a>
-            <div class="col-md-12 list-group leftPart" id="leftPart" style="padding: 0;margin-top: 30px;border: #474747 1px solid;">
+            <div class="col-md-12 list-group leftPart" id="leftPart"
+                 style="padding: 0;margin-top: 30px;border: #474747 1px solid;">
                 <div class="list-group-item my-list-group-item text-center">
                     <strong>私信列表</strong><span id="numOfLetter"></span>
-                    <a href="#letterUser" style="float: right;" data-toggle="collapse" data-parent="#accordion " onclick="changeUpOrDown()">
+                    <a href="#letterUser" style="float: right;" data-toggle="collapse" data-parent="#accordion "
+                       onclick="changeUpOrDown()">
                         <span class="glyphicon glyphicon-chevron-up" id="upOrDown"></span>
                     </a>
                 </div>
@@ -438,10 +442,6 @@
 
 
                 </div>
-
-
-
-
 
 
             </div>
@@ -470,15 +470,16 @@
                 <!--上一页下一页begin-->
                 <div>
                     <ul class="pager">
-                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere" onclick="postBackPage()">上一页</a></li>
+                        <li class="previous disabled" id="prePageNode"><a href="#jumpHere"
+                                                                          onclick="postBackPage()">上一页</a></li>
                         <li id="showPageMessage">
-                             当前第
+                            当前第
                             <span id="currentPage" contenteditable="true"></span>
                             总 :
                             <label id="maxPage"></label>
-                             页
+                            页
                         </li>
-                        <li ><a href="#jumpHere" class="jumpTargetPage" onclick="jumpPage()">跳转</a>
+                        <li><a href="#jumpHere" class="jumpTargetPage" onclick="jumpPage()">跳转</a>
                         <li class="next" id="nextPageNode"><a href="#jumpHere" onclick="postNextPage()">下一页</a>
                         </li>
 
@@ -548,66 +549,8 @@
             </div>-->
         </div>
 
-        <!--帖子详情模块-->
-        <div class="post-detail hidden">
-            <div class="row clearfix">
-                <div class="col-md-12 column">
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="#">板块</a>
-                        </li>
-                        <li class="active">
-                            日常吐槽
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-md-2 column">
-                    <img alt="140x140" src="img/user/head/miss.jpeg"
-                         class="img-circle img-responsive center-block user-head"
-                         height="" width=""/>
-                    <ul>
-                        <li>
-                            昵称[ID号](点击发送私信)
-                        </li>
-                        <li>
-                            吧龄
-                        </li>
-                    </ul>
-                    <p class="text-left lead text-info">
-                        <em>Git</em> 是一个分布式的版本控制系统，最初由 <strong>Linus Torvalds</strong>
-                        编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在
-                        <small>Ruby</small>
-                        社区中。
-                    </p>
-                </div>
-                <div class="col-md-6 column">
-                    <h2>
-                        标题
-                    </h2>
-
-                    <p class="MsoNormal">
-                        <span>201</span><span>9</span><span>年3月30日至4月27日，由福州大学学生工作部（处）、福州大学研究生工作部（处）主办，福州大学数学与计算机科学学院、福州大学经济与管理学院、福州大学厦门工艺美术学院、福州大学阳光众创空间承办，福州软件园产业服务有限公司、福州福大科技园管理有限公司、福州大学昆冈众创工作室、福州大学学生创新创业服务中心、福州大学数计学院大学生创新创业中心、厦门市大学生创业促进会协办的2019福州大学大学生创新创业项目路演活动在福州大学素质拓展中心光彩创咖举行，共有来自19个学院的</span><span>108</span><span>个团队参与了活动。根据选手的参赛表现，福州大学学生工作处（部）与投资评审人对申报项目进行评审，经评审，拟定以下队伍为2019福州大学大学生创新创业项目路演活动获奖队伍（见附件），现公布获奖名单如下,如有异议，敬请监督。</span>
-                    </p>
-
-                    <p>
-                        <a class="btn" href="#">View details »</a>
-                    </p>
-                </div>
-                <div class="col-md-4 column">
-                    <blockquote>
-                        人生的磨难是很多的，所以我们不可对于每一件轻微的伤害都过于敏感。在生活磨难面前，精神上的坚强和无动于衷是我们抵抗罪恶和人生意外的最好武器。
-                        <small>洛克</small>
-                    </blockquote>
-                </div>
-            </div>
-            <!--todo-->
-
-            <!--在这里加入markdown Editor-->
-        </div>
         <!--火速发帖部分-->
-        <div  id="mypost" class="bbs-post chatPart hidden">
+        <div id="mypost" class="bbs-post chatPart hidden">
             <div class="post-head text-center">
                 <h1>火速发帖</h1>
             </div>
@@ -632,61 +575,49 @@
                 <br/>
                 <br/><br/>
                 <div id="my-editormd"> <!--文章内容-->
-                    <!-- 书写与实时显示的textarea -->
-                    <label>
-                        <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
-                    </label>
-                    <label>
-                        <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
-                        <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
-                    </label>
+
                 </div>
-
-
             </div>
         </div>
-
-
-
         <!--私信显示-->
-       <!-- <div id="float_left">
-            <div id="letterNumber">
-                &lt;!&ndash;<a href="#" id="letter">私信(1)</a>&ndash;&gt;
-                <img src="img/sixin.png" alt="私信泡泡" height="32" width="32">
-                <p style="text-align: center">(<span style="color: red">1</span>)</p>
-            </div>
+        <!-- <div id="float_left">
+             <div id="letterNumber">
+                 &lt;!&ndash;<a href="#" id="letter">私信(1)</a>&ndash;&gt;
+                 <img src="img/sixin.png" alt="私信泡泡" height="32" width="32">
+                 <p style="text-align: center">(<span style="color: red">1</span>)</p>
+             </div>
 
-            <div id="letterContentFrame">
-                <div id="letterContent">
-                    <ul id="ulLetterContent">
-                        <li>
-                            <span class="isRead" style="color: #c7254e">读</span>
-                            <span class="simpleContent" style="color: #c7254e">私信内容</span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
-                            <span class="sendTime" style="color: #c7254e">发送时间</span>
-                            <span class="sender" style="color: #c7254e">发送者</span>
-                        </li>
-                        <li>
-                            <span class="isRead">[未读]</span>
-                            <span class="simpleContent"><a href="#">在吗？在干嘛</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
-                            <span class="sendTime">5分钟前</span>
-                            <span class="sender">小王</span>
-                        </li>
-                        <li>
-                            <span class="isRead">[已读]</span>
-                            <span class="simpleContent"><a href="#">在吗？那点事发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
-                            <span class="sendTime">4/14 23:20:05</span>
-                            <span class="sender">小张发发</span>
-                        </li>
-                        <li>
-                            <span class="isRead">[已读]</span>
-                            <span class="simpleContent"><a href="#">在吗？那点事d 发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
-                            <span class="sendTime">12/14 13:20:05</span>
-                            <span class="sender">小张发f f fasf asf as 发</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>-->
+             <div id="letterContentFrame">
+                 <div id="letterContent">
+                     <ul id="ulLetterContent">
+                         <li>
+                             <span class="isRead" style="color: #c7254e">读</span>
+                             <span class="simpleContent" style="color: #c7254e">私信内容</span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
+                             <span class="sendTime" style="color: #c7254e">发送时间</span>
+                             <span class="sender" style="color: #c7254e">发送者</span>
+                         </li>
+                         <li>
+                             <span class="isRead">[未读]</span>
+                             <span class="simpleContent"><a href="#">在吗？在干嘛</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
+                             <span class="sendTime">5分钟前</span>
+                             <span class="sender">小王</span>
+                         </li>
+                         <li>
+                             <span class="isRead">[已读]</span>
+                             <span class="simpleContent"><a href="#">在吗？那点事发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
+                             <span class="sendTime">4/14 23:20:05</span>
+                             <span class="sender">小张发发</span>
+                         </li>
+                         <li>
+                             <span class="isRead">[已读]</span>
+                             <span class="simpleContent"><a href="#">在吗？那点事d 发是</a></span>&lt;!&ndash;这个要控制显示几个字&ndash;&gt;
+                             <span class="sendTime">12/14 13:20:05</span>
+                             <span class="sender">小张发f f fasf asf as 发</span>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>-->
     </div>
 
 

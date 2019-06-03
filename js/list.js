@@ -18,7 +18,7 @@ $(document).ready(
 function isLogin() {
     var token = $.cookie('qmkl_token');
     if(token == null){
-        console.log("还没登录");
+        zzzconsole.log("还没登录");
     }else{
         /*$(".page-header-left").remove();
         var newDiv = document.createElement('div');
@@ -35,7 +35,7 @@ function isLogin() {
         logOutButton.innerHTML = "<span class=\"glyphicon glyphicon-log-out\"></span> 退出";
         newDiv.append(logOutButton);
         $(".container .page-header .row").append(newDiv);*/
-        console.log("登录，token为" + token);
+        //console.log("登录，token为" + token);
     }
 
 }
@@ -72,7 +72,7 @@ function showPostList(classify,page,num,sortMethod) {
     $.ajax(settings).done(function (response) {
         /*console.log(response.code);*/
         if(response.code=="200"){
-            console.log(response.data);
+            //console.log(response.data);
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
             $("#letterInfo").hide();
