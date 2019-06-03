@@ -1,5 +1,5 @@
 $(document).ready(
-    $(function () {
+    function () {
         editormd("my-editormd", { //注意1：这里的就是上面的DIV的id属性值
             placeholder: "此处开始编写您要发布的内容...",
             width: "95%",
@@ -29,7 +29,7 @@ $(document).ready(
                 return ["undo", "redo", "|", "bold", "italic", "quote", "uppercase", "lowercase", "|", "h1", "h2", "h3", "h4", "|", "list-ul", "list-ol", "hr", "|", "link", "image", "code", "code-block", "table", "html-entities", "|", "watch", "preview", "fullscreen", "clear", "|", "help"]
             }
         });
-    })
+    }
 );
 
 
