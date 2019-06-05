@@ -58,7 +58,7 @@
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
 </head>
-<body background="img/background.jpg">
+<body background="img/background.jpg" onload="window.scrollTo(0,0)">
 <div class="container">
     <!--标题栏-->
 
@@ -73,7 +73,7 @@
                     <small>大学考试再也不怕挂科啦</small>
                 </h1>
             </div>
-            <div class="col-md-3 page-header-left">
+            <div class="col-md-3 page-header-left" id="loginAndRegister">
                 <button class="btn big-login" data-toggle="modal" href="javascript:void(0)"
                         onclick="openLoginModal();">
                     <strong>登陆</strong>
@@ -226,16 +226,14 @@
                                  <div class="line r"></div>
                              </div>
                              <div class="error"></div>-->
-                            <form role="form">
-                                <div class="loginBox">
-                                    <input id="telephone_login" class="form-control" type="text"
-                                           placeholder="手机号码" name="phone" autocomplete="username" >
-                                    <input id="password_login" class="form-control" type="password"
-                                           placeholder="密码" name="password" autocomplete="current-password">
-                                    <input class="btn btn-default btn-login" type="button" value="登陆"
-                                           onclick="loginAjax()">
-                                </div>
-                            </form>
+                            <div class="loginBox" role="form">
+                                <input id="telephone_login" class="form-control" type="text"
+                                       placeholder="手机号码" name="phone" autocomplete="username">
+                                <input id="password_login" class="form-control" type="password"
+                                       placeholder="密码" name="password" autocomplete="current-password">
+                                <input class="btn btn-default btn-login" type="button" value="登陆"
+                                       onclick="loginAjax()">
+                            </div>
                         </div>
                     </div>
                     <div class="box">
@@ -779,6 +777,5 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 </body>
 </html>
