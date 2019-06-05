@@ -1,4 +1,4 @@
-function showRegisterForm() {
+﻿function showRegisterForm() {
     $('.loginBox').fadeOut('fast', function () {
         $('.registerBox').fadeIn('fast');
         $('.login-footer').fadeOut('fast', function () {
@@ -77,6 +77,10 @@ function loginAjax() {
             $('#loginModal').modal('hide');
             //开始显示主页面
             showMain();
+            //首页显示帖子
+            showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
+            //获取私信列表的内容
+            setMessageBox();
             $("#loginAndRegister").addClass("hidden");
         }
         else {

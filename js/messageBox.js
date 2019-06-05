@@ -132,8 +132,17 @@ function showLetter(otherUserId) {
                         newElement3.innerHTML = str;
                         newElement2.append(newElement3);
                     }
-                    $("#letterInfo").append(newElement2);
+                    //回复框
+                    var replyNode = document.createElement('div');
+                    replyNode.innerHTML = "<label for=\"name\">回复</label>\n" +
+                        "                <textarea class=\"form-control replyContent \" rows=\"3\"></textarea>\n" +
+                        "                <button type=\"button\" class=\"btn btn-primary\"\n" +
+                        "                        data-toggle=\"button\" onclick=\"replyMessage(" + otherUserId + ")\"> 回复\n" +
+                        "                </button>";
 
+                    $("#letterInfo").append(newElement2);
+                    $("#letterInfo").append(replyNode);
+                    $("#postInfo").hide();
                     $("#postList").hide();
                     $("#myPost").hide();
                     $("#letterInfo").show();
@@ -142,7 +151,40 @@ function showLetter(otherUserId) {
 
         }
     });
+}
 
+function replyMessage(otherUserId) {
+    var content = $(".replyContent").val();
+    if(content == null){
+        alert("请输入回复内容");
+    }else{
+        var myData = {
+            token: $.cookie('qmkl_token'),
+            receiveUserId: otherUserId.toString(),
+            content: content
+        };
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://119.23.238.215:8080/qmkl1.0.0/web/letter/send",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(myData)
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            console.log($.cookie('qmkl_token'));
+            console.log(content);
+            if (response.code == 200){
+                alert("回复成功");
+                $(".replyContent").val("");
 
+            }
+        });
+    }
 
 }

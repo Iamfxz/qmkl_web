@@ -113,6 +113,7 @@ function showPostList(classify,page,num,sortMethod) {
                 }else if(response.data.post[i].classify == "7"){
                     bbsClassfy = "站务管理";
                 }
+                $("#jumpHere").innerText = bbsClassfy;
                 /*console.log(bbsClassfy);*/
                 var myPostId =response.data.post[i].postId;
                 var myModels=bbsClassfy;
