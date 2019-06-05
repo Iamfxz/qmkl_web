@@ -176,7 +176,9 @@ function replyPost() {
         $.ajax(settings).done(function (response) {
             console.log(response);
             if(response.code == 200){
-                alert("回复成功");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("回复成功");
+                $('#ourModal').modal('show');
                 $("#replyPostContent").val("");
                 showReplylist();
             }
@@ -219,11 +221,15 @@ function isaddLike() {
             }
             else
             {
-                alert("你已经点赞过了！");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("你已经点赞过了！");
+                $('#ourModal').modal('show');
             }
         }
         else {
-            alert("点赞失败，请先登录再查询"+$.cookie('qmkl_token')+$.cookie("postId"));
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点赞失败");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -256,7 +262,9 @@ function addlike() {
             $('#postLikeNum').text(num);
         }
         else {
-            alert("点赞失败，请先登录再点赞");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点赞失败，请先登录再点赞");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -293,11 +301,16 @@ function isadddisLike(){
             }
             else
             {
-                alert("你已经点灭过了！")
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("你已经点灭过了！");
+                $('#ourModal').modal('show');
+
             }
         }
         else {
-            alert("点灭失败，请先登录再查询");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点灭失败，请先登录再查询");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -331,7 +344,9 @@ function adddisLike() {
             $('#postDislikeNum').text(num);
         }
         else {
-            alert("点赞失败，请先登录再查询");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点赞失败，请先登录再查询");
+            $('#ourModal').modal('show');
         }
     });
 

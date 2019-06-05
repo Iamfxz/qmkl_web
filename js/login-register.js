@@ -69,7 +69,9 @@ function loginAjax() {
     };
     $.ajax(settings).done(function (response) {
         if(response.code === 200){
-            alert("登录成功");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("登录成功");
+            $('#ourModal').modal('show');
             var token = response.data;
             console.log("qmkl_token(cookie):"+token);
             //创建一个cookie并设置有效时间为 7天
@@ -82,7 +84,9 @@ function loginAjax() {
 
         }
         else {
-            alert("登录失败");;
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("失败");
+            $('#ourModal').modal('show')
             shakeModal();
         }
     });
@@ -197,43 +201,57 @@ function check() {
     /*检查密码不能为空*/
     var password = document.getElementById("password_register").value;
     if(password == null || password == ''){
-        alert("密码不能为空");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("密码不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查两次密码的一致性*/
     var password_confirmation = document.getElementById("password_confirmation").value;
     if(password != password_confirmation){
-        alert("两次输入的密码不一致，请重新输入");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("两次输入的密码不一致，请重新输入");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查昵称不能为空*/
     var nickname = document.getElementById("nickname").value;
     if(nickname == null || nickname == ''){
-        alert("用户名不能为空");
+       $("#ourModalContent").empty();
+        $("#ourModalContent").text("用户名不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查入学年份不能为空*/
     var enterYear = document.getElementById("enterYear").value;
     if(enterYear == null || enterYear == ''){
-        alert("入学年份不能为空");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("入学年份不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查性别不能为空*/
     var gender = document.getElementById("gender").value;
     if(gender == null || gender == ''){
-        alert("性别不能为空");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("性别不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查学校不能为空*/
     var college = document.getElementById("college").value;
     if(college == null || college == ''){
-        alert("学校不能为空");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("学校不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     /*检查学院不能为空*/
     var temp_academy = document.getElementById("academy").value;
     if(temp_academy == null || temp_academy == ''){
-        alert("学院不能为空");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("学院不能为空");
+        $('#ourModal').modal('show');
         return false;
     }
     return true;
@@ -269,9 +287,14 @@ function yzm() {
                 setTime();
                 // $("#yzm1").attr("onclick","null");
             }else if(response.msg == "手机号已注册"){
-                alert("手机号已注册");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("手机号已注册");
+                $('#ourModal').modal('show');
+
             }else{
-                alert("发送失败");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("发送失败");
+                $('#ourModal').modal('show');
             }
         });
     }
@@ -301,7 +324,9 @@ function isPhoneNum(){
     var phonenum = $("#telephone_register").val();
     var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     if(!reg.test(phonenum)){
-        alert('请输入有效的手机号码！');
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("请输入有效的手机号码！");
+        $('#ourModal').modal('show');
         return false;
     }else{
         return true;
@@ -382,9 +407,13 @@ function improveRegister() {
         $.ajax(settings).done(function (response) {
             console.log(response.code);
             if(response.code == 200){
-                alert("完善信息成功");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("完善信息成功");
+                $('#ourModal').modal('show');
             }else if (response.code == 200 && response.msg == "昵称已存在") {
-                alert("昵称已存在，请输入一个新的昵称");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("昵称已存在，请输入一个新的昵称");
+                $('#ourModal').modal('show');
             }
         });
     }

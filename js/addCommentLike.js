@@ -28,11 +28,15 @@ function isaddCommentLike(commentId) {
             }
             else
             {
-                alert("你已经点赞过了！");
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("你已经点赞过了！");
+                $('#ourModal').modal('show');
             }
         }
         else {
-            alert("点赞失败，请先登录再查询"+$.cookie('qmkl_token')+x);
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点赞失败");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -66,7 +70,9 @@ function addCommentLike(x) {
             $(name).text(num);
         }
         else {
-            alert("点赞失败，请先登录再点赞");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点赞失败");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -103,11 +109,15 @@ function isaddCommentDisLike(commentId){
             }
             else
             {
-                alert("你已经点灭过了！")
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("你已经点灭过了！");
+                $('#ourModal').modal('show');
             }
         }
         else {
-            alert("点灭失败，请先登录再查询");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点灭失败");
+            $('#ourModal').modal('show');
         }
     });
 
@@ -142,7 +152,9 @@ function addCommentDisLike(x) {
             $(name).text(num);
         }
         else {
-            alert("点赞失败，请先登录再查询");
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("点灭失败");
+            $('#ourModal').modal('show');
         }
     });
 

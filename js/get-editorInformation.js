@@ -22,7 +22,7 @@ function getInfo() {
     $("#myNickname").attr("disabled","disabled");
     $("#myCollege").attr("disabled","disabled");
     $("#myShool").attr("disabled","disabled");
-    $("#myAdminssiondate").attr("disabled","disabled");;
+    $("#myAdminssiondate").attr("disabled","disabled");
     $(".informationPart").show();
 
 }
@@ -33,9 +33,11 @@ function getInfo() {
 function infoAlter()
 {
     $("#myNickname").attr("disabled",false);
-    $("#mySex").attr("disabled",false);
-    $("#myAdminssiondate").attr("disabled",false);
+    $("#mySex").hide();
+    $("#myAdminssiondate").hide()
     $("#myShool").hide();
+    $("#mySexAlter").show();
+    $("#myAdminssiondateAlter").show();
     $("#mySchoolAlter").show();
     $("#myCollege").hide();
     $("#myCollegeAlter").show();
@@ -86,8 +88,11 @@ function MycollegeListAjax() {
 更新个人信息
  */
 function saveTd() {
-        if($("#mySchoolAlter").val()==null|| $("#myCollegeAlter").val()==null|| $("#myNickname").val()==null|| $("#mySex").val()==null|| $("#myAdminssiondate").val()==null){
-            alert("修改内容不能为空！！！");
+        if($("#mySchoolAlter").val()==null|| $("#myCollegeAlter").val()==null|| $("#myNickname").val()==null|| $("#mySexAlter").val().length==0|| $("#myAdminssiondateAlter").val().length==0){
+            $("#ourModalContent").empty();
+            $("#ourModalContent").text("修改内容不能为空！！！");
+            $('#ourModal').modal('show');
+
         }
         else
         {
@@ -95,8 +100,8 @@ function saveTd() {
                 token: $.cookie('qmkl_token'),
                 user:{
                     nickname:$("#myNickname").val(),
-                    gender:$("#mySex").val(),
-                    enterYear:$("#myAdminssiondate").val(),
+                    gender:$("#mySexAlter").val(),
+                    enterYear:$("#myAdminssiondateAlter").val(),
                     college:$("#mySchoolAlter").val(),
                     academy:$("#myCollegeAlter").val()
                 }
@@ -116,18 +121,24 @@ function saveTd() {
             $.ajax(settings).done(function (response) {
                 console.log(response);
                 if(response.code == 200){
-                    alert("修改成功！"+$("#mySchoolAlter").val()+$("#myCollegeAlter").val());
+                    $("#ourModalContent").empty();
+                    $("#ourModalContent").text("修改成功！");
+                    $('#ourModal').modal('show');
                     $(".modifyTd").css("background-color","rgba(249,249,249,0.6)");
                     $("#myCollegeAlter").hide();
                     $("#mySchoolAlter").hide();
+                    $("#myAdminssiondateAlter").hide();
+                    $("#mySexAlter").hide();
                     $.cookie("currentCollege", $("#mySchoolAlter").val());
                     $.cookie("userAcademy",$("#myCollegeAlter").val());
-                    $.cookie("userGender",$("#mySex").val());
+                    $.cookie("userGender",$("#mySexAlter").val());
                     $.cookie("userNickname",$("#myNickname").val());
-                    $.cookie("userEnterYear",$("#myAdminssiondate").val());
+                    $.cookie("userEnterYear",$("#myAdminssiondateAlter").val());
                     getInfo();
                     $("#myCollege").show();
                     $("#myShool").show();
+                    $("#myAdminssiondate").show();
+                    $("#mySex").show();
                 }
             });
         }

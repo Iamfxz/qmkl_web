@@ -1,5 +1,8 @@
+var myMarkdown;
+
 $(function() {
-    editormd("my-editormd", { //注意1：这里的就是上面的DIV的id属性值
+
+     myMarkdown=editormd("my-editormd", { //注意1：这里的就是上面的DIV的id属性值
         width: "95%",
         height: 540,
         syncScrolling: "single",
@@ -16,4 +19,7 @@ $(function() {
 
 });
 
+function clean_markdown() {
+    myMarkdown.clear();
+}
 

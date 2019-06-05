@@ -708,8 +708,12 @@
                         <td>性别：</td>
                         <td class="">
                             <label>
-                                <input id="mySex" class="myInformation modifyTd" type="text">
+                                <input id="mySex" class="myInformation modifyTd " type="text">
                             </label>
+                            <select id="mySexAlter">
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -758,6 +762,14 @@
                             <label>
                                 <input id="myAdminssiondate" class="myInformation modifyTd" type="text">
                             </label>
+                                <select id="myAdminssiondateAlter" >
+                                    <option value="" style="display: none;" disabled selected>入学年份</option>
+                                    <option>2018</option>
+                                    <option>2017</option>
+                                    <option>2016</option>
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                </select>
                         </td>
                     </tr>
                 </table>
@@ -842,6 +854,36 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<!-- 提示模态框（Modal） -->
+<div class="modal fade" id="ourModal" tabindex="-1" role="dialog" aria-labelledby="ourModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <img style="margin: 0 0 46px 0;" src="img/icon/Icon-87.png"
+                     alt="期末考啦logo">
+            </div>
+            <div class="modal-body" id="ourModalContent">
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+
+
+
+
 
 </body>
 </html>

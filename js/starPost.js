@@ -1,7 +1,9 @@
 function starPost() {
 
     if($("#my-title").val().length==0||$(".editormd-markdown-textarea").val().length==0){
-        alert("请先选着分区号，然后在填写帖子内容。帖子标题和帖子内容不能为空！！！");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("请先选着分区号，然后在填写帖子内容。帖子标题和帖子内容不能为空！！！");
+        $('#ourModal').modal('show');
     }
     else
     {
@@ -26,14 +28,24 @@ function starPost() {
         $.ajax(settings).done(function (response) {
 
             if(response.code == 200){
-                alert("成功");
+                $("#my-title").val("");
+
+                $("#ourModalContent").empty();
+                clean_markdown();
+                $("#ourModalContent").text("发帖成功");
+                $('#ourModal').modal('show');
+
+
+
             }
             else {
-                alert("发送失败，请先登录然后输入帖子内容");;
-                shakeModal();
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("发送失败，请先登录然后输入帖子内容");
+                $('#ourModal').modal('show');
+
 
             }
         });
-        alert("你的贴子题目是："+$("#my-title").val()+"内容是："+$(".editormd-markdown-textarea").val());
+
     }
 }
