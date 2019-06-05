@@ -79,7 +79,10 @@ function loginAjax() {
             $('#loginModal').modal('hide');
             //开始显示主页面
             showMain();
-
+            //首页显示帖子
+            showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
+            //获取私信列表的内容
+            setMessageBox();
         }
         else {
             alert("登录失败");;
