@@ -1,15 +1,13 @@
 function starPost() {
-
-    if($("#my-title").val().length==0||$(".editormd-markdown-textarea").val().length==0){
+    if ($("#my-title").val().length == 0 || $(".editormd-markdown-textarea").val().length == 0) {
         alert("请先选着分区号，然后在填写帖子内容。帖子标题和帖子内容不能为空！！！");
     }
-    else
-    {
+    else {
         var myData = {
             token: $.cookie('qmkl_token'),
-            classify:$("#modulePart").val(),
-            title:$("#my-title").val(),
-            content:$(".editormd-markdown-textarea").val()
+            classify: $("#modulePart").val(),
+            title: $("#my-title").val(),
+            content: $(".editormd-markdown-textarea").val()
         };
         var settings = {
             "async": true,
@@ -25,15 +23,16 @@ function starPost() {
         };
         $.ajax(settings).done(function (response) {
 
-            if(response.code == 200){
+            if (response.code == 200) {
                 alert("成功");
             }
             else {
-                alert("发送失败，请先登录然后输入帖子内容");;
+                alert("发送失败，请先登录然后输入帖子内容");
+                ;
                 shakeModal();
 
             }
         });
-        alert("你的贴子题目是："+$("#my-title").val()+"内容是："+$(".editormd-markdown-textarea").val());
+        alert("你的贴子题目是：" + $("#my-title").val() + "内容是：" + $(".editormd-markdown-textarea").val());
     }
 }

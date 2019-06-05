@@ -11,7 +11,7 @@ $(document).ready(
             path: "tools/editor-master/lib/",
             imageUpload: true,//图片上传功能
             imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            imageUploadURL: "../article/uploadImage",
+            imageUploadURL: "img/uploadImg",
             /* theme: "dark",//工具栏主题
             previewTheme: "dark",//预览主题
             editorTheme: "pastel-on-dark",//编辑主题  */

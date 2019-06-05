@@ -18,24 +18,40 @@ $(document).ready(
 function isLogin() {
     var token = $.cookie('qmkl_token');
     if(token == null){
-        zzzconsole.log("还没登录");
+        console.log("还没登录");
     }else{
-        /*$(".page-header-left").remove();
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute("class","col-md-3 page-header-left");
-
-        var infoButton = document.createElement('button');
-        infoButton.setAttribute("type","button");
-        infoButton.setAttribute("class","btn btn-default btn-lg");
-        infoButton.innerHTML = "<span class=\"glyphicon glyphicon-user\"></span> 用户中心";
-        newDiv.append(infoButton);
-        var logOutButton = document.createElement('button');
-        logOutButton.setAttribute("type","button");
-        logOutButton.setAttribute("class","btn btn-default btn-lg");
-        logOutButton.innerHTML = "<span class=\"glyphicon glyphicon-log-out\"></span> 退出";
-        newDiv.append(logOutButton);
-        $(".container .page-header .row").append(newDiv);*/
-        //console.log("登录，token为" + token);
+        var myData = {
+            token:$.cookie("qmkl_token")
+        }
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://119.23.238.215:8080/qmkl1.0.0/user/login",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(myData)
+        };
+        $.ajax(settings).done(function (response) {
+            if(response.code === 200){
+                var token = response.data;
+                console.log("qmkl_token(cookie):"+token);
+                //创建一个cookie并设置有效时间为 7天
+                $.cookie('qmkl_token',token,{ expires: 7 });
+                //获取用户信息
+                userInfoAjax(token);
+                //开始显示主页面
+                showMain();
+                $("#loginAndRegister").addClass("hidden");
+                return true;
+            }else {
+                $("#loginAndRegister").removeClass("hidden");
+            }
+            return false;
+        });
     }
 
 }

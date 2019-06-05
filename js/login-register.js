@@ -52,8 +52,6 @@ function loginAjax() {
     var myData = {
         username: $('#telephone_login').val(),
         password: hex_sha1($('#password_login').val())
-        /*这边密码后端还没有给他转换成为哈希算法的值 所以先只要传入密码*/
-        /*password: $('#password_login').val()*/
     };
     var settings = {
         "async": true,
@@ -79,11 +77,12 @@ function loginAjax() {
             $('#loginModal').modal('hide');
             //开始显示主页面
             showMain();
-
+            $("#loginAndRegister").addClass("hidden");
         }
         else {
             alert("登录失败");;
             shakeModal();
+            $("#loginAndRegister").removeClass("hidden");
         }
     });
 
