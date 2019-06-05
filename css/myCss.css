@@ -104,8 +104,10 @@
     float: left;
 }
 #modulePart{
-    margin: 10px;
-    float: left;
+    font-size:18px;
+    font-family: inherit;
+    margin-top: 10px;
+    padding:10px;
 }
 
 .footer
@@ -122,6 +124,11 @@
     margin-right: 100px;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
 }
+#myPhone,#myCollege,#myShool{
+    font-weight: normal;
+}
+
+
 #myCollegeAlter{
     display: none;
     font-weight: normal;
@@ -142,8 +149,17 @@
 #postTitle{
     width: 120%;
 }
+#postInfoportrait{
+    width: 8%;
+}
+#replyPostList{
 
+    display: none;
+}
 
-postInfoLi{
-    left: 0px;
+#preReplyPageNode{
+    float: left;
+}
+#nextReplyPageNode{
+    float: right;
 }

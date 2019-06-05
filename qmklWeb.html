@@ -41,6 +41,8 @@
     <script src="js/starPost.js" type="text/javascript"></script>
     <script src="js/get-editorInformation.js" type="text/javascript"></script>
     <script src="js/showPost.js" type="text/javascript"></script>
+    <script src="js/reply.js" type="text/javascript"></script>
+    <script src="js/addCommentLike.js" type="text/javascript"></script>
 
     <script src="tools/editor-master/lib/marked.min.js"></script>
     <script src="tools/editor-master/lib/prettify.min.js"></script>
@@ -90,11 +92,11 @@
             <li id="officialWeb">
                 <a href="#">主页</a>
             </li>
-            <li id="resource" class="active">
+            <li id="resource" >
                 <a href="#">资源</a>
             </li>
-            <li id="chat">
-                <a href="#">趣聊</a>
+            <li id="chat" class="active">
+                <a href="#" onclick="switchBlock(-1)">趣聊</a>
             </li>
             <li id="information">
                 <a href="#" onclick="getInfo()">个人</a>
@@ -129,7 +131,7 @@
         </div>
     </div>
     <!--资源列表页面内容-->
-    <div class="resourcePart">
+    <div class="resourcePart hidden">
         <!--路径导航-->
         <ul class="breadcrumb" id="pathNavigation">
             <li>
@@ -400,7 +402,7 @@
     </div>
 
     <!--趣聊页面-->
-    <div class="chatPart container-fluid hidden" style="margin-top: 5px;">
+    <div class="chatPart container-fluid" style="margin-top: 5px;">
         <!--论坛左边板块分类begin-->
         <div class="col-md-2 list-group leftPart">
             <a href="#" onclick="switchBlock(-1)"
@@ -487,16 +489,59 @@
         <!--论坛右边区域end-->
 
         <!--论坛右边区域更改为帖子详情star-->
-        <div id="postInfo" class="col-md-9 rightPart " style="padding-left: 0; padding-right: 0;">
+        <div id="postInfo" class="col-md-9" style="padding-left: 0; padding-right: 0;">
             <div id="postInfoLi" class="list-group-item my-list-group-item active">
-                <span id="postLikeNum" class="badge badge-info author"></span>
-                <span id="postDislikeNum" class="badge badge-info author"></span>
+                <div class="Picnick">
+                    <img src="img/favicon.ico" class="img-thumbnail" id="postInfoportrait" alt="">
+                    <span id="postInfoNickname" class="badge badge-info author"></span>
+                </div>
+
+                <span class="badge badge-info author">
+                    <span class="glyphicon glyphicon-thumbs-down" onclick="isadddisLike()"></span>
+                    <span id="postDislikeNum" class="badge badge-info author"></span>
+
+
+
+                </span>
+                <span class="badge badge-info author">
+                    <span class="glyphicon glyphicon-thumbs-up" onclick="isaddLike()"></span>
+                    <span id="postLikeNum" class="badge badge-info author"></span>
+                </span>
+
+
+
+
                 <span id="postCommentNum" class="badge badge-info author"></span>
                 <span id="postInfoTime" class="badge badge-info post-time"></span>
                 <p id="postInfoTitle"></p>
             </div>
             <div id="test-editormd-view">
             </div>
+            <br>
+            <div id="replyPostList" >
+
+
+            </div>
+            <div class="list-group-item my-list-group-item active ">
+                    <ul class="pager">
+                        <li class="disabled" id="preReplyPageNode"><a href="#" onclick="postBackContent()">上一页</a></li>
+                        <span id="showReplyMessage"></span>
+                        <li id="nextReplyPageNode"><a href="#" onclick="postNextContent()">下一页 </a></li>
+                    </ul>
+            </div>
+
+
+            <br><br><br><br><br>
+            <div id="myreplypost" class="form-group">
+                <div class="picnick">
+                    <img src="img/favicon.ico" class="img-thumbnail" id="portrait_2" alt="">
+                    <span id="infoNickname_2"></span>
+                </div>
+                <textarea id="replyPostContent" class="form-control" rows="3"></textarea>
+                <button type="submit" class="btn-lg btn-primary post-submit" onclick="replyPost()">回复</button>
+            </div>
+
+
         </div>
 
         <!--帖子详情模块-->
@@ -557,44 +602,7 @@
             <!--在这里加入markdown Editor-->
         </div>
         <!--火速发帖部分-->
-        <div  id="mypost" class="bbs-post chatPart hidden">
-            <div class="post-head text-center">
-                <h1>火速发帖</h1>
-            </div>
-            <div class="post_Form">
-                <!--发文章-->
 
-                <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
-                <label for="modulePart">
-                    <select id="modulePart">
-                        <option value="1" style="display: none;" disabled selected>全部模块</option>
-                        <option value="2">日常吐槽</option>
-                        <option value="3">生活趣事</option>
-                        <option value="4">学习分享</option>
-                        <option value="5">游戏娱乐</option>
-                        <option value="6">运动生活</option>
-                        <option value="7">站务管理</option>
-                    </select>
-                </label>
-                <br/><br/>
-                <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title"
-                       placeholder="请输入文章标题">
-                <br/>
-                <br/><br/>
-                <div id="my-editormd"> <!--文章内容-->
-                    <!-- 书写与实时显示的textarea -->
-                    <label>
-                        <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
-                    </label>
-                    <label>
-                        <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
-                        <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
-                    </label>
-                </div>
-
-
-            </div>
-        </div>
 
 
 
@@ -638,7 +646,46 @@
             </div>
         </div>
     </div>
+    <div  id="myPost" class="bbs-post chatPart ">
+        <div class="post-head text-center">
+            <h1>火速发帖</h1>
+        </div>
+        <div class="post_Form">
+            <!--发文章-->
 
+            <button type="submit" class="btn-lg btn-primary post-submit" onclick="starPost()">发表</button>
+            <div class="col-md-2">
+                <label for="modulePart">
+                    <select id="modulePart" class="">
+                        <option value="1" ` disabled selected>全部模块</option>
+                        <option value="2">日常吐槽</option>
+                        <option value="3">生活趣事</option>
+                        <option value="4">学习分享</option>
+                        <option value="5">游戏娱乐</option>
+                        <option value="6">运动生活</option>
+                        <option value="7">站务管理</option>
+                    </select>
+                </label>
+            </div>
+            <br/><br/>
+            <input type="text" name="title" size="100" class="form-control post_Form" title="请输入文章标题" id="my-title"
+                   placeholder="请输入文章标题">
+            <br/>
+            <br/><br/>
+            <div id="my-editormd"> <!--文章内容-->
+                <!-- 书写与实时显示的textarea -->
+                <label>
+                    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
+                </label>
+                <label>
+                    <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
+                    <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
+                </label>
+            </div>
+
+
+        </div>
+    </div>
 
     <!--个人信息页面-->
     <div class="informationPart">

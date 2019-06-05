@@ -137,6 +137,7 @@ function userInfoAjax(token) {
             $.cookie("userAcademy",response.data["academy"]);
             //用户id，用于修改头像
             $.cookie("userID",response.data["id"]);
+            $.cookie("userAvatar",response.data["avatar"]);
         }
     });
 }

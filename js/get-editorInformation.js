@@ -4,7 +4,9 @@
  */
 
 function getInfo() {
+    var userImg="http://119.23.238.215:8080/qmkl1.0.0/user/download/avatar/"+$.cookie("userAvatar");
     $("#infoNickname").text($.cookie("userNickname"));
+
     $("#myNickname").val($.cookie("userNickname"));
     $("#mySex").val($.cookie("userGender"));
     $("#myPhone").val($.cookie("userPhone"));
@@ -12,6 +14,8 @@ function getInfo() {
     $("#myUserId").val($.cookie("userID"));
     $("#myShool").val($.cookie("currentCollege"));
     $("#myAdminssiondate").val($.cookie("userEnterYear"));
+    $("#portrait").attr("src",userImg);
+
 
     $("#myPhone").attr("disabled","disabled");
     $("#mySex").attr("disabled","disabled");
