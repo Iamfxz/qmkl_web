@@ -8,11 +8,10 @@ $(document).ready(
 
         //首页显示帖子
         showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
+        //获取私信列表的内容
         setMessageBox();
 }
 );
-
-
 
 //判断是否已经登录 显示或者隐藏登录注册按钮 以及个人中心和退出按钮
 function isLogin() {

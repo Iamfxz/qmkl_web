@@ -42,3 +42,16 @@ function postNextPage() {
         showPostList(postClassify.toString(),postCurrentPage.toString(),listPerPage.toString(),timeOrHeat.toString());
     }
 }
+
+/*
+* 监听输入跳转到第几页的回车键
+* */
+function monitorEnter() {
+    var focus = document.getElementById("currentPage");
+    focus.onkeypress=function(event){
+        if(event.which === 13) {
+            //点击回车要执行的事件
+            jumpPage();
+        }
+    }
+}
