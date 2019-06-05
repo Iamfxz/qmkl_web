@@ -8,7 +8,9 @@ $(document).ready(
 
         //首页显示帖子
         showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
-    }
+        //获取私信列表的内容
+        setMessageBox();
+}
 );
 
 //判断是否已经登录 显示或者隐藏登录注册按钮 以及个人中心和退出按钮
@@ -17,28 +19,44 @@ function isLogin() {
     if(token == null){
         console.log("还没登录");
     }else{
-        /*$(".page-header-left").remove();
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute("class","col-md-3 page-header-left");
-
-        var infoButton = document.createElement('button');
-        infoButton.setAttribute("type","button");
-        infoButton.setAttribute("class","btn btn-default btn-lg");
-        infoButton.innerHTML = "<span class=\"glyphicon glyphicon-user\"></span> 用户中心";
-        newDiv.append(infoButton);
-        var logOutButton = document.createElement('button');
-        logOutButton.setAttribute("type","button");
-        logOutButton.setAttribute("class","btn btn-default btn-lg");
-        logOutButton.innerHTML = "<span class=\"glyphicon glyphicon-log-out\"></span> 退出";
-        newDiv.append(logOutButton);
-        $(".container .page-header .row").append(newDiv);*/
-        console.log("登录，token为" + token);
+        var myData = {
+            token:$.cookie("qmkl_token")
+        }
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://119.23.238.215:8080/qmkl1.0.0/user/login",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(myData)
+        };
+        $.ajax(settings).done(function (response) {
+            if(response.code === 200){
+                var token = response.data;
+                console.log("qmkl_token(cookie):"+token);
+                //创建一个cookie并设置有效时间为 7天
+                $.cookie('qmkl_token',token,{ expires: 7 });
+                //获取用户信息
+                userInfoAjax(token);
+                //开始显示主页面
+                showMain();
+                $("#loginAndRegister").addClass("hidden");
+                return true;
+            }else {
+                $("#loginAndRegister").removeClass("hidden");
+            }
+            return false;
+        });
     }
 
 }
 
 //设置每页显示的帖子数
-var listPerPage = 7;
+var listPerPage = 15;
 //保存帖子能显示的最多页数
 var maxPage = 0;
 //保存当前在第几个分区
@@ -69,12 +87,10 @@ function showPostList(classify,page,num,sortMethod) {
     $.ajax(settings).done(function (response) {
         /*console.log(response.code);*/
         if(response.code=="200"){
-
-            console.log(response.data);
-
+            //console.log(response.data);
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
-
+            $("#letterInfo").hide();
             /*console.log(response.data.post.length);*/
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
@@ -97,6 +113,7 @@ function showPostList(classify,page,num,sortMethod) {
                 }else if(response.data.post[i].classify == "7"){
                     bbsClassfy = "站务管理";
                 }
+                $("#jumpHere").innerText = bbsClassfy;
                 /*console.log(bbsClassfy);*/
                 var myPostId =response.data.post[i].postId;
                 var myModels=bbsClassfy;
@@ -107,8 +124,8 @@ function showPostList(classify,page,num,sortMethod) {
                 newElement.innerHTML = htmlstr;
                 $(".bbs-ul").append(newElement);
             }
-            document.getElementById('showPageMessage').innerText = "当前第 " + postCurrentPage + " 页/ 总:"
-                + maxPage + " 页";
+            document.getElementById('currentPage').innerText = postCurrentPage;
+            document.getElementById('maxPage').innerText = maxPage;
             //如果点了下一页后的当前页是最后一页 那么他的按钮将不能点击 反之相反
             if(postCurrentPage >= maxPage){
                 $("#nextPageNode").attr("class","next disabled");
@@ -501,3 +518,30 @@ function pagination() {
     });
 }
 
+function jumpPage() {
+    var targetPage = document.getElementById("currentPage").innerHTML;
+    var sumPage = document.getElementById('maxPage').innerHTML;
+    if(parseInt(targetPage)>parseInt(sumPage)){
+        alert("您输入的页数大于最大页数，请重新输入！");
+    }else if(parseInt(targetPage)<1){
+        alert("您输入的页数错误，请重新输入！");
+    }else{
+        $(".bbs-ul").empty();
+
+        //将当前页数+1
+        postCurrentPage = parseInt(targetPage);
+
+        //重新获取第二页的帖子
+        showPostList(postClassify.toString(),postCurrentPage.toString(),listPerPage.toString(),timeOrHeat.toString());
+    }
+}
+
+function changeUpOrDown() {
+  /*  var eleSpan = $("#upOrDown");*/
+    var eleSpan = document.getElementById("upOrDown");
+    var attr = eleSpan.getAttribute("class");
+    if(attr == "glyphicon glyphicon-chevron-down")
+        eleSpan.setAttribute("class","glyphicon glyphicon-chevron-up")
+    else
+        eleSpan.setAttribute("class","glyphicon glyphicon-chevron-down")
+}

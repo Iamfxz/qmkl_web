@@ -1,17 +1,18 @@
 function starPost() {
-
-    if($("#my-title").val().length==0||$(".editormd-markdown-textarea").val().length==0){
+    if($("#my-title").val().length==0||$(".editormd-markdown-textarea").val().length==0) {
         $("#ourModalContent").empty();
         $("#ourModalContent").text("请先选着分区号，然后在填写帖子内容。帖子标题和帖子内容不能为空！！！");
         $('#ourModal').modal('show');
     }
-    else
-    {
+    if ($("#my-title").val().length == 0 || $(".editormd-markdown-textarea").val().length == 0) {
+        alert("请先选着分区号，然后在填写帖子内容。帖子标题和帖子内容不能为空！！！");
+    }
+    else {
         var myData = {
             token: $.cookie('qmkl_token'),
-            classify:$("#modulePart").val(),
-            title:$("#my-title").val(),
-            content:$(".editormd-markdown-textarea").val()
+            classify: $("#modulePart").val(),
+            title: $("#my-title").val(),
+            content: $(".editormd-markdown-textarea").val()
         };
         var settings = {
             "async": true,
@@ -31,9 +32,10 @@ function starPost() {
                 $("#my-title").val("");
 
                 $("#ourModalContent").empty();
-                clean_markdown();
                 $("#ourModalContent").text("发帖成功");
+                clean_markdown();
                 $('#ourModal').modal('show');
+
 
 
 
@@ -47,5 +49,19 @@ function starPost() {
             }
         });
 
-    }
+            if (response.code == 200) {
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("发送成功");
+                $('#ourModal').modal('show');
+
+            }
+            else {
+                $("#ourModalContent").empty();
+                $("#ourModalContent").text("发送失败");
+                $('#ourModal').modal('show');
+                shakeModal();
+
+            }
+        }
+
 }

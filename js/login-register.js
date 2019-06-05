@@ -1,4 +1,4 @@
-function showRegisterForm() {
+﻿function showRegisterForm() {
     $('.loginBox').fadeOut('fast', function () {
         $('.registerBox').fadeIn('fast');
         $('.login-footer').fadeOut('fast', function () {
@@ -52,8 +52,6 @@ function loginAjax() {
     var myData = {
         username: $('#telephone_login').val(),
         password: hex_sha1($('#password_login').val())
-        /*这边密码后端还没有给他转换成为哈希算法的值 所以先只要传入密码*/
-        /*password: $('#password_login').val()*/
     };
     var settings = {
         "async": true,
@@ -81,13 +79,18 @@ function loginAjax() {
             $('#loginModal').modal('hide');
             //开始显示主页面
             showMain();
-
+            //首页显示帖子
+            showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
+            //获取私信列表的内容
+            setMessageBox();
+            $("#loginAndRegister").addClass("hidden");
         }
         else {
             $("#ourModalContent").empty();
             $("#ourModalContent").text("失败");
             $('#ourModal').modal('show')
             shakeModal();
+            $("#loginAndRegister").removeClass("hidden");
         }
     });
 

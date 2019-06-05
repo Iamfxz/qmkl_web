@@ -96,6 +96,7 @@
     border-radius:5px;
     margin-top: 25px;
     margin-right: 20px;
+    padding: 20px;
     box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;
 }
 
@@ -142,6 +143,10 @@
     display: none;
 }
 
+#letterInfo{
+    display: none;
+}
+
 #postTitle{
     width: 120%;
 }
@@ -152,9 +157,12 @@
 
     display: none;
 }
-
-#preReplyPageNode{
+#preReplyPageNode {
     float: left;
+}
+
+#postInfoLi {
+    left: 0px;
 }
 #nextReplyPageNode{
     float: right;
