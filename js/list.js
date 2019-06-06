@@ -156,8 +156,10 @@ function showMain() {
     //设置路径导航中的学校名字
     $("#school").text($.cookie("currentCollege"));
     if ($.cookie("currentCollege") === "其他学校") {
-        alert("目前还没有零散的其他学校的文件，如果您希望自己所在的学校也加入我们期末考啦共享资料库中，" +
-            "欢迎上传资料，并留下您学校的名字，更多合作请联系qq:347647804");
+        $("#ourModalContent").empty();
+        $("#ourModalContent").text("目前还没有零散的其他学校的文件，如果您希望自己所在的学校也加入我们期末考啦共享资料库中，\" +\n" +
+            "            \"欢迎上传资料，并留下您学校的名字，更多合作请联系qq:347647804");
+        $('#ourModal').modal('show');
     }
     //设置当前路径
     $.cookie('currentPath', '/');
