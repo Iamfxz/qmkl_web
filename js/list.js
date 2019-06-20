@@ -61,6 +61,8 @@ var listPerPage = 15;
 var maxPage = 0;
 //保存当前在第几个分区
 var postClassify = -1;
+//今日发表
+var todayPost = 0;
 
 
 //首页显示帖子
@@ -87,11 +89,14 @@ function showPostList(classify,page,num,sortMethod) {
     $.ajax(settings).done(function (response) {
         /*console.log(response.code);*/
         if(response.code=="200"){
-            //console.log(response.data);
+            console.log(response.data);
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
             $("#letterInfo").hide();
             /*console.log(response.data.post.length);*/
+            getTodayPost(classify);
+            document.getElementById("todayPost").innerHTML = "今日：" + todayPost;
+            document.getElementById("sumPost").innerText = "总版：" + response.data.sumPost;
             for(var i = 0 ;i<response.data.post.length;i++){
                 var newElement = document.createElement('li');
                 var jsName = "showPost(" + response.data.post[i].postId.toString() + ")";
@@ -113,8 +118,8 @@ function showPostList(classify,page,num,sortMethod) {
                 }else if(response.data.post[i].classify == "7"){
                     bbsClassfy = "站务管理";
                 }
-                $("#jumpHere").innerText = bbsClassfy;
-                /*console.log(bbsClassfy);*/
+                document.getElementById("jumpHere").innerHTML = bbsClassfy;
+
                 var myPostId =response.data.post[i].postId;
                 var myModels=bbsClassfy;
                 var htmlstr = "<span class=\"badge badge-info author\">" + response.data.post[i].nickName + "</span>\n" +
@@ -142,6 +147,35 @@ function showPostList(classify,page,num,sortMethod) {
     });
 }
 
+
+//返回模块下今天发帖人数
+function getTodayPost(classifyi) {
+    var myData = {
+        token: $.cookie('qmkl_token'),
+        classify:classifyi
+    };
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://119.23.238.215:8080/qmkl1.0.0/web/post/today/sum",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(myData)
+    };
+
+    $.ajax(settings).done(function (response) {
+        if(response.code=="200"){
+           todayPost = response.data;
+        }else{
+            todayPost = 0;
+        }
+
+    });
+}
 
 //显示主列表，并初始化分页栏
 function showMain() {
