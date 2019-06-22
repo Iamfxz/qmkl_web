@@ -35,10 +35,7 @@ function starPost() {
                 $("#ourModalContent").text("发帖成功");
                 clean_markdown();
                 $('#ourModal').modal('show');
-
-
-
-
+                switchBlock(-1);
             }
             else {
                 $("#ourModalContent").empty();

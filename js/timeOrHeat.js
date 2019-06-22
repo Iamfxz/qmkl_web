@@ -2,8 +2,8 @@
 * 本文档实现用户点击按时间或热度排序按钮
 * */
 
-//默认是用热度排序
-var timeOrHeat = "heat";
+//默认改为时间排序
+var timeOrHeat = "time";
 
 //按时间排序
 function sortByTime() {

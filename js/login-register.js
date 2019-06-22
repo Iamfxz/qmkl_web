@@ -84,6 +84,7 @@ function loginAjax() {
             //获取私信列表的内容
             setMessageBox();
             $("#loginAndRegister").addClass("hidden");
+            $("#exit").removeClass("hidden");
         }
         else {
             $("#ourModalContent").empty();
@@ -91,6 +92,7 @@ function loginAjax() {
             $('#ourModal').modal('show')
             shakeModal();
             $("#loginAndRegister").removeClass("hidden");
+            $("#exit").addClass("hidden")
         }
     });
 
@@ -420,4 +422,26 @@ function improveRegister() {
             }
         });
     }
+}
+
+function exit() {
+    $.removeCookie("qmkl_token");
+    window.location.reload();
+    $("#exit").addClass("hidden");
+
+    //删除个人信息
+    //学校，不可改
+    $.removeCookie("currentCollege");
+    //手机号，不可改
+    $.removeCookie("userPhone");
+    //性别，入学年龄，昵称（可修改）
+    $.removeCookie("userGender");
+
+    $.removeCookie("userEnterYear");
+    $.removeCookie("userNickname");
+    //学院
+    $.removeCookie("userAcademy");
+    //用户id，用于修改头像
+    $.removeCookie("userID");
+    $.removeCookie("userAvatar");
 }

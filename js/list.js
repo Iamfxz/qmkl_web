@@ -1,15 +1,9 @@
 //第一次打开页面加载主列表
 $(document).ready(
     function first() {
-        isLogin();//判断是否已经登录
-        showMain();
+        isLogin();//判断是否已经登录,并加载资源，趣聊，个人，私信页面
         //路径导航中设置默认学校（用户所在的学校）
         $("#school").text($.cookie("currentCollege"));
-
-        //首页显示帖子
-        showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
-        //获取私信列表的内容
-        setMessageBox();
 }
 );
 
@@ -17,7 +11,8 @@ $(document).ready(
 function isLogin() {
     var token = $.cookie('qmkl_token');
     if(token == null){
-        console.log("还没登录");
+        //console.log("token未空，还未登陆");
+        $("#loginAndRegister").removeClass("hidden");
     }else{
         var myData = {
             token:$.cookie("qmkl_token")
@@ -37,17 +32,23 @@ function isLogin() {
         $.ajax(settings).done(function (response) {
             if(response.code === 200){
                 var token = response.data;
-                console.log("qmkl_token(cookie):"+token);
+                //console.log("qmkl_token(cookie):"+token);
                 //创建一个cookie并设置有效时间为 7天
                 $.cookie('qmkl_token',token,{ expires: 7 });
                 //获取用户信息
                 userInfoAjax(token);
                 //开始显示主页面
                 showMain();
+                //加载趣聊页面
+                showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
+                //获取私信列表的内容
+                setMessageBox();
                 $("#loginAndRegister").addClass("hidden");
+                $("#exit").removeClass("hidden");
                 return true;
             }else {
                 $("#loginAndRegister").removeClass("hidden");
+                $("#exit").addClass("hidden");
             }
             return false;
         });
@@ -89,7 +90,7 @@ function showPostList(classify,page,num,sortMethod) {
     $.ajax(settings).done(function (response) {
         /*console.log(response.code);*/
         if(response.code=="200"){
-            console.log(response.data);
+            //console.log(response.data);
             //帖子最多能显示的页数
             maxPage = Math.ceil((response.data.sumPost/listPerPage));
             $("#letterInfo").hide();
@@ -291,7 +292,7 @@ function list_item_click(id, requestMethod) {
         //存储当前路径
         $.cookie('currentPath', currentPath);
     }
-    console.log("currentPath:" + currentPath);
+    //console.log("currentPath:" + currentPath);
     //修改路径导航
     if (requestMethod === 2 || requestMethod === 3) {
         pathNavigation.empty();
@@ -334,9 +335,9 @@ function list_item_click(id, requestMethod) {
         "processData": false,
         "data": JSON.stringify(myData)
     };
-    console.log(requestFile);
+    //console.log(requestFile);
     $.ajax(settings).done(function (response) {
-        console.log(response.data);
+        //console.log(response.data);
         for (var i in response.data) {
             var newElement = $("<div class=\"list-group-item\">\n" +
                 "            <h4 class=\"list-group-item-heading\">\n" +
@@ -372,7 +373,7 @@ function pathNavigationFolderClick(id) {
         $it = $it.prev();
     }
     $.cookie("currentPath", currentPath);
-    console.log("路径导航：" + currentPath);
+    //console.log("路径导航：" + currentPath);
     list_item_click(id, 2)
 }
 
@@ -423,7 +424,7 @@ function fileDetailAjax(requestFile) {
         "data": JSON.stringify(myData)
     };
     $.ajax(settings).done(function (response) {
-        console.log("文件详细信息：" + response);
+        //console.log("文件详细信息：" + response);
         $("#fileSize").text(response.data["size"]);
         $("#fileCreateAt").text(response.data["createAt"]);
         $("#fileNick").text(response.data["nick"]);
