@@ -71,20 +71,15 @@ function loginAjax() {
             $("#ourModalContent").text("登录成功");
             $('#ourModal').modal('show');
             var token = response.data;
-            console.log("qmkl_token(cookie):"+token);
+            //console.log("qmkl_token(cookie):"+token);
             //创建一个cookie并设置有效时间为 7天
             $.cookie('qmkl_token',token,{ expires: 7 });
             //获取用户信息
             userInfoAjax(token);
-            $('#loginModal').modal('hide');
-            //开始显示主页面
-            showMain();
-            //首页显示帖子
-            showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
-            //获取私信列表的内容
-            setMessageBox();
             $("#loginAndRegister").addClass("hidden");
             $("#exit").removeClass("hidden");
+            $('#loginModal').modal('hide');
+            window.location.reload();
         }
         else {
             $("#ourModalContent").empty();
@@ -147,6 +142,8 @@ function userInfoAjax(token) {
             //用户id，用于修改头像
             $.cookie("userID",response.data["id"]);
             $.cookie("userAvatar",response.data["avatar"]);
+            //开始显示主页面
+            showMain();
         }
     });
 }

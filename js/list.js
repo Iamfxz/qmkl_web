@@ -35,10 +35,8 @@ function isLogin() {
                 //console.log("qmkl_token(cookie):"+token);
                 //创建一个cookie并设置有效时间为 7天
                 $.cookie('qmkl_token',token,{ expires: 7 });
-                //获取用户信息
+                //获取用户信息,学校等，并加载文件资源页面
                 userInfoAjax(token);
-                //开始显示主页面
-                showMain();
                 //加载趣聊页面
                 showPostList("-1","1",listPerPage.toString(),timeOrHeat.toString());
                 //获取私信列表的内容
