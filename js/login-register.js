@@ -287,6 +287,8 @@ function yzm() {
                 $('#myModal').modal('show');
                 registerTaken = response.data;
                 setTime();
+                //显示默认的学院信息
+                collegeListAjax();
                 // $("#yzm1").attr("onclick","null");
             }else if(response.msg == "手机号已注册"){
                 $("#ourModalContent").empty();
@@ -410,11 +412,17 @@ function improveRegister() {
             console.log(response.code);
             if(response.code == 200){
                 $("#ourModalContent").empty();
-                $("#ourModalContent").text("完善信息成功");
+                $("#ourModalContent").text("完善信息成功,您已经可以登陆了！");
                 $('#ourModal').modal('show');
-            }else if (response.code == 200 && response.msg == "昵称已存在") {
+                $("#completeInfo").empty();
+                $("#completeInfo").addClass("hidden");
+                $("#loginModal").modal("hide");
+            }else if (response.msg == "昵称已存在") {
                 $("#ourModalContent").empty();
                 $("#ourModalContent").text("昵称已存在，请输入一个新的昵称");
+                $('#ourModal').modal('show');
+            }else{
+                $("#ourModalContent").text(response.msg.toString());
                 $('#ourModal').modal('show');
             }
         });

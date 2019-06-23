@@ -229,7 +229,7 @@
                         </div>
                     </div>
 
-                    <div class="box">
+                    <div class="box" id="sendYZM">
                         <div class="content registerBox" style="display:none;">
                             <div class="form" role="form">
                                 <input id="telephone_register" class="form-control" type="text"
@@ -248,9 +248,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="content ImproveBox" style="display:none;">
-                            <form role="form">
+
+                    <div class="box" id="completeInfo">
+                        <div class="content ImproveBox" style="display: none;">
+                            <div class="form" role="form">
                                 <input id="nickname" class="form-control" type="text"
                                        placeholder="昵称" autocomplete="nickname">
                                 <input id="password_register" class="form-control" type="password"
@@ -275,8 +276,7 @@
                                     </select>
                                 </label>
                                 <label for="college">
-                                    <select id="college" class="form-control" onchange="collegeListAjax()">
-                                        <option value="" style="display: none;" disabled selected>学校</option>
+                                    <select id="college" class="form-control"  onchange="collegeListAjax()">
                                         <option>福州大学</option>
                                         <option>福建工程学院</option>
                                         <option>福建农林大学</option>
@@ -297,7 +297,7 @@
                                        name="commit">-->
                                 <button class="yzm btn btn-default btn-register" onclick="improveRegister()">创建</button>
                                 <!--</form>-->
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -557,9 +557,9 @@
                     <img src="img/favicon.ico" class="img-thumbnail" id="portrait_2" alt="">
                     <span id="infoNickname_2"></span>
                 </div>
-                <label >
-                    <textarea id="replyPostContent" class="form-control" rows="3"></textarea>
-                </label>
+                <label for="replyPostContent"></label>
+                <textarea id="replyPostContent" class="form-control" rows="3"></textarea>
+
                 <button type="submit" class="btn-lg btn-primary post-submit" onclick="replyPost()">回复</button>
             </div>
 
@@ -653,13 +653,13 @@
             <br/><br/>
             <div id="my-editormd"> <!--文章内容-->
                 <!-- 书写与实时显示的textarea -->
-                <label>
+                <label for="my-editormd-markdown-doc"></label>
                     <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc"></textarea>
-                </label>
-                <label>
+
+                <label for="my-editormd-html-code"></label>
                     <!-- 用于后端获取md文档内容，Java中：request.getParameter("my-editormd-html-code")。  -->
                     <textarea id="my-editormd-html-code" name="my-editormd-html-code"></textarea>
-                </label>
+
             </div>
 
 
@@ -739,7 +739,7 @@
                         <td>入学年份：</td>
                         <td class="">
                             <label>
-                                <input id="myAd minssiondate" class="myInformation modifyTd" type="text">
+                                <input id="myAdminssiondate" class="myInformation modifyTd" type="text">
                                 <select id="myAdminssiondateAlter" >
                                     <option value="" style="display: none;" disabled selected>入学年份</option>
                                     <option>2018</option>

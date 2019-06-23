@@ -16,7 +16,7 @@ function isLogin() {
     }else{
         var myData = {
             token:$.cookie("qmkl_token")
-        }
+        };
         var settings = {
             "async": true,
             "crossDomain": true,
